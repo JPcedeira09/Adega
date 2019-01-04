@@ -19,19 +19,13 @@ target 'Adega' do
     # Pods for Adega UI Test
   end
 
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
-  pod 'Alamofire', '~> 4.5'
+
+  pod 'Alamofire'
   pod 'GoogleSignIn'
-  pod 'TextFieldEffects', '~> 1.4'
-  pod 'ExpandableCell'
   pod 'Moya'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
-  pod 'Fabric', '~> 1.7.2'
-  pod 'Crashlytics', '~> 3.9.3'
   pod 'Firebase/RemoteConfig'
   pod 'SwiftSpinner'
-  pod 'SideMenu', '3.0.1'
 
 end
