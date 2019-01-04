@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C8B68A921DEC5F0001AEFE9 /* CardapioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68A821DEC5F0001AEFE9 /* CardapioViewController.swift */; };
+		6C8B68AB21DED322001AEFE9 /* MeuCardapioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68AA21DED322001AEFE9 /* MeuCardapioViewController.swift */; };
+		6C8B68AD21DED33A001AEFE9 /* PedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68AC21DED33A001AEFE9 /* PedidosViewController.swift */; };
 		6CB700C221DD308B00CF0429 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700C121DD308B00CF0429 /* AppDelegate.swift */; };
 		6CB700C421DD308B00CF0429 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700C321DD308B00CF0429 /* ViewController.swift */; };
 		6CB700C721DD308B00CF0429 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CB700C521DD308B00CF0429 /* Main.storyboard */; };
@@ -17,8 +20,6 @@
 		6CB700E521DD308D00CF0429 /* AdegaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700E421DD308D00CF0429 /* AdegaUITests.swift */; };
 		6CB700F721DD523200CF0429 /* PedidosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700F521DD523200CF0429 /* PedidosTableViewCell.swift */; };
 		6CB700F821DD523200CF0429 /* PedidosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB700F621DD523200CF0429 /* PedidosTableViewCell.xib */; };
-		6CB700FB21DD524400CF0429 /* MeuCardapioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700F921DD524400CF0429 /* MeuCardapioTableViewCell.swift */; };
-		6CB700FC21DD524400CF0429 /* MeuCardapioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB700FA21DD524400CF0429 /* MeuCardapioTableViewCell.xib */; };
 		6CB700FF21DD525300CF0429 /* CardapioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700FD21DD525300CF0429 /* CardapioTableViewCell.swift */; };
 		6CB7010021DD525300CF0429 /* CardapioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB700FE21DD525300CF0429 /* CardapioTableViewCell.xib */; };
 		6CB7010421DE6F3800CF0429 /* MeuCardapioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB7010221DE6F3800CF0429 /* MeuCardapioTableViewCell.swift */; };
@@ -43,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C8B68A821DEC5F0001AEFE9 /* CardapioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardapioViewController.swift; sourceTree = "<group>"; };
+		6C8B68AA21DED322001AEFE9 /* MeuCardapioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuCardapioViewController.swift; sourceTree = "<group>"; };
+		6C8B68AC21DED33A001AEFE9 /* PedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosViewController.swift; sourceTree = "<group>"; };
 		6CB700BE21DD308B00CF0429 /* Adega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB700C121DD308B00CF0429 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CB700C321DD308B00CF0429 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,8 +63,6 @@
 		6CB700E621DD308D00CF0429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CB700F521DD523200CF0429 /* PedidosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosTableViewCell.swift; sourceTree = "<group>"; };
 		6CB700F621DD523200CF0429 /* PedidosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PedidosTableViewCell.xib; sourceTree = "<group>"; };
-		6CB700F921DD524400CF0429 /* MeuCardapioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuCardapioTableViewCell.swift; sourceTree = "<group>"; };
-		6CB700FA21DD524400CF0429 /* MeuCardapioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeuCardapioTableViewCell.xib; sourceTree = "<group>"; };
 		6CB700FD21DD525300CF0429 /* CardapioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardapioTableViewCell.swift; sourceTree = "<group>"; };
 		6CB700FE21DD525300CF0429 /* CardapioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardapioTableViewCell.xib; sourceTree = "<group>"; };
 		6CB7010221DE6F3800CF0429 /* MeuCardapioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuCardapioTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				6CB700F421DD4D1F00CF0429 /* Pedidos Cell */,
+				6C8B68AC21DED33A001AEFE9 /* PedidosViewController.swift */,
 			);
 			path = Pedidos;
 			sourceTree = "<group>";
@@ -104,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				6CB700F321DD4D1C00CF0429 /* Meu Cardapio Cell */,
+				6C8B68AA21DED322001AEFE9 /* MeuCardapioViewController.swift */,
 			);
 			path = "Meu Cardapio";
 			sourceTree = "<group>";
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				6CB700F221DD4D1700CF0429 /* Cardapio Cell */,
+				6C8B68A821DEC5F0001AEFE9 /* CardapioViewController.swift */,
 			);
 			path = Cardapio;
 			sourceTree = "<group>";
@@ -183,7 +188,6 @@
 		6CB700F321DD4D1C00CF0429 /* Meu Cardapio Cell */ = {
 			isa = PBXGroup;
 			children = (
-				6CB7010121DE6F1F00CF0429 /* old */,
 				6CB7010221DE6F3800CF0429 /* MeuCardapioTableViewCell.swift */,
 				6CB7010321DE6F3800CF0429 /* MeuCardapioTableViewCell.xib */,
 			);
@@ -197,15 +201,6 @@
 				6CB700F621DD523200CF0429 /* PedidosTableViewCell.xib */,
 			);
 			path = "Pedidos Cell";
-			sourceTree = "<group>";
-		};
-		6CB7010121DE6F1F00CF0429 /* old */ = {
-			isa = PBXGroup;
-			children = (
-				6CB700F921DD524400CF0429 /* MeuCardapioTableViewCell.swift */,
-				6CB700FA21DD524400CF0429 /* MeuCardapioTableViewCell.xib */,
-			);
-			path = old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CB700FC21DD524400CF0429 /* MeuCardapioTableViewCell.xib in Resources */,
 				6CB700F821DD523200CF0429 /* PedidosTableViewCell.xib in Resources */,
 				6CB7010521DE6F3800CF0429 /* MeuCardapioTableViewCell.xib in Resources */,
 				6CB7010021DD525300CF0429 /* CardapioTableViewCell.xib in Resources */,
@@ -344,12 +338,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CB700FF21DD525300CF0429 /* CardapioTableViewCell.swift in Sources */,
+				6C8B68A921DEC5F0001AEFE9 /* CardapioViewController.swift in Sources */,
 				6CB700F721DD523200CF0429 /* PedidosTableViewCell.swift in Sources */,
+				6C8B68AB21DED322001AEFE9 /* MeuCardapioViewController.swift in Sources */,
 				6CB700C421DD308B00CF0429 /* ViewController.swift in Sources */,
+				6C8B68AD21DED33A001AEFE9 /* PedidosViewController.swift in Sources */,
 				6CB700C221DD308B00CF0429 /* AppDelegate.swift in Sources */,
 				6CB700CA21DD308B00CF0429 /* Adega.xcdatamodeld in Sources */,
 				6CB7010421DE6F3800CF0429 /* MeuCardapioTableViewCell.swift in Sources */,
-				6CB700FB21DD524400CF0429 /* MeuCardapioTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

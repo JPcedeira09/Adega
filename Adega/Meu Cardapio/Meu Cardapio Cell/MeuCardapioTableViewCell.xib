@@ -59,9 +59,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="disponibilidade" destination="abR-uf-p2E" id="A8P-U8-d5b"/>
-                <outlet property="imagem_produto" destination="fzi-IN-a0f" id="C34-KO-iM4"/>
-                <outlet property="nome_produto" destination="cRd-Ho-MpT" id="bgC-va-lXC"/>
+                <outlet property="disponibilidade" destination="abR-uf-p2E" id="7L9-n5-4jj"/>
+                <outlet property="imagem" destination="fzi-IN-a0f" id="jnR-sA-cM7"/>
+                <outlet property="nome_produto" destination="cRd-Ho-MpT" id="LOH-BD-5vd"/>
             </connections>
             <point key="canvasLocation" x="52.799999999999997" y="134.03298350824588"/>
         </tableViewCell>

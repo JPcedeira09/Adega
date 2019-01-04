@@ -39,6 +39,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIU-rU-AgJ">
                                 <rect key="frame" x="133" y="390" width="109" height="30"/>
                                 <state key="normal" title="Entrar"/>
+                                <connections>
+                                    <segue destination="WPO-yq-8wH" kind="show" id="rip-hP-3oT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc0-yU-WOG">
                                 <rect key="frame" x="16" y="323" width="343" height="21"/>
@@ -72,6 +75,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqr-vE-vj6">
                                 <rect key="frame" x="133" y="428" width="109" height="30"/>
                                 <state key="normal" title="Cadastrar"/>
+                                <connections>
+                                    <segue destination="EIv-jT-LcV" kind="show" id="60a-bK-9A2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,7 +117,7 @@
         <!--Pedidos-->
         <scene sceneID="KDY-ms-HIt">
             <objects>
-                <viewController id="15P-CY-LY2" sceneMemberID="viewController">
+                <viewController id="15P-CY-LY2" customClass="PedidosViewController" customModule="Adega" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LDE-EW-RcD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,6 +138,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pedidos" id="L2g-hw-tNh"/>
                     <connections>
+                        <outlet property="table" destination="QHZ-9i-Zyj" id="eqJ-dX-Ck4"/>
                         <segue destination="0bh-wL-99R" kind="show" id="iRe-Pe-UFc"/>
                     </connections>
                 </viewController>
@@ -160,7 +167,7 @@
         <!--Meu Cardapio-->
         <scene sceneID="JsF-T1-MCC">
             <objects>
-                <viewController id="2Bo-pA-0Y6" sceneMemberID="viewController">
+                <viewController id="2Bo-pA-0Y6" customClass="MeuCardapioViewController" customModule="Adega" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EEY-0a-Br4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,6 +193,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="table" destination="osA-fF-XSS" id="hgy-aW-Sje"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJK-Ud-f1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -260,7 +270,7 @@
         <!--ADEGA HAUSE-->
         <scene sceneID="Muj-Rp-6ru">
             <objects>
-                <viewController id="Al6-MX-6Zt" sceneMemberID="viewController">
+                <viewController id="Al6-MX-6Zt" customClass="CardapioViewController" customModule="Adega" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J50-bp-8ZD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -286,6 +296,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="table" destination="yWX-0d-jtq" id="0tw-FW-58h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0X-bb-9Lx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

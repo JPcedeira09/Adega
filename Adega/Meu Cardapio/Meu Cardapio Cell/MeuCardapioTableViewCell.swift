@@ -10,6 +10,10 @@ import UIKit
 
 class MeuCardapioTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nome_produto: UILabel!
+    @IBOutlet weak var disponibilidade: UILabel!
+    @IBOutlet weak var imagem: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
