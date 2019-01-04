@@ -136,7 +136,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qZb-B8-Mqh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pedidos" id="L2g-hw-tNh"/>
+                    <navigationItem key="navigationItem" title="Pedidos" id="L2g-hw-tNh">
+                        <barButtonItem key="leftBarButtonItem" title="menu" image="menu_icon" id="hoH-f1-VXI"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="table" destination="QHZ-9i-Zyj" id="eqJ-dX-Ck4"/>
                         <segue destination="0bh-wL-99R" kind="show" id="iRe-Pe-UFc"/>
@@ -187,6 +189,7 @@
                         <viewLayoutGuide key="safeArea" id="D42-VG-OUL"/>
                     </view>
                     <navigationItem key="navigationItem" title="Meu Cardapio" id="rGH-Kw-eaE">
+                        <barButtonItem key="leftBarButtonItem" title="menu" image="menu_icon" id="cr7-Jz-Dld"/>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="RcX-dc-qjg">
                             <connections>
                                 <segue destination="cbb-lG-EKP" kind="show" id="FAw-nQ-3GG"/>
@@ -290,6 +293,7 @@
                         <viewLayoutGuide key="safeArea" id="vVD-T2-dmQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="ADEGA HAUSE" id="4Bz-32-oMC">
+                        <barButtonItem key="leftBarButtonItem" title="menu" image="menu_icon" id="hDC-OC-Rbt"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="n2D-Sg-08p">
                             <connections>
                                 <segue destination="Bhg-YY-sih" kind="show" id="wHU-oV-G5r"/>
@@ -375,5 +379,6 @@
     <resources>
         <image name="cardapio" width="32" height="32"/>
         <image name="cardapio_filled" width="32" height="32"/>
+        <image name="menu_icon" width="48" height="48"/>
     </resources>
 </document>

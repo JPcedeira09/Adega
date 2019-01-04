@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0764CB475F1DD50E93B017DB /* Pods_Adega.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0D1EFDFFA5C9A65A8D4296 /* Pods_Adega.framework */; };
+		5595E17D77A9F4DF7249DCD0 /* Pods_AdegaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61FC6D51A2EA54CD4410B8C /* Pods_AdegaTests.framework */; };
 		6C8B68A921DEC5F0001AEFE9 /* CardapioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68A821DEC5F0001AEFE9 /* CardapioViewController.swift */; };
 		6C8B68AB21DED322001AEFE9 /* MeuCardapioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68AA21DED322001AEFE9 /* MeuCardapioViewController.swift */; };
 		6C8B68AD21DED33A001AEFE9 /* PedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68AC21DED33A001AEFE9 /* PedidosViewController.swift */; };
@@ -24,6 +26,7 @@
 		6CB7010021DD525300CF0429 /* CardapioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB700FE21DD525300CF0429 /* CardapioTableViewCell.xib */; };
 		6CB7010421DE6F3800CF0429 /* MeuCardapioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB7010221DE6F3800CF0429 /* MeuCardapioTableViewCell.swift */; };
 		6CB7010521DE6F3800CF0429 /* MeuCardapioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB7010321DE6F3800CF0429 /* MeuCardapioTableViewCell.xib */; };
+		AF554BC328853973E9A9AC70 /* Pods_AdegaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C665BB197CBF7CEBD40AE4 /* Pods_AdegaUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1315E14C40A38BF5D7C079E9 /* Pods-Adega.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adega.release.xcconfig"; path = "Pods/Target Support Files/Pods-Adega/Pods-Adega.release.xcconfig"; sourceTree = "<group>"; };
+		165E953F8675B095DD22D1BE /* Pods-Adega.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adega.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Adega/Pods-Adega.debug.xcconfig"; sourceTree = "<group>"; };
+		2491D340FB735386C42072CA /* Pods-AdegaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdegaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdegaUITests/Pods-AdegaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		27C665BB197CBF7CEBD40AE4 /* Pods_AdegaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdegaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57CE1FB1D30444B75A970EC8 /* Pods-AdegaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdegaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdegaUITests/Pods-AdegaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C8B68A821DEC5F0001AEFE9 /* CardapioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardapioViewController.swift; sourceTree = "<group>"; };
 		6C8B68AA21DED322001AEFE9 /* MeuCardapioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuCardapioViewController.swift; sourceTree = "<group>"; };
 		6C8B68AC21DED33A001AEFE9 /* PedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +75,10 @@
 		6CB700FE21DD525300CF0429 /* CardapioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardapioTableViewCell.xib; sourceTree = "<group>"; };
 		6CB7010221DE6F3800CF0429 /* MeuCardapioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuCardapioTableViewCell.swift; sourceTree = "<group>"; };
 		6CB7010321DE6F3800CF0429 /* MeuCardapioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeuCardapioTableViewCell.xib; sourceTree = "<group>"; };
+		AAE9B5713A635330E21BC6E3 /* Pods-AdegaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdegaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdegaTests/Pods-AdegaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB0D1EFDFFA5C9A65A8D4296 /* Pods_Adega.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Adega.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3538BCD36FF20DB060A5F62 /* Pods-AdegaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdegaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdegaTests/Pods-AdegaTests.release.xcconfig"; sourceTree = "<group>"; };
+		E61FC6D51A2EA54CD4410B8C /* Pods_AdegaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdegaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0764CB475F1DD50E93B017DB /* Pods_Adega.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5595E17D77A9F4DF7249DCD0 /* Pods_AdegaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF554BC328853973E9A9AC70 /* Pods_AdegaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +143,8 @@
 				6CB700D821DD308D00CF0429 /* AdegaTests */,
 				6CB700E321DD308D00CF0429 /* AdegaUITests */,
 				6CB700BF21DD308B00CF0429 /* Products */,
+				7E9947798BB8C711BF80AB28 /* Pods */,
+				F71588596127599495E07C65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,6 +220,29 @@
 			path = "Pedidos Cell";
 			sourceTree = "<group>";
 		};
+		7E9947798BB8C711BF80AB28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				165E953F8675B095DD22D1BE /* Pods-Adega.debug.xcconfig */,
+				1315E14C40A38BF5D7C079E9 /* Pods-Adega.release.xcconfig */,
+				AAE9B5713A635330E21BC6E3 /* Pods-AdegaTests.debug.xcconfig */,
+				D3538BCD36FF20DB060A5F62 /* Pods-AdegaTests.release.xcconfig */,
+				57CE1FB1D30444B75A970EC8 /* Pods-AdegaUITests.debug.xcconfig */,
+				2491D340FB735386C42072CA /* Pods-AdegaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F71588596127599495E07C65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB0D1EFDFFA5C9A65A8D4296 /* Pods_Adega.framework */,
+				E61FC6D51A2EA54CD4410B8C /* Pods_AdegaTests.framework */,
+				27C665BB197CBF7CEBD40AE4 /* Pods_AdegaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,9 +250,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CB700E921DD308D00CF0429 /* Build configuration list for PBXNativeTarget "Adega" */;
 			buildPhases = (
+				AD064296485A39E9DD116D10 /* [CP] Check Pods Manifest.lock */,
 				6CB700BA21DD308B00CF0429 /* Sources */,
 				6CB700BB21DD308B00CF0429 /* Frameworks */,
 				6CB700BC21DD308B00CF0429 /* Resources */,
+				C482DAFD32E06137E088D50E /* [CP] Embed Pods Frameworks */,
+				7B94A746F00C56FCE9B8B652 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,6 +270,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CB700EC21DD308D00CF0429 /* Build configuration list for PBXNativeTarget "AdegaTests" */;
 			buildPhases = (
+				E65E69565FA6FC746D2A367B /* [CP] Check Pods Manifest.lock */,
 				6CB700D121DD308D00CF0429 /* Sources */,
 				6CB700D221DD308D00CF0429 /* Frameworks */,
 				6CB700D321DD308D00CF0429 /* Resources */,
@@ -245,6 +289,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CB700EF21DD308D00CF0429 /* Build configuration list for PBXNativeTarget "AdegaUITests" */;
 			buildPhases = (
+				8396499DD89865EEA4699E9E /* [CP] Check Pods Manifest.lock */,
 				6CB700DC21DD308D00CF0429 /* Sources */,
 				6CB700DD21DD308D00CF0429 /* Frameworks */,
 				6CB700DE21DD308D00CF0429 /* Resources */,
@@ -331,6 +376,145 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7B94A746F00C56FCE9B8B652 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Adega/Pods-Adega-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Adega/Pods-Adega-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8396499DD89865EEA4699E9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdegaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD064296485A39E9DD116D10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Adega-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C482DAFD32E06137E088D50E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Adega/Pods-Adega-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Adega/Pods-Adega-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E65E69565FA6FC746D2A367B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdegaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6CB700BA21DD308B00CF0429 /* Sources */ = {
@@ -518,6 +702,7 @@
 		};
 		6CB700EA21DD308D00CF0429 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 165E953F8675B095DD22D1BE /* Pods-Adega.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +721,7 @@
 		};
 		6CB700EB21DD308D00CF0429 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1315E14C40A38BF5D7C079E9 /* Pods-Adega.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -554,6 +740,7 @@
 		};
 		6CB700ED21DD308D00CF0429 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAE9B5713A635330E21BC6E3 /* Pods-AdegaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -575,6 +762,7 @@
 		};
 		6CB700EE21DD308D00CF0429 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3538BCD36FF20DB060A5F62 /* Pods-AdegaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -596,6 +784,7 @@
 		};
 		6CB700F021DD308D00CF0429 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57CE1FB1D30444B75A970EC8 /* Pods-AdegaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -616,6 +805,7 @@
 		};
 		6CB700F121DD308D00CF0429 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2491D340FB735386C42072CA /* Pods-AdegaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_Adega {
+  umbrella header "Pods-Adega-umbrella.h"
+
+  export *
+  module * { export * }
+}
