@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		0764CB475F1DD50E93B017DB /* Pods_Adega.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0D1EFDFFA5C9A65A8D4296 /* Pods_Adega.framework */; };
 		5595E17D77A9F4DF7249DCD0 /* Pods_AdegaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61FC6D51A2EA54CD4410B8C /* Pods_AdegaTests.framework */; };
+		6C44A17321E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44A17121E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift */; };
+		6C44A17421E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C44A17221E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib */; };
+		6C44A17621E3B9F2008ED84A /* PedidoDetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44A17521E3B9F2008ED84A /* PedidoDetalheViewController.swift */; };
+		6C44A17921E3C86C008ED84A /* CarrinhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44A17821E3C86C008ED84A /* CarrinhoViewController.swift */; };
+		6C7DFFD521E50AA400C24596 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C7DFFD421E50AA400C24596 /* GoogleService-Info.plist */; };
+		6C7DFFD721E50CF700C24596 /* InicialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DFFD621E50CF700C24596 /* InicialViewController.swift */; };
+		6C7DFFDA21E51A4A00C24596 /* CadastrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DFFD921E51A4A00C24596 /* CadastrarViewController.swift */; };
 		6C8B68A921DEC5F0001AEFE9 /* CardapioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68A821DEC5F0001AEFE9 /* CardapioViewController.swift */; };
 		6C8B68AB21DED322001AEFE9 /* MeuCardapioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68AA21DED322001AEFE9 /* MeuCardapioViewController.swift */; };
 		6C8B68AD21DED33A001AEFE9 /* PedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68AC21DED33A001AEFE9 /* PedidosViewController.swift */; };
@@ -52,6 +59,13 @@
 		2491D340FB735386C42072CA /* Pods-AdegaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdegaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdegaUITests/Pods-AdegaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		27C665BB197CBF7CEBD40AE4 /* Pods_AdegaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdegaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CE1FB1D30444B75A970EC8 /* Pods-AdegaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdegaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdegaUITests/Pods-AdegaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C44A17121E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoDetalheTableViewCell.swift; sourceTree = "<group>"; };
+		6C44A17221E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PedidoDetalheTableViewCell.xib; sourceTree = "<group>"; };
+		6C44A17521E3B9F2008ED84A /* PedidoDetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoDetalheViewController.swift; sourceTree = "<group>"; };
+		6C44A17821E3C86C008ED84A /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewController.swift; sourceTree = "<group>"; };
+		6C7DFFD421E50AA400C24596 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6C7DFFD621E50CF700C24596 /* InicialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicialViewController.swift; sourceTree = "<group>"; };
+		6C7DFFD921E51A4A00C24596 /* CadastrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarViewController.swift; sourceTree = "<group>"; };
 		6C8B68A821DEC5F0001AEFE9 /* CardapioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardapioViewController.swift; sourceTree = "<group>"; };
 		6C8B68AA21DED322001AEFE9 /* MeuCardapioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuCardapioViewController.swift; sourceTree = "<group>"; };
 		6C8B68AC21DED33A001AEFE9 /* PedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +123,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C44A16C21E3B2E3008ED84A /* Pedidos Detalhe */ = {
+			isa = PBXGroup;
+			children = (
+				6C44A16D21E3B388008ED84A /* Pedidos Detalhe Cell */,
+				6C44A17521E3B9F2008ED84A /* PedidoDetalheViewController.swift */,
+			);
+			path = "Pedidos Detalhe";
+			sourceTree = "<group>";
+		};
+		6C44A16D21E3B388008ED84A /* Pedidos Detalhe Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6C44A17121E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift */,
+				6C44A17221E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib */,
+			);
+			path = "Pedidos Detalhe Cell";
+			sourceTree = "<group>";
+		};
+		6C44A17721E3C85E008ED84A /* Carrinho */ = {
+			isa = PBXGroup;
+			children = (
+				6C44A17B21E3C880008ED84A /* Itens do Carrinho Cell */,
+				6C44A17A21E3C870008ED84A /* Carrinho Pagemento Cell */,
+				6C44A17821E3C86C008ED84A /* CarrinhoViewController.swift */,
+			);
+			path = Carrinho;
+			sourceTree = "<group>";
+		};
+		6C44A17A21E3C870008ED84A /* Carrinho Pagemento Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Carrinho Pagemento Cell";
+			sourceTree = "<group>";
+		};
+		6C44A17B21E3C880008ED84A /* Itens do Carrinho Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Itens do Carrinho Cell";
+			sourceTree = "<group>";
+		};
+		6C44A17C21E3C8AA008ED84A /* Inicial */ = {
+			isa = PBXGroup;
+			children = (
+				6C7DFFD621E50CF700C24596 /* InicialViewController.swift */,
+			);
+			path = Inicial;
+			sourceTree = "<group>";
+		};
+		6C7DFFD821E51A3E00C24596 /* Cadastrar */ = {
+			isa = PBXGroup;
+			children = (
+				6C7DFFD921E51A4A00C24596 /* CadastrarViewController.swift */,
+			);
+			path = Cadastrar;
+			sourceTree = "<group>";
+		};
 		6C8B68A521DE8969001AEFE9 /* Pedidos */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +233,10 @@
 		6CB700C021DD308B00CF0429 /* Adega */ = {
 			isa = PBXGroup;
 			children = (
+				6C7DFFD821E51A3E00C24596 /* Cadastrar */,
+				6C44A17C21E3C8AA008ED84A /* Inicial */,
+				6C44A17721E3C85E008ED84A /* Carrinho */,
+				6C44A16C21E3B2E3008ED84A /* Pedidos Detalhe */,
 				6C8B68A721DE897F001AEFE9 /* Cardapio */,
 				6C8B68A621DE8972001AEFE9 /* Meu Cardapio */,
 				6C8B68A521DE8969001AEFE9 /* Pedidos */,
@@ -171,6 +247,7 @@
 				6CB700CD21DD308D00CF0429 /* LaunchScreen.storyboard */,
 				6CB700D021DD308D00CF0429 /* Info.plist */,
 				6CB700C821DD308B00CF0429 /* Adega.xcdatamodeld */,
+				6C7DFFD421E50AA400C24596 /* GoogleService-Info.plist */,
 			);
 			path = Adega;
 			sourceTree = "<group>";
@@ -353,6 +430,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CB700F821DD523200CF0429 /* PedidosTableViewCell.xib in Resources */,
+				6C7DFFD521E50AA400C24596 /* GoogleService-Info.plist in Resources */,
+				6C44A17421E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib in Resources */,
 				6CB7010521DE6F3800CF0429 /* MeuCardapioTableViewCell.xib in Resources */,
 				6CB7010021DD525300CF0429 /* CardapioTableViewCell.xib in Resources */,
 				6CB700CF21DD308D00CF0429 /* LaunchScreen.storyboard in Resources */,
@@ -460,7 +539,6 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -474,7 +552,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,9 +590,14 @@
 			files = (
 				6CB700FF21DD525300CF0429 /* CardapioTableViewCell.swift in Sources */,
 				6C8B68A921DEC5F0001AEFE9 /* CardapioViewController.swift in Sources */,
+				6C7DFFDA21E51A4A00C24596 /* CadastrarViewController.swift in Sources */,
 				6CB700F721DD523200CF0429 /* PedidosTableViewCell.swift in Sources */,
 				6C8B68AB21DED322001AEFE9 /* MeuCardapioViewController.swift in Sources */,
+				6C44A17921E3C86C008ED84A /* CarrinhoViewController.swift in Sources */,
+				6C44A17321E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift in Sources */,
+				6C7DFFD721E50CF700C24596 /* InicialViewController.swift in Sources */,
 				6CB700C421DD308B00CF0429 /* ViewController.swift in Sources */,
+				6C44A17621E3B9F2008ED84A /* PedidoDetalheViewController.swift in Sources */,
 				6C8B68AD21DED33A001AEFE9 /* PedidosViewController.swift in Sources */,
 				6CB700C221DD308B00CF0429 /* AppDelegate.swift in Sources */,
 				6CB700CA21DD308B00CF0429 /* Adega.xcdatamodeld in Sources */,
@@ -704,7 +786,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.techlold.Adega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -723,7 +805,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.techlold.Adega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

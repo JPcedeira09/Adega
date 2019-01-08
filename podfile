@@ -24,8 +24,8 @@ target 'Adega' do
   pod 'GoogleSignIn'
   pod 'Moya'
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
   pod 'Firebase/RemoteConfig'
-  pod 'SwiftSpinner'
 
 end

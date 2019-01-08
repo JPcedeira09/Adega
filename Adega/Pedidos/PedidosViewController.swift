@@ -12,6 +12,12 @@ class PedidosViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
     
+    @IBAction func SairAction(_ sender: UIBarButtonItem) {
+        
+        print("O Dono da Adega foi logado com sucesso.")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginView")
+        self.present(vc!, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

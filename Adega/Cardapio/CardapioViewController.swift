@@ -7,10 +7,24 @@
 //
 
 import UIKit
+import Firebase
 
 class CardapioViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
+    
+    @IBAction func logOut(_ sender: UIBarButtonItem) {
+        if Auth.auth().currentUser != nil {
+            do {
+                try Auth.auth().signOut()
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUp")
+                present(vc, animated: true, completion: nil)
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
