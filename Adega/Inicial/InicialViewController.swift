@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class InicialViewController: UIViewController {
+class InicialViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var entrabtn: UIButton!
     @IBOutlet weak var cadastrabtn: UIButton!
@@ -17,7 +17,7 @@ class InicialViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     
     @IBOutlet weak var senha: UITextField!
-    
+ 
     @IBAction func loginAction(_ sender: AnyObject) {
         
         if self.email.text == "" || self.senha.text == "" {
@@ -29,11 +29,26 @@ class InicialViewController: UIViewController {
             
             self.present(alertController, animated: true, completion: nil)
             
-        }else if self.email.text == "adega.house@gmail.com" || self.senha.text == "Adega123"{
+        }else if self.email.text == "adega.house@gmail.com" || self.senha.text == "adega123"{
             
-            print("O Dono da Adega foi logado com sucesso.")
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeDono")
-            self.present(vc!, animated: true, completion: nil)
+            
+            Auth.auth().signIn(withEmail: self.email.text!, password: self.senha.text!) { (user, error) in
+                if error == nil {
+                    
+                    print("O Dono da Adega foi logado com sucesso.")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeDono")
+                    self.present(vc!, animated: true, completion: nil)
+                    
+                } else {
+                    
+                    let alertController = UIAlertController(title: "Erro", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
             
         } else {
             
@@ -61,6 +76,37 @@ class InicialViewController: UIViewController {
         super.viewDidLoad()
         entrabtn.layer.cornerRadius = 4
         cadastrabtn.layer.cornerRadius = 4
+
+        self.email.delegate = self
+        self.senha.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(InicialViewController.keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(InicialViewController.keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue.height
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+            self.view.window?.frame.origin.y = -1 * keyboardHeight
+            self.view.layoutIfNeeded()
+        })
+    }
+    @objc func keyboardWillHide(notification: NSNotification) {
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+            self.view.window?.frame.origin.y = 0
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        email.resignFirstResponder()
+        senha.resignFirstResponder()
+
+        return true
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }

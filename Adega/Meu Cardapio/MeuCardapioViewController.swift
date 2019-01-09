@@ -7,14 +7,28 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
-class MeuCardapioViewController: UIViewController {
+class MeuCardapioViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var ref: DatabaseReference!
+    var produtos = [Produto]()
+    let imagePicker = UIImagePickerController()
 
     @IBOutlet weak var table: UITableView!
+    
     @IBAction func SairAction(_ sender: UIBarButtonItem) {
-        print("O Dono da Adega foi logado com sucesso.")
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginView")
-        self.present(vc!, animated: true, completion: nil)
+        if Auth.auth().currentUser != nil {
+            do {
+                try Auth.auth().signOut()
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUp")
+                present(vc, animated: true, completion: nil)
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -24,6 +38,41 @@ class MeuCardapioViewController: UIViewController {
         self.table.delegate = self
         
         self.table.register(UINib(nibName: "MeuCardapioTableViewCell", bundle: nil), forCellReuseIdentifier: "MeuCardapioTableViewCell")
+        
+        self.ref = Database.database().reference()
+
+        
+        /*
+         firebase.observeEventType(.Value, withBlock: { snapshot in
+         var tempItems = [NSDictionary]()
+         
+         for item in snapshot.children {
+         let child = item as! FDataSnapshot
+         let dict = child.value as! NSDictionary
+         tempItems.append(dict)
+         }
+         
+         self.items = tempItems
+         self.tableView.reloadData()
+         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+         })
+ */
+        ref.child("Adega").child("Produtos").observe(.value) { (snapshot) in
+            print()
+            print(snapshot.children)
+            print()
+            var produtosRetrived = [Produto]()
+
+            for item in snapshot.children {
+                let child = item as! DataSnapshot
+                let dict = child.value as! NSDictionary
+                let produto = Produto(produtoJSON: dict as! [String : Any])
+                produtosRetrived.append(produto)
+            }
+            
+            self.produtos = produtosRetrived
+            self.table.reloadData()
+        }
     }
     
 }
@@ -31,13 +80,26 @@ class MeuCardapioViewController: UIViewController {
 extension MeuCardapioViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return produtos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = table.dequeueReusableCell(withIdentifier: "MeuCardapioTableViewCell") as! MeuCardapioTableViewCell
         
+        let produto = produtos[indexPath.row]
+        
+        var valorString = String(format: "%.2f",produto.valor).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+
+        cell.valorProduto.text = "R$ \(valorString)"
+
+        cell.nome_produto.text = produto.nome
+        if(produto.disponivel == true){
+            cell.disponibilidade.text = "Disponivel"
+        }else{
+            cell.disponibilidade.text = "Indisponivel"
+        }
+
         return cell
     }
     

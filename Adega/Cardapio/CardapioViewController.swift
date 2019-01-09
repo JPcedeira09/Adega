@@ -14,6 +14,7 @@ class CardapioViewController: UIViewController {
     @IBOutlet weak var table: UITableView!
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
+        
         if Auth.auth().currentUser != nil {
             do {
                 try Auth.auth().signOut()

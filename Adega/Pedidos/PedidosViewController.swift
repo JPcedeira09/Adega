@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import Firebase
 
 class PedidosViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
     
     @IBAction func SairAction(_ sender: UIBarButtonItem) {
-        
-        print("O Dono da Adega foi logado com sucesso.")
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginView")
-        self.present(vc!, animated: true, completion: nil)
+        if Auth.auth().currentUser != nil {
+            do {
+                try Auth.auth().signOut()
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUp")
+                present(vc, animated: true, completion: nil)
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

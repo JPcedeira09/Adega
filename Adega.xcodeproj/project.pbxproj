@@ -13,7 +13,6 @@
 		6C44A17421E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C44A17221E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib */; };
 		6C44A17621E3B9F2008ED84A /* PedidoDetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44A17521E3B9F2008ED84A /* PedidoDetalheViewController.swift */; };
 		6C44A17921E3C86C008ED84A /* CarrinhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44A17821E3C86C008ED84A /* CarrinhoViewController.swift */; };
-		6C7DFFD521E50AA400C24596 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C7DFFD421E50AA400C24596 /* GoogleService-Info.plist */; };
 		6C7DFFD721E50CF700C24596 /* InicialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DFFD621E50CF700C24596 /* InicialViewController.swift */; };
 		6C7DFFDA21E51A4A00C24596 /* CadastrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DFFD921E51A4A00C24596 /* CadastrarViewController.swift */; };
 		6C8B68A921DEC5F0001AEFE9 /* CardapioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68A821DEC5F0001AEFE9 /* CardapioViewController.swift */; };
@@ -33,6 +32,9 @@
 		6CB7010021DD525300CF0429 /* CardapioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB700FE21DD525300CF0429 /* CardapioTableViewCell.xib */; };
 		6CB7010421DE6F3800CF0429 /* MeuCardapioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB7010221DE6F3800CF0429 /* MeuCardapioTableViewCell.swift */; };
 		6CB7010521DE6F3800CF0429 /* MeuCardapioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB7010321DE6F3800CF0429 /* MeuCardapioTableViewCell.xib */; };
+		6CDB5C2E21E62D2D00D4CE1F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CDB5C2D21E62D2D00D4CE1F /* GoogleService-Info.plist */; };
+		6CDB5C3121E63F1D00D4CE1F /* CadastroProdutosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDB5C3021E63F1D00D4CE1F /* CadastroProdutosViewController.swift */; };
+		6CF537CB21E652D5006DF1F0 /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF537CA21E652D5006DF1F0 /* Produto.swift */; };
 		AF554BC328853973E9A9AC70 /* Pods_AdegaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C665BB197CBF7CEBD40AE4 /* Pods_AdegaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +65,6 @@
 		6C44A17221E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PedidoDetalheTableViewCell.xib; sourceTree = "<group>"; };
 		6C44A17521E3B9F2008ED84A /* PedidoDetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoDetalheViewController.swift; sourceTree = "<group>"; };
 		6C44A17821E3C86C008ED84A /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewController.swift; sourceTree = "<group>"; };
-		6C7DFFD421E50AA400C24596 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C7DFFD621E50CF700C24596 /* InicialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicialViewController.swift; sourceTree = "<group>"; };
 		6C7DFFD921E51A4A00C24596 /* CadastrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarViewController.swift; sourceTree = "<group>"; };
 		6C8B68A821DEC5F0001AEFE9 /* CardapioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardapioViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +90,9 @@
 		6CB700FE21DD525300CF0429 /* CardapioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardapioTableViewCell.xib; sourceTree = "<group>"; };
 		6CB7010221DE6F3800CF0429 /* MeuCardapioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuCardapioTableViewCell.swift; sourceTree = "<group>"; };
 		6CB7010321DE6F3800CF0429 /* MeuCardapioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeuCardapioTableViewCell.xib; sourceTree = "<group>"; };
+		6CDB5C2D21E62D2D00D4CE1F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6CDB5C3021E63F1D00D4CE1F /* CadastroProdutosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroProdutosViewController.swift; sourceTree = "<group>"; };
+		6CF537CA21E652D5006DF1F0 /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
 		AAE9B5713A635330E21BC6E3 /* Pods-AdegaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdegaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdegaTests/Pods-AdegaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB0D1EFDFFA5C9A65A8D4296 /* Pods_Adega.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Adega.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3538BCD36FF20DB060A5F62 /* Pods-AdegaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdegaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdegaTests/Pods-AdegaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,12 +177,12 @@
 			path = Inicial;
 			sourceTree = "<group>";
 		};
-		6C7DFFD821E51A3E00C24596 /* Cadastrar */ = {
+		6C7DFFD821E51A3E00C24596 /* CadastrarUsuario */ = {
 			isa = PBXGroup;
 			children = (
 				6C7DFFD921E51A4A00C24596 /* CadastrarViewController.swift */,
 			);
-			path = Cadastrar;
+			path = CadastrarUsuario;
 			sourceTree = "<group>";
 		};
 		6C8B68A521DE8969001AEFE9 /* Pedidos */ = {
@@ -233,7 +237,9 @@
 		6CB700C021DD308B00CF0429 /* Adega */ = {
 			isa = PBXGroup;
 			children = (
-				6C7DFFD821E51A3E00C24596 /* Cadastrar */,
+				6CF537C921E652AF006DF1F0 /* Models */,
+				6CDB5C2F21E63F0900D4CE1F /* CadastrarProdutos */,
+				6C7DFFD821E51A3E00C24596 /* CadastrarUsuario */,
 				6C44A17C21E3C8AA008ED84A /* Inicial */,
 				6C44A17721E3C85E008ED84A /* Carrinho */,
 				6C44A16C21E3B2E3008ED84A /* Pedidos Detalhe */,
@@ -247,7 +253,7 @@
 				6CB700CD21DD308D00CF0429 /* LaunchScreen.storyboard */,
 				6CB700D021DD308D00CF0429 /* Info.plist */,
 				6CB700C821DD308B00CF0429 /* Adega.xcdatamodeld */,
-				6C7DFFD421E50AA400C24596 /* GoogleService-Info.plist */,
+				6CDB5C2D21E62D2D00D4CE1F /* GoogleService-Info.plist */,
 			);
 			path = Adega;
 			sourceTree = "<group>";
@@ -295,6 +301,22 @@
 				6CB700F621DD523200CF0429 /* PedidosTableViewCell.xib */,
 			);
 			path = "Pedidos Cell";
+			sourceTree = "<group>";
+		};
+		6CDB5C2F21E63F0900D4CE1F /* CadastrarProdutos */ = {
+			isa = PBXGroup;
+			children = (
+				6CDB5C3021E63F1D00D4CE1F /* CadastroProdutosViewController.swift */,
+			);
+			path = CadastrarProdutos;
+			sourceTree = "<group>";
+		};
+		6CF537C921E652AF006DF1F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6CF537CA21E652D5006DF1F0 /* Produto.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7E9947798BB8C711BF80AB28 /* Pods */ = {
@@ -430,7 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CB700F821DD523200CF0429 /* PedidosTableViewCell.xib in Resources */,
-				6C7DFFD521E50AA400C24596 /* GoogleService-Info.plist in Resources */,
+				6CDB5C2E21E62D2D00D4CE1F /* GoogleService-Info.plist in Resources */,
 				6C44A17421E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib in Resources */,
 				6CB7010521DE6F3800CF0429 /* MeuCardapioTableViewCell.xib in Resources */,
 				6CB7010021DD525300CF0429 /* CardapioTableViewCell.xib in Resources */,
@@ -539,6 +561,7 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -552,6 +575,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,7 +621,9 @@
 				6C44A17321E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift in Sources */,
 				6C7DFFD721E50CF700C24596 /* InicialViewController.swift in Sources */,
 				6CB700C421DD308B00CF0429 /* ViewController.swift in Sources */,
+				6CF537CB21E652D5006DF1F0 /* Produto.swift in Sources */,
 				6C44A17621E3B9F2008ED84A /* PedidoDetalheViewController.swift in Sources */,
+				6CDB5C3121E63F1D00D4CE1F /* CadastroProdutosViewController.swift in Sources */,
 				6C8B68AD21DED33A001AEFE9 /* PedidosViewController.swift in Sources */,
 				6CB700C221DD308B00CF0429 /* AppDelegate.swift in Sources */,
 				6CB700CA21DD308B00CF0429 /* Adega.xcdatamodeld in Sources */,
