@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItensCarrinhoTableViewCell" rowHeight="67" id="YPG-A7-6ga" customClass="ItensCarrinhoTableViewCell" customModule="Adega" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YPG-A7-6ga" id="Uhx-7T-RXo">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2x Carvão Vegetal, 26 Kg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asF-n9-RBd">
+                        <rect key="frame" x="16" y="11" width="172.5" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="Xm9-B6-SAw"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="rHi-dH-f3e"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 50,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXr-eQ-M5J">
+                        <rect key="frame" x="197" y="11" width="80" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Fih-Vc-mbw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORD-XU-Fgn">
+                        <rect key="frame" x="285" y="22.5" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="8oS-7D-bBS"/>
+                            <constraint firstAttribute="height" constant="22" id="vdU-kz-KYN"/>
+                        </constraints>
+                        <state key="normal" image="menu_pedidos"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mXr-eQ-M5J" firstAttribute="bottom" secondItem="Uhx-7T-RXo" secondAttribute="bottomMargin" id="4Sk-c6-yJa"/>
+                    <constraint firstItem="asF-n9-RBd" firstAttribute="top" secondItem="Uhx-7T-RXo" secondAttribute="topMargin" id="7v3-ak-ZY7"/>
+                    <constraint firstItem="mXr-eQ-M5J" firstAttribute="top" secondItem="Uhx-7T-RXo" secondAttribute="topMargin" id="Fy8-ku-emc"/>
+                    <constraint firstItem="mXr-eQ-M5J" firstAttribute="top" secondItem="asF-n9-RBd" secondAttribute="top" id="LX8-sb-Jg0"/>
+                    <constraint firstItem="asF-n9-RBd" firstAttribute="bottom" secondItem="Uhx-7T-RXo" secondAttribute="bottomMargin" id="RPZ-pF-cPB"/>
+                    <constraint firstItem="ORD-XU-Fgn" firstAttribute="leading" secondItem="mXr-eQ-M5J" secondAttribute="trailing" constant="8" id="aia-ll-3Dy"/>
+                    <constraint firstItem="ORD-XU-Fgn" firstAttribute="centerY" secondItem="Uhx-7T-RXo" secondAttribute="centerY" id="ia0-BI-tto"/>
+                    <constraint firstItem="mXr-eQ-M5J" firstAttribute="leading" secondItem="asF-n9-RBd" secondAttribute="trailing" constant="8.5" id="n4f-lD-vuf"/>
+                    <constraint firstItem="asF-n9-RBd" firstAttribute="leading" secondItem="Uhx-7T-RXo" secondAttribute="leadingMargin" id="oDm-Yy-dCk"/>
+                    <constraint firstAttribute="trailing" secondItem="ORD-XU-Fgn" secondAttribute="trailing" constant="13" id="pJd-ti-EWH"/>
+                    <constraint firstItem="mXr-eQ-M5J" firstAttribute="bottom" secondItem="asF-n9-RBd" secondAttribute="bottom" id="pq7-2H-4H4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="XfS-68-jSH"/>
+            <point key="canvasLocation" x="136" y="154.27286356821591"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="menu_pedidos" width="50" height="50"/>
+    </resources>
+</document>

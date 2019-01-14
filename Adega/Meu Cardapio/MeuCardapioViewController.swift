@@ -14,6 +14,7 @@ class MeuCardapioViewController: UIViewController , UIImagePickerControllerDeleg
     
     var ref: DatabaseReference!
     var produtos = [Produto]()
+    
     let imagePicker = UIImagePickerController()
 
     @IBOutlet weak var table: UITableView!
@@ -41,22 +42,6 @@ class MeuCardapioViewController: UIViewController , UIImagePickerControllerDeleg
         
         self.ref = Database.database().reference()
 
-        
-        /*
-         firebase.observeEventType(.Value, withBlock: { snapshot in
-         var tempItems = [NSDictionary]()
-         
-         for item in snapshot.children {
-         let child = item as! FDataSnapshot
-         let dict = child.value as! NSDictionary
-         tempItems.append(dict)
-         }
-         
-         self.items = tempItems
-         self.tableView.reloadData()
-         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-         })
- */
         ref.child("Adega").child("Produtos").observe(.value) { (snapshot) in
             print()
             print(snapshot.children)
