@@ -13,6 +13,7 @@ import FirebaseDatabase
 class CadastroProdutosViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate{
 
     var ref: DatabaseReference!
+    
     var user: User!
 
     @IBOutlet weak var imagemProduto: UIImageView!

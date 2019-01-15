@@ -15,7 +15,7 @@ class CardapioViewController: UIViewController {
     var produtos = [Produto]()
     var produto:Produto?
     var ref: DatabaseReference!
-    
+    var usuarioFirebase = Auth.auth()
     @IBOutlet weak var table: UITableView!
 
     @IBAction func logOut(_ sender: UIBarButtonItem) {
@@ -59,6 +59,16 @@ class CardapioViewController: UIViewController {
             
             self.produtos = produtosRetrived
             self.table.reloadData()
+        }
+        
+        let uid = (usuarioFirebase.currentUser?.uid)!
+        print(uid)
+        ref.child("Usuarios").child(uid).child("dados_pessoais").observe(.value) { (snapshot) in
+            
+            let dict = snapshot.value as! NSDictionary
+            let usuario = Usuario(usuarioJSON: dict as! [String : Any])
+            print(usuario)
+        
         }
     }
     

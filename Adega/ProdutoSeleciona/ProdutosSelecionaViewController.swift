@@ -20,13 +20,27 @@ class ProdutosSelecionaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(produto)
+        print(produto!)
         self.valorTotal.text = "Total R$ \((produto?.valor)!)"
         self.nomeProduto.text = produto?.nome
         self.descricao.text = produto?.descricao
+        self.quantidadePedido.text = "1"
     }
     
     @IBAction func adicionarCarrinho(_ sender: UIButton) {
+        
     }
     
+    @IBAction func reduzirUm(_ sender: Any) {
+        if(Int(self.quantidadePedido.text!)! > 1 ){
+            self.quantidadePedido.text = "\(Int(self.quantidadePedido.text!)!-1)"
+        }
+    }
+    
+    
+    @IBAction func adionarMaisUm(_ sender: Any) {
+        if( Int(self.quantidadePedido.text!)! < (self.produto?.quantidade)! ){
+        self.quantidadePedido.text = "\(Int(self.quantidadePedido.text!)!+1)"
+        }
+    }
 }
