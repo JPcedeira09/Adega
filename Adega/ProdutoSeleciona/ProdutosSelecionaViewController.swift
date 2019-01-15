@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class ProdutosSelecionaViewController: UIViewController {
 
     var produto:Produto?
+    var usuario:Usuario?
+    var ref: DatabaseReference!
 
     @IBOutlet weak var valorTotal: UILabel!
     @IBOutlet weak var quantidadePedido: UILabel!
@@ -19,8 +23,11 @@ class ProdutosSelecionaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.ref = Database.database().reference()
 
         print(produto!)
+        print(usuario!)
         self.valorTotal.text = "Total R$ \((produto?.valor)!)"
         self.nomeProduto.text = produto?.nome
         self.descricao.text = produto?.descricao
@@ -28,6 +35,11 @@ class ProdutosSelecionaViewController: UIViewController {
     }
     
     @IBAction func adicionarCarrinho(_ sender: UIButton) {
+       
+        let pedido = Pedido(nomeProduto: (produto?.nome)!, quantidadeProduto: Int(self.quantidadePedido.text!)!, valorTotalProduto: Double(self.produto?.valor * Int(self.quantidadePedido.text!)! )!, usuarioComprador: usuario?.toDict(usuario!))
+        
+        let user = (Auth.auth().currentUser)!
+        self.ref.child("Usuarios").child(user.uid).child("meus_pedidos").setValue(self.usuario?.toDict(self.usuario!))
         
     }
     

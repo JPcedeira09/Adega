@@ -14,6 +14,7 @@ class CardapioViewController: UIViewController {
 
     var produtos = [Produto]()
     var produto:Produto?
+    var usuario:Usuario?
     var ref: DatabaseReference!
     var usuarioFirebase = Auth.auth()
     @IBOutlet weak var table: UITableView!
@@ -66,9 +67,9 @@ class CardapioViewController: UIViewController {
         ref.child("Usuarios").child(uid).child("dados_pessoais").observe(.value) { (snapshot) in
             
             let dict = snapshot.value as! NSDictionary
-            let usuario = Usuario(usuarioJSON: dict as! [String : Any])
-            print(usuario)
-        
+            let retornoUsuario = Usuario(usuarioJSON: dict as! [String : Any])
+            print(retornoUsuario)
+            self.usuario = retornoUsuario
         }
     }
     
@@ -109,6 +110,8 @@ extension CardapioViewController : UITableViewDelegate, UITableViewDataSource{
         let destination = segue.destination as? ProdutosSelecionaViewController
             
             destination!.produto = produto!
+            destination!.usuario = usuario!
+
         }
         
 //        // Get the index path from the cell that was tapped

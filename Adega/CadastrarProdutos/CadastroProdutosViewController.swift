@@ -29,6 +29,7 @@ class CadastroProdutosViewController: UIViewController, UITextFieldDelegate, UIT
         super.viewDidLoad()
         
         self.ref = Database.database().reference()
+        
         self.user = Auth.auth().currentUser
         self.descricao_text.text = "Digite a descrição do produto aqui!"
         self.imagemProduto.image = UIImage(named: "image_default")
