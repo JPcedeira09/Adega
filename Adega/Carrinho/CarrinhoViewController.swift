@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class CarrinhoViewController: UIViewController {
 
+    var ref:DatabaseReference!
+    
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var fazerPedido: UIButton!
     var countItens = 3
-
+    var items = [ItensCarrinho]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,15 +33,37 @@ class CarrinhoViewController: UIViewController {
         self.table.register(UINib(nibName: "PedidosTableViewCell", bundle: nil), forCellReuseIdentifier: "PedidosTableViewCell")
         
         fazerPedido.layer.cornerRadius = 4
+                
+        self.ref = Database.database().reference()
+        let user = (Auth.auth().currentUser)!
+
+        ref.child("Usuarios").child(user.uid).child("meus_pedidos").observe(.value) { (snapshot) in
+            print()
+            print(snapshot.children)
+            print()
+            
+            var itensRetrived = [ItensCarrinho]()
+            
+            for item in snapshot.children {
+                
+                let child = item as! DataSnapshot
+                let dict = child.value as! NSDictionary
+                let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
+                
+                itensRetrived.append(item)
+            }
+            self.items = itensRetrived
+            print(self.items)
+            self.countItens = self.items.count
+            self.table.reloadData()
+        }
     }
     
     @IBAction func FazerPedidoAction(_ sender: Any) {
     }
-    
 }
 
 extension CarrinhoViewController : UITableViewDelegate, UITableViewDataSource{
-
     
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 6 + countItens
@@ -47,6 +74,11 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     for i in 1 ... countItens {
         if indexPath.row == i{
             let cell = table.dequeueReusableCell(withIdentifier: "ItensCarrinhoTableViewCell") as! ItensCarrinhoTableViewCell
+            let item = items[indexPath.row]
+            
+            cell.quantidadeNome.text = "\(item.qtd)X \(item.nome)"
+            cell.valorTotal.text = "R$ \(item.totalItem)"
+           // cell.botao
             return cell
         }
     }

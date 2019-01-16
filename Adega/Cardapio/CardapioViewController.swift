@@ -63,9 +63,9 @@ class CardapioViewController: UIViewController {
         }
         
         let uid = (usuarioFirebase.currentUser?.uid)!
-        print(uid)
         ref.child("Usuarios").child(uid).child("dados_pessoais").observe(.value) { (snapshot) in
             
+            print("Count children\(snapshot.childrenCount)")
             let dict = snapshot.value as! NSDictionary
             let retornoUsuario = Usuario(usuarioJSON: dict as! [String : Any])
             print(retornoUsuario)

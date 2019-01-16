@@ -773,7 +773,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yWX-0d-jtq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yWX-0d-jtq">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -961,6 +961,7 @@
                         <outlet property="nomeProduto" destination="2lF-At-XzL" id="Ubv-mJ-dhT"/>
                         <outlet property="quantidadePedido" destination="MbA-14-kQ0" id="bMd-DA-DjG"/>
                         <outlet property="valorTotal" destination="pIo-CV-Fpv" id="Gkf-u5-MGw"/>
+                        <segue destination="WPO-yq-8wH" kind="show" identifier="adicionouItemCarrinho" id="90q-nZ-9kn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYo-qU-K7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1233,6 +1234,7 @@
         <image name="shopping_cart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="90q-nZ-9kn"/>
         <segue reference="tmX-QO-6Q0"/>
     </inferredMetricsTieBreakers>
 </document>

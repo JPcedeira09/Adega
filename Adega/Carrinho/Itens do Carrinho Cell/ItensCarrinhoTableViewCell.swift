@@ -10,6 +10,9 @@ import UIKit
 
 class ItensCarrinhoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var quantidadeNome: UILabel!
+    @IBOutlet weak var valorTotal: UILabel!
+    @IBOutlet weak var botao: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
