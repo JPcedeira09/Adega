@@ -15,15 +15,19 @@ class CarrinhoViewController: UIViewController {
     
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var fazerPedido: UIButton!
-    var countItens = 3
+    var countItens:Int?
     var items = [ItensCarrinho]()
-    
+    var usuarioFirebase = Auth.auth()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.table.delegate = self
         self.table.dataSource = self
-        
+        self.ref = Database.database().reference()
+        fazerPedido.layer.cornerRadius = 4
+        let UID = (usuarioFirebase.currentUser?.uid)!
+
         self.table.register(UINib(nibName: "HeaderCarrinhoTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderCarrinhoTableViewCell")
         self.table.register(UINib(nibName: "ItensCarrinhoTableViewCell", bundle: nil), forCellReuseIdentifier: "ItensCarrinhoTableViewCell")
         self.table.register(UINib(nibName: "AdicionarMaisTableViewCell", bundle: nil), forCellReuseIdentifier: "AdicionarMaisTableViewCell")
@@ -32,31 +36,26 @@ class CarrinhoViewController: UIViewController {
         self.table.register(UINib(nibName: "PagamentoTableViewCell", bundle: nil), forCellReuseIdentifier: "PagamentoTableViewCell")
         self.table.register(UINib(nibName: "PedidosTableViewCell", bundle: nil), forCellReuseIdentifier: "PedidosTableViewCell")
         
-        fazerPedido.layer.cornerRadius = 4
-                
-        self.ref = Database.database().reference()
-        let user = (Auth.auth().currentUser)!
 
-        ref.child("Usuarios").child(user.uid).child("meus_pedidos").observe(.value) { (snapshot) in
-            print()
-            print(snapshot.children)
-            print()
-            
-            var itensRetrived = [ItensCarrinho]()
-            
-            for item in snapshot.children {
+        
+        print("Numero de Produtos Existentes:\(self.countItens!)")
+        var itensRetrived = [ItensCarrinho]()
+
+        for i in 1 ... self.countItens!{
+            print("produto_\(i)")
+             ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
                 
-                let child = item as! DataSnapshot
-                let dict = child.value as! NSDictionary
+                print(snapshot.value)
+                let dict = snapshot.value as! NSDictionary
                 let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
-                
+                print(item)
                 itensRetrived.append(item)
             }
-            self.items = itensRetrived
-            print(self.items)
-            self.countItens = self.items.count
-            self.table.reloadData()
         }
+        
+        print(self.items)
+        print(self.items.count)
+
     }
     
     @IBAction func FazerPedidoAction(_ sender: Any) {
@@ -66,18 +65,19 @@ class CarrinhoViewController: UIViewController {
 extension CarrinhoViewController : UITableViewDelegate, UITableViewDataSource{
     
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 6 + countItens
+    return 6 + countItens!
 }
     
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    for i in 1 ... countItens {
+    for i in 1 ... countItens! {
         if indexPath.row == i{
             let cell = table.dequeueReusableCell(withIdentifier: "ItensCarrinhoTableViewCell") as! ItensCarrinhoTableViewCell
-            let item = items[indexPath.row]
             
-            cell.quantidadeNome.text = "\(item.qtd)X \(item.nome)"
-            cell.valorTotal.text = "R$ \(item.totalItem)"
+//            let item = items[i]
+//
+//            cell.quantidadeNome.text = "\(item.qtd)X \(item.nome)"
+//            cell.valorTotal.text = "R$ \(item.totalItem)"
            // cell.botao
             return cell
         }
@@ -86,26 +86,25 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     if indexPath.row == 0 {
         
         let cell = table.dequeueReusableCell(withIdentifier: "HeaderCarrinhoTableViewCell") as! HeaderCarrinhoTableViewCell
-        
         return cell
         
     }
-     else if indexPath.row == (countItens + 2){
+     else if indexPath.row == (countItens! + 2){
         
     let cell = table.dequeueReusableCell(withIdentifier: "AdicionarMaisTableViewCell") as! AdicionarMaisTableViewCell
     return cell
         
-    }else if indexPath.row == (countItens + 3){
+    }else if indexPath.row == (countItens! + 3){
         
         let cell = table.dequeueReusableCell(withIdentifier: "TotaisTableViewCell") as! TotaisTableViewCell
         return cell
         
-    }else if indexPath.row == (countItens + 4){
+    }else if indexPath.row == (countItens! + 4){
         
         let cell = table.dequeueReusableCell(withIdentifier: "HeaderTableViewCell") as! HeaderTableViewCell
         return cell
         
-    }else if indexPath.row == (countItens + 5){
+    }else if indexPath.row == (countItens! + 5){
         
         let cell = table.dequeueReusableCell(withIdentifier: "PagamentoTableViewCell") as! PagamentoTableViewCell
         return cell

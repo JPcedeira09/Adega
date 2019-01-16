@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class ProdutosSelecionaViewController: UIViewController {
 
+    var item:ItensCarrinho?
     var produto:Produto?
     var usuario:Usuario?
     var ref: DatabaseReference!
@@ -46,10 +47,12 @@ class ProdutosSelecionaViewController: UIViewController {
     @IBAction func adicionarCarrinho(_ sender: UIButton) {
        
         let qtd = Double(self.quantidadePedido.text!)!
-        let pedido = Pedido(nomeProduto: (produto?.nome)!, quantidadeProduto: Int(self.quantidadePedido.text!)!, valorTotalProduto: Double((self.produto?.valor)! * qtd), usuarioComprador: (usuario?.toDict(usuario!))!)
+//        let pedido = Pedido(nomeProduto: (produto?.nome)!, quantidadeProduto: Int(self.quantidadePedido.text!)!, valorTotalProduto: Double((self.produto?.valor)! * qtd), usuarioComprador: (usuario?.toDict(usuario!))!)
+        
+        let item = ItensCarrinho(qtd: Int(self.quantidadePedido.text!)!, nome: (produto?.nome)!, totalItem: Double((self.produto?.valor)! * qtd))
         
         let user = (Auth.auth().currentUser)!
-        self.ref.child("Usuarios").child(user.uid).child("meus_pedidos").child("produto_\(countProduto+1)").setValue(pedido.toDict(pedido))
+        self.ref.child("Usuarios").child(user.uid).child("meus_pedidos").child("produto_\(countProduto+1)").setValue(item.toDict(item))
         performSegue(withIdentifier: "adicionouItemCarrinho", sender: nil)
 
     }

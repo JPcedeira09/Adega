@@ -17,6 +17,7 @@ class CardapioViewController: UIViewController {
     var usuario:Usuario?
     var ref: DatabaseReference!
     var usuarioFirebase = Auth.auth()
+    var countItens:Int?
     @IBOutlet weak var table: UITableView!
 
     @IBAction func logOut(_ sender: UIBarButtonItem) {
@@ -64,12 +65,23 @@ class CardapioViewController: UIViewController {
         
         let uid = (usuarioFirebase.currentUser?.uid)!
         ref.child("Usuarios").child(uid).child("dados_pessoais").observe(.value) { (snapshot) in
-            
-            print("Count children\(snapshot.childrenCount)")
             let dict = snapshot.value as! NSDictionary
             let retornoUsuario = Usuario(usuarioJSON: dict as! [String : Any])
             print(retornoUsuario)
             self.usuario = retornoUsuario
+        }
+        
+        ref.child("Usuarios").child(uid).child("meus_pedidos").observe(.value) { (snapshot) in
+            
+            print(snapshot.children)
+            print("Count children =\(snapshot.childrenCount)")
+            if(Int(snapshot.childrenCount) == 0){
+                self.countItens = 0
+            }else{
+                self.countItens = Int(snapshot.childrenCount)
+            }
+            print("countItens:\(self.countItens)")
+
         }
     }
     
@@ -111,9 +123,13 @@ extension CardapioViewController : UITableViewDelegate, UITableViewDataSource{
             
             destination!.produto = produto!
             destination!.usuario = usuario!
-
         }
         
+        if (segue.identifier == "carrinhosegue"){
+            let destination = segue.destination as? CarrinhoViewController
+            
+            destination!.countItens = countItens!
+        }
 //        // Get the index path from the cell that was tapped
 //        // Get the Row of the Index Path and set as index
 //        let index = indexPath?.row
