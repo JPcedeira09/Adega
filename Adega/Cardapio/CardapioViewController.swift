@@ -18,6 +18,7 @@ class CardapioViewController: UIViewController {
     var ref: DatabaseReference!
     var usuarioFirebase = Auth.auth()
     var countItens:Int?
+    
     @IBOutlet weak var table: UITableView!
 
     @IBAction func logOut(_ sender: UIBarButtonItem) {
@@ -32,6 +33,22 @@ class CardapioViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    @IBAction func segueCarrinho(_ sender: Any) {
+        if(countItens! != 0){
+            performSegue(withIdentifier: "escolhaProduto", sender: nil)
+
+        }else{
+            alertSimples(title:"Carrinho Vazio",msg: "Escolha algum produto e adicione ele ao seu carrinho.")
+        }
+    }
+    
+    func alertSimples(title:String , msg:String){
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -125,7 +142,7 @@ extension CardapioViewController : UITableViewDelegate, UITableViewDataSource{
             destination!.usuario = usuario!
         }
         
-        if (segue.identifier == "carrinhosegue"){
+        if (segue.identifier == "carrinhosegue" ){
             let destination = segue.destination as? CarrinhoViewController
             
             destination!.countItens = countItens!

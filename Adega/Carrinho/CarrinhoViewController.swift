@@ -15,19 +15,30 @@ class CarrinhoViewController: UIViewController {
     
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var fazerPedido: UIButton!
+    
     var countItens:Int?
     var items = [ItensCarrinho]()
     var usuarioFirebase = Auth.auth()
 
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         
         self.table.delegate = self
         self.table.dataSource = self
         self.ref = Database.database().reference()
         fazerPedido.layer.cornerRadius = 4
-        let UID = (usuarioFirebase.currentUser?.uid)!
-
+    
+        montaCell()
+        table.reloadData()
+        
+        print("Quantidade de itens é:\(self.items.count)")
+        print(self.items)
+        print(self.items.count)
+        
+    }
+    
+    func montaCell(){
+        
         self.table.register(UINib(nibName: "HeaderCarrinhoTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderCarrinhoTableViewCell")
         self.table.register(UINib(nibName: "ItensCarrinhoTableViewCell", bundle: nil), forCellReuseIdentifier: "ItensCarrinhoTableViewCell")
         self.table.register(UINib(nibName: "AdicionarMaisTableViewCell", bundle: nil), forCellReuseIdentifier: "AdicionarMaisTableViewCell")
@@ -35,31 +46,11 @@ class CarrinhoViewController: UIViewController {
         self.table.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell")
         self.table.register(UINib(nibName: "PagamentoTableViewCell", bundle: nil), forCellReuseIdentifier: "PagamentoTableViewCell")
         self.table.register(UINib(nibName: "PedidosTableViewCell", bundle: nil), forCellReuseIdentifier: "PedidosTableViewCell")
-        
-
-        
-        print("Numero de Produtos Existentes:\(self.countItens!)")
-        var itensRetrived = [ItensCarrinho]()
-
-        for i in 1 ... self.countItens!{
-            print("produto_\(i)")
-             ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
-                
-                print(snapshot.value)
-                let dict = snapshot.value as! NSDictionary
-                let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
-                print(item)
-                itensRetrived.append(item)
-            }
-        }
-        
-        print(self.items)
-        print(self.items.count)
-
     }
     
     @IBAction func FazerPedidoAction(_ sender: Any) {
     }
+    
 }
 
 extension CarrinhoViewController : UITableViewDelegate, UITableViewDataSource{
@@ -70,16 +61,25 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
     
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
+    if(countItens! != 0){
     for i in 1 ... countItens! {
         if indexPath.row == i{
             let cell = table.dequeueReusableCell(withIdentifier: "ItensCarrinhoTableViewCell") as! ItensCarrinhoTableViewCell
             
-//            let item = items[i]
-//
-//            cell.quantidadeNome.text = "\(item.qtd)X \(item.nome)"
-//            cell.valorTotal.text = "R$ \(item.totalItem)"
-           // cell.botao
+                let UID = (usuarioFirebase.currentUser?.uid)!
+
+                ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
+                    
+                let dict = snapshot.value as! NSDictionary
+                let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
+                cell.quantidadeNome.text = "\(item.qtd)X \(item.nome)"
+                let valorString = String(format: "%.2f",item.totalItem).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+                cell.valorTotal.text = "R$ \(valorString)"
+            }
+
             return cell
+        }
+        
         }
     }
     

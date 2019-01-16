@@ -27,11 +27,11 @@ struct ItensCarrinho {
                 "totalItem":itensCarrinho.totalItem
         ]
     }
-    
+
     init( itensCarrinhoJSON : [String : Any]) {
         
-        self.qtd = itensCarrinhoJSON["qtd"] as? Int ?? 0
         self.nome = itensCarrinhoJSON["nome"] as? String ?? ""
+        self.qtd = itensCarrinhoJSON["qtd"] as? Int ?? 0
         self.totalItem =  itensCarrinhoJSON["totalItem"] as? Double ?? 0.0
     }
     

@@ -795,7 +795,8 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="shopping_cart" id="n2D-Sg-08p">
                             <connections>
-                                <segue destination="SZS-xp-Dah" kind="show" identifier="carrinhosegue" id="ks8-ZH-thE"/>
+                                <action selector="segueCarrinho:" destination="Al6-MX-6Zt" id="xJZ-6o-ASV"/>
+                                <segue destination="SZS-xp-Dah" kind="show" identifier="carrinhosegue" id="P8K-tY-Av4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

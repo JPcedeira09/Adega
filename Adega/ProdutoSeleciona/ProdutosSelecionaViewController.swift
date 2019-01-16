@@ -54,7 +54,6 @@ class ProdutosSelecionaViewController: UIViewController {
         let user = (Auth.auth().currentUser)!
         self.ref.child("Usuarios").child(user.uid).child("meus_pedidos").child("produto_\(countProduto+1)").setValue(item.toDict(item))
         performSegue(withIdentifier: "adicionouItemCarrinho", sender: nil)
-
     }
     
     @IBAction func reduzirUm(_ sender: Any) {
