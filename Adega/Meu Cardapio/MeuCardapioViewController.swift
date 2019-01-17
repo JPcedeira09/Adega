@@ -14,7 +14,8 @@ class MeuCardapioViewController: UIViewController , UIImagePickerControllerDeleg
     
     var ref: DatabaseReference!
     var produtos = [Produto]()
-    
+    var produto:Produto?
+
     let imagePicker = UIImagePickerController()
 
     @IBOutlet weak var table: UITableView!
@@ -86,6 +87,24 @@ extension MeuCardapioViewController : UITableViewDelegate, UITableViewDataSource
         }
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        table.deselectRow(at: indexPath, animated: true)
+        let row = indexPath.row
+        let produtoselecionado = produtos[row]
+        produto = produtoselecionado
+        print(produto!)
+        performSegue(withIdentifier: "atualizaEstoque", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "atualizaEstoque"){
+            let destination = segue.destination as? EstoqueAtualizaViewController
+            
+            destination!.produto = produto!
+        }
     }
     
     

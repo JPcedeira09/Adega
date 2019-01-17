@@ -35,6 +35,7 @@
 		6C8B68A921DEC5F0001AEFE9 /* CardapioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68A821DEC5F0001AEFE9 /* CardapioViewController.swift */; };
 		6C8B68AB21DED322001AEFE9 /* MeuCardapioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68AA21DED322001AEFE9 /* MeuCardapioViewController.swift */; };
 		6C8B68AD21DED33A001AEFE9 /* PedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B68AC21DED33A001AEFE9 /* PedidosViewController.swift */; };
+		6C94E88321F0C51E00333A4A /* EstoqueAtualizaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C94E88221F0C51E00333A4A /* EstoqueAtualizaViewController.swift */; };
 		6CB11B9421E909400096860D /* ProdutosSelecionaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB11B9321E909400096860D /* ProdutosSelecionaViewController.swift */; };
 		6CB700C221DD308B00CF0429 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700C121DD308B00CF0429 /* AppDelegate.swift */; };
 		6CB700C421DD308B00CF0429 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700C321DD308B00CF0429 /* ViewController.swift */; };
@@ -104,6 +105,7 @@
 		6C8B68A821DEC5F0001AEFE9 /* CardapioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardapioViewController.swift; sourceTree = "<group>"; };
 		6C8B68AA21DED322001AEFE9 /* MeuCardapioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuCardapioViewController.swift; sourceTree = "<group>"; };
 		6C8B68AC21DED33A001AEFE9 /* PedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosViewController.swift; sourceTree = "<group>"; };
+		6C94E88221F0C51E00333A4A /* EstoqueAtualizaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstoqueAtualizaViewController.swift; sourceTree = "<group>"; };
 		6CB11B9321E909400096860D /* ProdutosSelecionaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutosSelecionaViewController.swift; sourceTree = "<group>"; };
 		6CB700BE21DD308B00CF0429 /* Adega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB700C121DD308B00CF0429 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -299,6 +301,14 @@
 			path = Cardapio;
 			sourceTree = "<group>";
 		};
+		6C94E88121F0C49500333A4A /* EstoqueControle */ = {
+			isa = PBXGroup;
+			children = (
+				6C94E88221F0C51E00333A4A /* EstoqueAtualizaViewController.swift */,
+			);
+			path = EstoqueControle;
+			sourceTree = "<group>";
+		};
 		6CB11B9221E9091F0096860D /* ProdutoSeleciona */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +342,7 @@
 		6CB700C021DD308B00CF0429 /* Adega */ = {
 			isa = PBXGroup;
 			children = (
+				6C94E88121F0C49500333A4A /* EstoqueControle */,
 				6CB11B9221E9091F0096860D /* ProdutoSeleciona */,
 				6CF537C921E652AF006DF1F0 /* Models */,
 				6CDB5C2F21E63F0900D4CE1F /* CadastrarProdutos */,
@@ -719,6 +730,7 @@
 			files = (
 				6CB700FF21DD525300CF0429 /* CardapioTableViewCell.swift in Sources */,
 				6C8B68A921DEC5F0001AEFE9 /* CardapioViewController.swift in Sources */,
+				6C94E88321F0C51E00333A4A /* EstoqueAtualizaViewController.swift in Sources */,
 				6C7DFFDA21E51A4A00C24596 /* CadastrarViewController.swift in Sources */,
 				6C039C9121E7CACF004696F7 /* PagamentoTableViewCell.swift in Sources */,
 				6CB700F721DD523200CF0429 /* PedidosTableViewCell.swift in Sources */,

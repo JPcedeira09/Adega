@@ -10,33 +10,24 @@ import Foundation
 
 struct Pedido {
 
-    var nomeProduto:String
-    var quantidadeProduto:Int
     var valorTotalProduto:Double
-    var usuarioComprador:[String : Any]
+    var itensCarrinho:[ItensCarrinho]
     
-    init(nomeProduto:String, quantidadeProduto:Int,valorTotalProduto:Double, usuarioComprador:[String : Any]) {
-        
-        self.nomeProduto = nomeProduto
-        self.quantidadeProduto = quantidadeProduto
+    init(valorTotalProduto:Double, itensCarrinho:[ItensCarrinho]) {
+
         self.valorTotalProduto = valorTotalProduto
-        self.usuarioComprador = usuarioComprador
+        self.itensCarrinho = itensCarrinho
     }
     
     func toDict (_ pedido : Pedido) -> [String:Any]{
         
-        return ["nomeProduto":pedido.nomeProduto,
-                "quantidadeProduto":pedido.quantidadeProduto,
-                "valorTotalProduto":pedido.valorTotalProduto,
-                "usuarioComprador":pedido.usuarioComprador
+        return ["valorTotalProduto":pedido.valorTotalProduto,
+                "itensCarrinho":pedido.itensCarrinho
         ]
     }
     
     init( pedidoJSON : [String : Any]) {
-        
-        self.nomeProduto = pedidoJSON["nomeProduto"] as? String ?? ""
-        self.quantidadeProduto = pedidoJSON["quantidadeProduto"] as? Int ?? 0
         self.valorTotalProduto =  pedidoJSON["valorTotalProduto"] as? Double ?? 0.0
-        self.usuarioComprador = pedidoJSON["usuarioComprador"] as? [String : Any] ?? [:]
+        self.itensCarrinho = pedidoJSON["itensCarrinho"] as? [String : Any] ?? [:]
     }
 }

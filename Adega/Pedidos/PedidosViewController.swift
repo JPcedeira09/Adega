@@ -12,7 +12,7 @@ import Firebase
 class PedidosViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
-    
+    var 
     @IBAction func SairAction(_ sender: UIBarButtonItem) {
         if Auth.auth().currentUser != nil {
             do {
@@ -49,6 +49,29 @@ extension PedidosViewController : UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        table.deselectRow(at: indexPath, animated: true)
+        let row = indexPath.row
+        let produtoselecionado = produtos[row]
+        produto = produtoselecionado
+        print(produto!)
+        performSegue(withIdentifier: "escolhaProduto", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "escolhaProduto"){
+            let destination = segue.destination as? ProdutosSelecionaViewController
+            
+            destination!.produto = produto!
+            destination!.usuario = usuario!
+        }
+        
+        if (segue.identifier == "carrinhosegue" ){
+            let destination = segue.destination as? CarrinhoViewController
+            
+            destination!.countItens = countItens!
+        }
     
     //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     //        switch indexPath.row {
