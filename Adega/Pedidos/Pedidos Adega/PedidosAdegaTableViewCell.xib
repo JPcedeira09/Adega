@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PedidosAdegaTableViewCell" rowHeight="112" id="KGk-i7-Jjw" customClass="PedidosAdegaTableViewCell" customModule="Adega" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="286" height="111.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedido N˚3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYH-n0-j4O">
+                        <rect key="frame" x="16" y="11" width="169" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="C8p-aD-3h4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distância 5.0 Km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZU-57-r0y">
+                        <rect key="frame" x="16" y="49" width="270" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="8I5-Mu-tQo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor Total: R$ 100,00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5m-Wg-KUi">
+                        <rect key="frame" x="16" y="81.5" width="270" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="thJ-aa-5up"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNQ-4Y-ddj">
+                        <rect key="frame" x="226" y="15.5" width="60" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="WBB-IV-bpY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.86362701649999996" green="0.32150477170000002" blue="0.27715787289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="SGw-sT-VzB">
+                        <rect key="frame" x="193" y="13.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="7wR-h6-kEN"/>
+                            <constraint firstAttribute="width" constant="25" id="UTc-gY-UFx"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="I5m-Wg-KUi" secondAttribute="bottom" constant="5" id="0Db-zD-Rft"/>
+                    <constraint firstAttribute="trailing" secondItem="LNQ-4Y-ddj" secondAttribute="trailing" id="0Ra-6w-3Yj"/>
+                    <constraint firstItem="LNQ-4Y-ddj" firstAttribute="leading" secondItem="SGw-sT-VzB" secondAttribute="trailing" constant="8" id="GVE-qs-PMf"/>
+                    <constraint firstAttribute="trailing" secondItem="eZU-57-r0y" secondAttribute="trailing" id="Gam-ap-Cxa"/>
+                    <constraint firstItem="SGw-sT-VzB" firstAttribute="centerY" secondItem="LNQ-4Y-ddj" secondAttribute="centerY" id="Ggd-2F-pxG"/>
+                    <constraint firstItem="iYH-n0-j4O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="HTT-xw-Vj2"/>
+                    <constraint firstItem="iYH-n0-j4O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="M2d-c8-8e6"/>
+                    <constraint firstItem="eZU-57-r0y" firstAttribute="top" secondItem="iYH-n0-j4O" secondAttribute="bottom" constant="8" id="NGE-XB-hyd"/>
+                    <constraint firstItem="SGw-sT-VzB" firstAttribute="leading" secondItem="iYH-n0-j4O" secondAttribute="trailing" constant="8" id="SGy-m8-APy"/>
+                    <constraint firstItem="I5m-Wg-KUi" firstAttribute="top" secondItem="eZU-57-r0y" secondAttribute="bottom" constant="7.5" id="VqN-LO-u59"/>
+                    <constraint firstItem="eZU-57-r0y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Yqe-bE-BCd"/>
+                    <constraint firstAttribute="trailing" secondItem="I5m-Wg-KUi" secondAttribute="trailing" id="dB5-P3-mKm"/>
+                    <constraint firstItem="I5m-Wg-KUi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kTu-Md-Zx2"/>
+                    <constraint firstItem="LNQ-4Y-ddj" firstAttribute="centerY" secondItem="iYH-n0-j4O" secondAttribute="centerY" id="pjS-2k-I8p"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="distancia" destination="eZU-57-r0y" id="CFO-9r-jUY"/>
+                <outlet property="hora" destination="LNQ-4Y-ddj" id="UAI-4s-zeD"/>
+                <outlet property="numeroPedido" destination="iYH-n0-j4O" id="PDl-q2-JkZ"/>
+                <outlet property="valorTotal" destination="I5m-Wg-KUi" id="nGu-mZ-B1h"/>
+            </connections>
+            <point key="canvasLocation" x="52.799999999999997" y="79.160419790104953"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="clock" width="50" height="50"/>
+    </resources>
+</document>

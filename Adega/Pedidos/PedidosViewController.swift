@@ -12,7 +12,7 @@ import Firebase
 class PedidosViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
-    var 
+    //var
     @IBAction func SairAction(_ sender: UIBarButtonItem) {
         if Auth.auth().currentUser != nil {
             do {
@@ -31,7 +31,7 @@ class PedidosViewController: UIViewController {
         self.table.dataSource = self
         self.table.delegate = self
         
-        self.table.register(UINib(nibName: "PedidosTableViewCell", bundle: nil), forCellReuseIdentifier: "PedidosTableViewCell")
+        self.table.register(UINib(nibName: "PedidosAdegaTableViewCell", bundle: nil), forCellReuseIdentifier: "PedidosAdegaTableViewCell")
     }
     
 }
@@ -44,45 +44,27 @@ extension PedidosViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = table.dequeueReusableCell(withIdentifier: "PedidosTableViewCell") as! PedidosTableViewCell
+        let cell = table.dequeueReusableCell(withIdentifier: "PedidosAdegaTableViewCell") as! PedidosAdegaTableViewCell
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
-        let row = indexPath.row
-        let produtoselecionado = produtos[row]
-        produto = produtoselecionado
-        print(produto!)
-        performSegue(withIdentifier: "escolhaProduto", sender: nil)
+//        let row = indexPath.row
+//        let produtoselecionado = produtos[row]
+//        produto = produtoselecionado
+//        print(produto!)
+        performSegue(withIdentifier: "segueDetalhePedido", sender: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if (segue.identifier == "escolhaProduto"){
-            let destination = segue.destination as? ProdutosSelecionaViewController
-            
-            destination!.produto = produto!
-            destination!.usuario = usuario!
-        }
-        
-        if (segue.identifier == "carrinhosegue" ){
-            let destination = segue.destination as? CarrinhoViewController
-            
-            destination!.countItens = countItens!
-        }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        if (segue.identifier == "segueDetalhePedido"){
+//            let destination = segue.destination as? PedidosAcompanhamentoViewController
+//            
+//         //   destination!.produto = produto!
+//        }
+//    }
     
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        switch indexPath.row {
-    //        case 0:
-    //            print("Tela ESTOQUE")
-    //            performSegue(withIdentifier: "segueEstoque", sender: self)
-    //        case 1:
-    //            print("")
-    //        default:
-    //            print("DEU RUIM")
-    //        }
-    //
-    //    }
 }

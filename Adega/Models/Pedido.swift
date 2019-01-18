@@ -26,8 +26,8 @@ struct Pedido {
         ]
     }
     
-    init( pedidoJSON : [String : Any]) {
-        self.valorTotalProduto =  pedidoJSON["valorTotalProduto"] as? Double ?? 0.0
-        self.itensCarrinho = pedidoJSON["itensCarrinho"] as? [String : Any] ?? [:]
-    }
+//    init( pedidoJSON : [String : Any]) {
+//        self.valorTotalProduto =  pedidoJSON["valorTotalProduto"] as? Double ?? 0.0
+//        self.itensCarrinho = pedidoJSON["itensCarrinho"] as? [String : Any] ?? [:]
+//    }
 }

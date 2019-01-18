@@ -28,7 +28,7 @@ class EstoqueAtualizaViewController: UIViewController {
         
         self.nome.text = produto?.nome
         self.descricao.text = produto?.descricao
-        self.quantidade.text = produto?.descricao
+        self.quantidade.text = "\((produto?.quantidade)!)"
         self.valor.text = "\((produto?.valor)!)"
         
     }
