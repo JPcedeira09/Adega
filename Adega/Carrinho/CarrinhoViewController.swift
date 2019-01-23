@@ -19,9 +19,13 @@ class CarrinhoViewController: UIViewController {
     var countItens:Int?
     var items = [ItensCarrinho]()
     var usuarioFirebase = Auth.auth()
-
+    var countPedidos = 0
+    var UID = ""
+    var valorTotal = 0.0
+    
     override func viewDidLoad(){
         super.viewDidLoad()
+        self.UID = (usuarioFirebase.currentUser?.uid)!
         
         self.table.delegate = self
         self.table.dataSource = self
@@ -32,9 +36,10 @@ class CarrinhoViewController: UIViewController {
         table.reloadData()
         
         print("Quantidade de itens é:\(self.items.count)")
-        print(self.items)
-        print(self.items.count)
-        
+        ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
+            self.countPedidos = Int(snapshot.childrenCount)
+            print("Count Pedidos =\(snapshot.childrenCount)")
+        }
     }
     
     func montaCell(){
@@ -49,6 +54,16 @@ class CarrinhoViewController: UIViewController {
     }
     
     @IBAction func FazerPedidoAction(_ sender: Any) {
+        
+        for i in 1 ... countItens!{
+         
+        ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
+            
+            let dict = snapshot.value as! NSDictionary
+            self.ref.child("Adega").child("Pedidos").child("pedido_\(self.countPedidos+1)").child("item_\(i)").setValue(dict)
+
+            }
+        }
     }
     
 }
@@ -64,16 +79,17 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     if(countItens! != 0){
     for i in 1 ... countItens! {
         if indexPath.row == i{
+            
             let cell = table.dequeueReusableCell(withIdentifier: "ItensCarrinhoTableViewCell") as! ItensCarrinhoTableViewCell
             
-                let UID = (usuarioFirebase.currentUser?.uid)!
-
-                ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
-                    
+              ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
                 let dict = snapshot.value as! NSDictionary
                 let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
                 cell.quantidadeNome.text = "\(item.qtd)X \(item.nome)"
+                
                 let valorString = String(format: "%.2f",item.totalItem).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+                self.valorTotal + item.totalItem
+
                 cell.valorTotal.text = "R$ \(valorString)"
             }
 
@@ -97,6 +113,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     }else if indexPath.row == (countItens! + 3){
         
         let cell = table.dequeueReusableCell(withIdentifier: "TotaisTableViewCell") as! TotaisTableViewCell
+        cell.valorTotal.text = "R$ \(self.valorTotal)"
         return cell
         
     }else if indexPath.row == (countItens! + 4){
