@@ -1,24 +1,25 @@
 //
-//  TotaisTableViewCell.swift
+//  TotaisPagamentoTableViewCell.swift
 //  Adega
 //
-//  Created by Joao Paulo on 10/01/19.
+//  Created by Joao Paulo on 28/01/19.
 //  Copyright © 2019 Joao Paulo. All rights reserved.
 //
 
 import UIKit
 
-class TotaisTableViewCell: UITableViewCell {
+class TotaisPagamentoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var valorTotal: UILabel!
-    
+    @IBOutlet weak var total: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        // Configure the view for the selected state
     }
     
 }

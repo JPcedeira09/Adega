@@ -75,7 +75,6 @@ class CardapioViewController: UIViewController {
                     produtosRetrived.append(produto)
                 }
             }
-            
             self.produtos = produtosRetrived
             self.table.reloadData()
         }
@@ -135,6 +134,7 @@ extension CardapioViewController : UITableViewDelegate, UITableViewDataSource{
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        
         if (segue.identifier == "escolhaProduto"){
         let destination = segue.destination as? ProdutosSelecionaViewController
             
@@ -147,6 +147,12 @@ extension CardapioViewController : UITableViewDelegate, UITableViewDataSource{
             
             destination!.countItens = countItens!
         }
+        if (segue.identifier == "meusDados" ){
+            let destination = segue.destination as? MeusDadosViewController
+
+            destination!.usuario = usuario!
+        }
+        
 //        // Get the index path from the cell that was tapped
 //        // Get the Row of the Index Path and set as index
 //        let index = indexPath?.row

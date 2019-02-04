@@ -11,8 +11,6 @@
 		5595E17D77A9F4DF7249DCD0 /* Pods_AdegaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61FC6D51A2EA54CD4410B8C /* Pods_AdegaTests.framework */; };
 		6C039C7D21E7A64F004696F7 /* ItensCarrinhoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C039C7B21E7A64F004696F7 /* ItensCarrinhoTableViewCell.swift */; };
 		6C039C7E21E7A64F004696F7 /* ItensCarrinhoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C039C7C21E7A64F004696F7 /* ItensCarrinhoTableViewCell.xib */; };
-		6C039C8721E7B325004696F7 /* TotaisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C039C8521E7B325004696F7 /* TotaisTableViewCell.swift */; };
-		6C039C8821E7B325004696F7 /* TotaisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C039C8621E7B325004696F7 /* TotaisTableViewCell.xib */; };
 		6C039C8C21E7B33E004696F7 /* AdicionarMaisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C039C8A21E7B33E004696F7 /* AdicionarMaisTableViewCell.swift */; };
 		6C039C8D21E7B33E004696F7 /* AdicionarMaisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C039C8B21E7B33E004696F7 /* AdicionarMaisTableViewCell.xib */; };
 		6C039C9121E7CACF004696F7 /* PagamentoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C039C8F21E7CACF004696F7 /* PagamentoTableViewCell.swift */; };
@@ -28,6 +26,9 @@
 		6C5876AA21EF8701006635A7 /* ItensCarrinho.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5876A921EF8701006635A7 /* ItensCarrinho.swift */; };
 		6C59A0C821ECC8A700D1FB00 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C59A0C721ECC8A700D1FB00 /* Usuario.swift */; };
 		6C59A0CA21ECDB2C00D1FB00 /* CadastroInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C59A0C921ECDB2C00D1FB00 /* CadastroInfoViewController.swift */; };
+		6C62B22221FF295C0050122E /* MeusDadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C62B22121FF295C0050122E /* MeusDadosViewController.swift */; };
+		6C62B22621FF30980050122E /* TotaisPagamentoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C62B22421FF30980050122E /* TotaisPagamentoTableViewCell.swift */; };
+		6C62B22721FF30990050122E /* TotaisPagamentoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C62B22521FF30980050122E /* TotaisPagamentoTableViewCell.xib */; };
 		6C72CEB521E8E44000463107 /* HeaderCarrinhoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C72CEB321E8E44000463107 /* HeaderCarrinhoTableViewCell.swift */; };
 		6C72CEB621E8E44000463107 /* HeaderCarrinhoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C72CEB421E8E44000463107 /* HeaderCarrinhoTableViewCell.xib */; };
 		6C79EFE721F2540A0018DC13 /* PedidosAdegaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79EFE521F2540A0018DC13 /* PedidosAdegaTableViewCell.swift */; };
@@ -92,8 +93,6 @@
 		57CE1FB1D30444B75A970EC8 /* Pods-AdegaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdegaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdegaUITests/Pods-AdegaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C039C7B21E7A64F004696F7 /* ItensCarrinhoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItensCarrinhoTableViewCell.swift; sourceTree = "<group>"; };
 		6C039C7C21E7A64F004696F7 /* ItensCarrinhoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItensCarrinhoTableViewCell.xib; sourceTree = "<group>"; };
-		6C039C8521E7B325004696F7 /* TotaisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotaisTableViewCell.swift; sourceTree = "<group>"; };
-		6C039C8621E7B325004696F7 /* TotaisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotaisTableViewCell.xib; sourceTree = "<group>"; };
 		6C039C8A21E7B33E004696F7 /* AdicionarMaisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarMaisTableViewCell.swift; sourceTree = "<group>"; };
 		6C039C8B21E7B33E004696F7 /* AdicionarMaisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdicionarMaisTableViewCell.xib; sourceTree = "<group>"; };
 		6C039C8F21E7CACF004696F7 /* PagamentoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +108,9 @@
 		6C5876A921EF8701006635A7 /* ItensCarrinho.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItensCarrinho.swift; sourceTree = "<group>"; };
 		6C59A0C721ECC8A700D1FB00 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		6C59A0C921ECDB2C00D1FB00 /* CadastroInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroInfoViewController.swift; sourceTree = "<group>"; };
+		6C62B22121FF295C0050122E /* MeusDadosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusDadosViewController.swift; sourceTree = "<group>"; };
+		6C62B22421FF30980050122E /* TotaisPagamentoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotaisPagamentoTableViewCell.swift; sourceTree = "<group>"; };
+		6C62B22521FF30980050122E /* TotaisPagamentoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotaisPagamentoTableViewCell.xib; sourceTree = "<group>"; };
 		6C72CEB321E8E44000463107 /* HeaderCarrinhoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCarrinhoTableViewCell.swift; sourceTree = "<group>"; };
 		6C72CEB421E8E44000463107 /* HeaderCarrinhoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCarrinhoTableViewCell.xib; sourceTree = "<group>"; };
 		6C79EFE521F2540A0018DC13 /* PedidosAdegaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosAdegaTableViewCell.swift; sourceTree = "<group>"; };
@@ -194,15 +196,6 @@
 			path = HeaderAdega;
 			sourceTree = "<group>";
 		};
-		6C039C8421E7B313004696F7 /* Totais */ = {
-			isa = PBXGroup;
-			children = (
-				6C039C8521E7B325004696F7 /* TotaisTableViewCell.swift */,
-				6C039C8621E7B325004696F7 /* TotaisTableViewCell.xib */,
-			);
-			path = Totais;
-			sourceTree = "<group>";
-		};
 		6C039C8921E7B32C004696F7 /* AdicionarMais */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,9 +253,9 @@
 		6C44A17721E3C85E008ED84A /* Carrinho */ = {
 			isa = PBXGroup;
 			children = (
+				6C62B22321FF307E0050122E /* pagamento new */,
 				6C039C8E21E7CABC004696F7 /* Pagemento */,
 				6C039C8921E7B32C004696F7 /* AdicionarMais */,
-				6C039C8421E7B313004696F7 /* Totais */,
 				6C039C7F21E7B0D1004696F7 /* HeaderAdega */,
 				6C44A17B21E3C880008ED84A /* Itens do Carrinho Cell */,
 				6C44A17821E3C86C008ED84A /* CarrinhoViewController.swift */,
@@ -285,6 +278,23 @@
 				6C7DFFD621E50CF700C24596 /* InicialViewController.swift */,
 			);
 			path = Inicial;
+			sourceTree = "<group>";
+		};
+		6C62B22021FF29410050122E /* MeusDados */ = {
+			isa = PBXGroup;
+			children = (
+				6C62B22121FF295C0050122E /* MeusDadosViewController.swift */,
+			);
+			path = MeusDados;
+			sourceTree = "<group>";
+		};
+		6C62B22321FF307E0050122E /* pagamento new */ = {
+			isa = PBXGroup;
+			children = (
+				6C62B22421FF30980050122E /* TotaisPagamentoTableViewCell.swift */,
+				6C62B22521FF30980050122E /* TotaisPagamentoTableViewCell.xib */,
+			);
+			path = "pagamento new";
 			sourceTree = "<group>";
 		};
 		6C79EFE421F253DE0018DC13 /* Pedidos Adega */ = {
@@ -423,6 +433,7 @@
 		6CB700C021DD308B00CF0429 /* Adega */ = {
 			isa = PBXGroup;
 			children = (
+				6C62B22021FF29410050122E /* MeusDados */,
 				6C94E88121F0C49500333A4A /* EstoqueControle */,
 				6CB11B9221E9091F0096860D /* ProdutoSeleciona */,
 				6CF537C921E652AF006DF1F0 /* Models */,
@@ -650,8 +661,8 @@
 				6C44A17421E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib in Resources */,
 				6CB7010521DE6F3800CF0429 /* MeuCardapioTableViewCell.xib in Resources */,
 				6C79EFF321F267AC0018DC13 /* StatusPedidosTableViewCell.xib in Resources */,
+				6C62B22721FF30990050122E /* TotaisPagamentoTableViewCell.xib in Resources */,
 				6CB7010021DD525300CF0429 /* CardapioTableViewCell.xib in Resources */,
-				6C039C8821E7B325004696F7 /* TotaisTableViewCell.xib in Resources */,
 				6C79F00021F26DC30018DC13 /* TotalPedidosTableViewCell.xib in Resources */,
 				6C72CEB621E8E44000463107 /* HeaderCarrinhoTableViewCell.xib in Resources */,
 				6C039C9821E7CB15004696F7 /* HeaderTableViewCell.xib in Resources */,
@@ -763,6 +774,7 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -777,6 +789,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -821,11 +834,12 @@
 				6C94E88321F0C51E00333A4A /* EstoqueAtualizaViewController.swift in Sources */,
 				6C7DFFDA21E51A4A00C24596 /* CadastrarViewController.swift in Sources */,
 				6C79EFF221F267AC0018DC13 /* StatusPedidosTableViewCell.swift in Sources */,
+				6C62B22221FF295C0050122E /* MeusDadosViewController.swift in Sources */,
 				6C039C9121E7CACF004696F7 /* PagamentoTableViewCell.swift in Sources */,
 				6CB700F721DD523200CF0429 /* PedidosTableViewCell.swift in Sources */,
 				6CB11B9421E909400096860D /* ProdutosSelecionaViewController.swift in Sources */,
 				6C79EFE721F2540A0018DC13 /* PedidosAdegaTableViewCell.swift in Sources */,
-				6C039C8721E7B325004696F7 /* TotaisTableViewCell.swift in Sources */,
+				6C62B22621FF30980050122E /* TotaisPagamentoTableViewCell.swift in Sources */,
 				6C8B68AB21DED322001AEFE9 /* MeuCardapioViewController.swift in Sources */,
 				6C59A0C821ECC8A700D1FB00 /* Usuario.swift in Sources */,
 				6C44A17921E3C86C008ED84A /* CarrinhoViewController.swift in Sources */,

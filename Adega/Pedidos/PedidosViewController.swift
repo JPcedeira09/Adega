@@ -9,11 +9,22 @@
 import UIKit
 import Firebase
 
+
+
+struct Count{
+    var count:Int
+    init(count:Int){
+        self.count = count
+    }
+}
 class PedidosViewController: UIViewController {
 
+    var ref:DatabaseReference!
+    var countPedidos:Count?
+    
     @IBOutlet weak var table: UITableView!
-    //var
     @IBAction func SairAction(_ sender: UIBarButtonItem) {
+        
         if Auth.auth().currentUser != nil {
             do {
                 try Auth.auth().signOut()
@@ -32,8 +43,63 @@ class PedidosViewController: UIViewController {
         self.table.delegate = self
         
         self.table.register(UINib(nibName: "PedidosAdegaTableViewCell", bundle: nil), forCellReuseIdentifier: "PedidosAdegaTableViewCell")
+        
+        count()
+//        for i in 1 ... self.countPedidos! {
+//            ref.child("Adega").child("Pedidos").child("pedido_\(i)").observe(.value) { (snapshot) in
+//                let dict = snapshot.value as! NSDictionary
+//               // let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
+//                print(dict)
+//            }
+//        }
+        
+        /*
+         if(countItens! != 0){
+         for i in 1 ... countItens! {
+         if indexPath.row == i{
+         
+         let cell = table.dequeueReusableCell(withIdentifier: "ItensCarrinhoTableViewCell") as! ItensCarrinhoTableViewCell
+         
+         ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
+         let dict = snapshot.value as! NSDictionary
+         let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
+         cell.quantidadeNome.text = "\(item.qtd)X \(item.nome)"
+         
+         let valorString = String(format: "%.2f",item.totalItem).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+         self.valorTotal + item.totalItem
+         
+         cell.valorTotal.text = "R$ \(valorString)"
+         }
+         
+         return cell
+         }
+         */
+//        ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
+//            var produtosRetrived = [Pedido]()
+//
+//            for item in snapshot.children {
+//                let child = item as! DataSnapshot
+//                let dict = child.value as! NSDictionary
+//                let produto = Pedido(pe: dict as! [String : Any])
+//                produtosRetrived.append(produto)
+//            }
+//
+//            self.produtos = produtosRetrived
+//            self.table.reloadData()
+//        }
+        
     }
     
+    func count(){
+        self.ref = Database.database().reference()
+        
+        ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
+            var count = 0
+            count = Int(snapshot.childrenCount)
+            self.countPedidos = Count(count: count)
+        }
+        print((self.countPedidos?.count))
+    }
 }
 
 extension PedidosViewController : UITableViewDelegate, UITableViewDataSource{

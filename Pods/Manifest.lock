@@ -111,6 +111,7 @@ PODS:
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
   - Result (4.1.0)
+  - SideMenu (5.0.3)
 
 DEPENDENCIES:
   - Alamofire
@@ -121,6 +122,7 @@ DEPENDENCIES:
   - Firebase/RemoteConfig
   - GoogleSignIn
   - Moya
+  - SideMenu (~> 5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -146,6 +148,7 @@ SPEC REPOS:
     - nanopb
     - Protobuf
     - Result
+    - SideMenu
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -170,7 +173,8 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
 
-PODFILE CHECKSUM: 205d97cc8c85d20e2cddeddcf4d1d2bba15747c4
+PODFILE CHECKSUM: b06d509fee4f71d1deab077ebce1b60e59137df1
 
 COCOAPODS: 1.5.3

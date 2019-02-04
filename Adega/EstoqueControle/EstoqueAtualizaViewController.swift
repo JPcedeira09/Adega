@@ -44,6 +44,7 @@ class EstoqueAtualizaViewController: UIViewController {
         ref.self.ref.child("Adega").child("Produtos").child((produto?.nome)!).updateChildValues((produto?.toDict(self.produto!))!)
             print("Produto Atualizado com sucesso!")
             segueForStoryboard(nameID: "HomeDono")
+        
         }
         
     }

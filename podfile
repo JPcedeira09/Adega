@@ -28,5 +28,7 @@ target 'Adega' do
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
   pod 'Firebase/RemoteConfig'
+  pod 'SideMenu', '~> 5.0'
+
 
 end

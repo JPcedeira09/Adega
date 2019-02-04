@@ -17,14 +17,16 @@ class CarrinhoViewController: UIViewController {
     @IBOutlet weak var fazerPedido: UIButton!
     
     var countItens:Int?
-    var items = [ItensCarrinho]()
+    var itens = [ItensCarrinho]()
     var usuarioFirebase = Auth.auth()
     var countPedidos = 0
     var UID = ""
     var valorTotal = 0.0
-    
+    var totalItens = [Double]()
+
     override func viewDidLoad(){
         super.viewDidLoad()
+        
         self.UID = (usuarioFirebase.currentUser?.uid)!
         
         self.table.delegate = self
@@ -33,21 +35,44 @@ class CarrinhoViewController: UIViewController {
         fazerPedido.layer.cornerRadius = 4
     
         montaCell()
-        table.reloadData()
+        var array = [ItensCarrinho]()
+        for i in 1 ... countItens!{
+            ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
+
+                let dict = snapshot.value as! NSDictionary
+                let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
+                print(item)
+                array.append(item)
+            }
+            print(array)
+            self.reloadInputViews()
+            self.table.reloadData()
+        }
+
+        print(self.itens)
         
-        print("Quantidade de itens é:\(self.items.count)")
+        print("Quantidade de itens é:\(self.itens.count)")
         ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
             self.countPedidos = Int(snapshot.childrenCount)
             print("Count Pedidos =\(snapshot.childrenCount)")
         }
     }
-    
+    /*
+     static func remove(child: String) {
+     
+     let ref = self.ref.child(child)
+     
+     ref.removeValue { error, _ in
+     
+     print(error)
+     }
+     */
     func montaCell(){
         
         self.table.register(UINib(nibName: "HeaderCarrinhoTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderCarrinhoTableViewCell")
         self.table.register(UINib(nibName: "ItensCarrinhoTableViewCell", bundle: nil), forCellReuseIdentifier: "ItensCarrinhoTableViewCell")
         self.table.register(UINib(nibName: "AdicionarMaisTableViewCell", bundle: nil), forCellReuseIdentifier: "AdicionarMaisTableViewCell")
-        self.table.register(UINib(nibName: "TotaisTableViewCell", bundle: nil), forCellReuseIdentifier: "TotaisTableViewCell")
+        self.table.register(UINib(nibName: "TotaisPagamentoTableViewCell", bundle: nil), forCellReuseIdentifier: "TotaisPagamentoTableViewCell")
         self.table.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell")
         self.table.register(UINib(nibName: "PagamentoTableViewCell", bundle: nil), forCellReuseIdentifier: "PagamentoTableViewCell")
         self.table.register(UINib(nibName: "PedidosTableViewCell", bundle: nil), forCellReuseIdentifier: "PedidosTableViewCell")
@@ -111,9 +136,35 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     return cell
         
     }else if indexPath.row == (countItens! + 3){
+
         
-        let cell = table.dequeueReusableCell(withIdentifier: "TotaisTableViewCell") as! TotaisTableViewCell
-        cell.valorTotal.text = "R$ \(self.valorTotal)"
+        let cell = table.dequeueReusableCell(withIdentifier: "TotaisPagamentoTableViewCell") as! TotaisPagamentoTableViewCell
+        
+
+        if(countItens! != 0){
+            var total = [Double]()
+
+            for i in 1 ... countItens! {
+                ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
+                    let dict = snapshot.value as! NSDictionary
+                    let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
+                   
+                   // total = total! + item.totalItem
+                    total.append(item.totalItem)
+                    print(item.totalItem)
+                    self.totalItens = total
+                }
+                print(totalItens)
+            }
+            
+            print(totalItens)
+            let sum = totalItens.reduce(0.0, +)
+            print(sum)
+            
+            let valorString = String(format: "%.2f",sum).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+            
+            cell.total.text = "R$ \(valorString)"
+        }
         return cell
         
     }else if indexPath.row == (countItens! + 4){
