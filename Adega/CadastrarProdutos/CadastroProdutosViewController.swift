@@ -8,12 +8,13 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
+import FirebaseStorage
 
-class CadastroProdutosViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate{
+class CadastroProdutosViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     var ref: DatabaseReference!
-    
+    let storage = Storage.storage()
+    var imagePicker = UIImagePickerController()
     var user: User!
 
     @IBOutlet weak var imagemProduto: UIImageView!
@@ -25,12 +26,23 @@ class CadastroProdutosViewController: UIViewController, UITextFieldDelegate, UIT
     
     var produto:Produto?
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagemProduto.image = image
+        } else{
+            print("Algo Esta errado")
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imagePicker.delegate = self
         self.ref = Database.database().reference()
         
         self.user = Auth.auth().currentUser
+        
         self.descricao_text.text = "Digite a descrição do produto aqui!"
         self.imagemProduto.image = UIImage(named: "image_default")
         self.cadastrarbtn.layer.cornerRadius = 4
@@ -76,6 +88,47 @@ class CadastroProdutosViewController: UIViewController, UITextFieldDelegate, UIT
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    @IBAction func imageGet(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Racecap", message: "Please Select an Option", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Escolha a Foto", style: .default , handler:{ (UIAlertAction)in
+
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                self.imagePicker = UIImagePickerController()
+                self.imagePicker.delegate = self
+                self.imagePicker.sourceType = .photoLibrary
+                self.imagePicker.allowsEditing = false
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+            else {
+                self.alertSimples(title: "Erro", msg: "Biblioteca de Fotos não está habilitada, vá em configurações e habilite-a.")
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Tire um Foto", style: .default , handler:{ (UIAlertAction)in
+
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                self.imagePicker = UIImagePickerController()
+                self.imagePicker.delegate = self
+                self.imagePicker.sourceType = .camera
+                self.imagePicker.allowsEditing = false
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+            else {
+                self.alertSimples(title: "Erro", msg: "Camera não está habilitada, vá em configurações e habilite-a.")
+            }
+
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler:{ (UIAlertAction)in
+        }))
+
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
+    
 }
 
 extension CadastroProdutosViewController {

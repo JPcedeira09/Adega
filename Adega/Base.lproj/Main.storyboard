@@ -1235,11 +1235,11 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R0T-aS-Ye6">
-                                <rect key="frame" x="0.0" y="155" width="320" height="361"/>
+                                <rect key="frame" x="0.0" y="111" width="320" height="405"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço da Entrega" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5j-i1-JBK">
-                                <rect key="frame" x="16" y="79" width="288" height="32"/>
+                                <rect key="frame" x="16" y="35" width="288" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="lsF-RI-cVa"/>
                                 </constraints>
@@ -1248,7 +1248,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R Almirante Protogenes, 162" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOT-Ow-Peg">
-                                <rect key="frame" x="16" y="119" width="288" height="21"/>
+                                <rect key="frame" x="16" y="75" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="m6o-w0-m9l"/>
                                 </constraints>
@@ -1313,6 +1313,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carvao_vegetal" translatesAutoresizingMaskIntoConstraints="NO" id="TcF-WU-zhw">
                                 <rect key="frame" x="16" y="74" width="288" height="191"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2P-4v-EFe">
                                 <rect key="frame" x="0.0" y="467" width="320" height="52"/>
@@ -1389,10 +1390,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upi-C2-ur1">
+                                <rect key="frame" x="16" y="74" width="288" height="191"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="imageGet:" destination="cbb-lG-EKP" eventType="touchUpInside" id="ONq-hG-egj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.86362701649999996" green="0.32150477170000002" blue="0.27715787289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="AB5-k9-lfL" firstAttribute="trailing" secondItem="EhC-Rw-cAA" secondAttribute="trailing" constant="16" id="0yc-Zu-WCa"/>
+                            <constraint firstItem="upi-C2-ur1" firstAttribute="bottom" secondItem="TcF-WU-zhw" secondAttribute="bottom" id="1Yn-XB-TxM"/>
                             <constraint firstItem="8nl-jY-DQL" firstAttribute="leading" secondItem="AB5-k9-lfL" secondAttribute="leading" constant="16" id="3bN-WC-eIx"/>
                             <constraint firstItem="s2P-4v-EFe" firstAttribute="leading" secondItem="AB5-k9-lfL" secondAttribute="leading" id="6EX-jd-rhJ"/>
                             <constraint firstItem="EhC-Rw-cAA" firstAttribute="leading" secondItem="AB5-k9-lfL" secondAttribute="leading" constant="16" id="6Kh-7w-Mev"/>
@@ -1400,16 +1409,21 @@
                             <constraint firstItem="s2P-4v-EFe" firstAttribute="bottom" secondItem="AB5-k9-lfL" secondAttribute="bottom" id="Eaj-KT-scD"/>
                             <constraint firstItem="s2P-4v-EFe" firstAttribute="top" secondItem="EhC-Rw-cAA" secondAttribute="bottom" constant="8" id="ITp-ts-py4"/>
                             <constraint firstItem="TcF-WU-zhw" firstAttribute="leading" secondItem="AB5-k9-lfL" secondAttribute="leading" constant="16" id="Iil-O6-Seu"/>
+                            <constraint firstItem="upi-C2-ur1" firstAttribute="leading" secondItem="TcF-WU-zhw" secondAttribute="leading" id="Lcv-e1-2N5"/>
                             <constraint firstItem="QlV-Hc-WhU" firstAttribute="top" secondItem="TcF-WU-zhw" secondAttribute="bottom" constant="8" id="MtB-Ne-LVb"/>
                             <constraint firstItem="TcF-WU-zhw" firstAttribute="top" secondItem="AB5-k9-lfL" secondAttribute="top" constant="10" id="PjD-H2-q1i"/>
+                            <constraint firstItem="upi-C2-ur1" firstAttribute="height" secondItem="TcF-WU-zhw" secondAttribute="height" id="VK6-fi-ixX"/>
                             <constraint firstItem="QlV-Hc-WhU" firstAttribute="leading" secondItem="AB5-k9-lfL" secondAttribute="leading" constant="16" id="ZDr-tl-gAH"/>
                             <constraint firstItem="gNu-7y-lKT" firstAttribute="top" secondItem="8nl-jY-DQL" secondAttribute="bottom" constant="8" id="aor-rh-7YM"/>
+                            <constraint firstItem="upi-C2-ur1" firstAttribute="trailing" secondItem="TcF-WU-zhw" secondAttribute="trailing" id="gYx-cF-gsQ"/>
                             <constraint firstItem="AB5-k9-lfL" firstAttribute="trailing" secondItem="8nl-jY-DQL" secondAttribute="trailing" constant="16" id="ggj-hK-mtE"/>
                             <constraint firstItem="AB5-k9-lfL" firstAttribute="trailing" secondItem="gNu-7y-lKT" secondAttribute="trailing" constant="16" id="h7b-HQ-v85"/>
                             <constraint firstItem="AB5-k9-lfL" firstAttribute="trailing" secondItem="QlV-Hc-WhU" secondAttribute="trailing" constant="16" id="hB6-fC-K2f"/>
                             <constraint firstItem="gNu-7y-lKT" firstAttribute="leading" secondItem="AB5-k9-lfL" secondAttribute="leading" constant="16" id="ijC-9j-qls"/>
+                            <constraint firstItem="upi-C2-ur1" firstAttribute="top" secondItem="TcF-WU-zhw" secondAttribute="top" id="irw-GD-eRj"/>
                             <constraint firstItem="8nl-jY-DQL" firstAttribute="top" secondItem="QlV-Hc-WhU" secondAttribute="bottom" constant="8" id="nws-am-0a6"/>
                             <constraint firstItem="AB5-k9-lfL" firstAttribute="trailing" secondItem="TcF-WU-zhw" secondAttribute="trailing" constant="16" id="r0I-PK-329"/>
+                            <constraint firstItem="upi-C2-ur1" firstAttribute="width" secondItem="TcF-WU-zhw" secondAttribute="width" id="tkF-Qm-mNM"/>
                             <constraint firstItem="s2P-4v-EFe" firstAttribute="trailing" secondItem="AB5-k9-lfL" secondAttribute="trailing" id="y9T-9d-9if"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AB5-k9-lfL"/>
@@ -1425,7 +1439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNe-NW-IrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-844" y="-2910"/>
+            <point key="canvasLocation" x="-845.625" y="-2910.211267605634"/>
         </scene>
         <!--Estoque Atualiza View Controller-->
         <scene sceneID="O3O-cu-SHl">
