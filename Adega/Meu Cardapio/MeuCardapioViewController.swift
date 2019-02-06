@@ -15,7 +15,7 @@ class MeuCardapioViewController: UIViewController , UIImagePickerControllerDeleg
     var ref: DatabaseReference!
     var produtos = [Produto]()
     var produto:Produto?
-
+    var imagens:[UIImage]?
     let imagePicker = UIImagePickerController()
 
     @IBOutlet weak var table: UITableView!
@@ -86,6 +86,19 @@ extension MeuCardapioViewController : UITableViewDelegate, UITableViewDataSource
             cell.disponibilidade.text = "Indisponivel"
         }
 
+        let islandRef = Storage.storage().reference().child("produtos/"+produto.nome+".jpg")
+        var imageFIR:UIImage?
+        // Download in memory with a maximum allowed size of 1MB (1 * 3000 * 3000 bytes)
+        islandRef.getData(maxSize: 1 * 3000 * 3000) { data, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                
+                imageFIR = UIImage(data: data!)
+            }
+            cell.imagem.image = imageFIR
+            self.imagens?.append(imageFIR!)
+        }
         return cell
     }
     
@@ -102,7 +115,7 @@ extension MeuCardapioViewController : UITableViewDelegate, UITableViewDataSource
         
         if (segue.identifier == "atualizaEstoque"){
             let destination = segue.destination as? EstoqueAtualizaViewController
-            
+            destination!.imagens = imagens!
             destination!.produto = produto!
         }
     }

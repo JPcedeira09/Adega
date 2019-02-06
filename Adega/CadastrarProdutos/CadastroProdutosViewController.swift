@@ -27,8 +27,11 @@ class CadastroProdutosViewController: UIViewController, UITextFieldDelegate, UIT
     var produto:Produto?
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+           
             imagemProduto.image = image
+
         } else{
             print("Algo Esta errado")
         }
@@ -63,6 +66,7 @@ class CadastroProdutosViewController: UIViewController, UITextFieldDelegate, UIT
             self.view.layoutIfNeeded()
         })
     }
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
             self.view.window?.frame.origin.y = 0
@@ -79,7 +83,13 @@ class CadastroProdutosViewController: UIViewController, UITextFieldDelegate, UIT
             let qtd = Int(self.quantidadetxtfield.text!) ?? 0
             produto = Produto(nome: self.nometxtField.text!, descricao: self.descricao_text.text!, quantidade: qtd, valor: Double(self.valortxtField.text!) ?? 0.0, disponivel: validaQTD(quantidade: qtd))
             
-            self.ref.child("Adega").child("Produtos").child((produto?.nome)!).setValue(produto?.toDict(produto!))
+           self.ref.child("Adega").child("Produtos").child((produto?.nome)!).setValue(produto?.toDict(produto!))
+            
+            var data = Data()
+            data = UIImageJPEGRepresentation(imagemProduto.image!, 0.6)!
+            let imageRef = Storage.storage().reference().child("produtos/"+(produto?.nome)!+".jpg")
+            _ = imageRef.putData(data, metadata: nil)
+            
             print("Produto Cadastrado com sucesso!")
             segueForStoryboard(nameID: "HomeDono")
         }
@@ -90,7 +100,7 @@ class CadastroProdutosViewController: UIViewController, UITextFieldDelegate, UIT
     }
     
     @IBAction func imageGet(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Racecap", message: "Please Select an Option", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Opções", message: "Por favor, escolha a opção", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Escolha a Foto", style: .default , handler:{ (UIAlertAction)in
 
@@ -129,6 +139,37 @@ class CadastroProdutosViewController: UIViewController, UITextFieldDelegate, UIT
         })
     }
     
+    func uploadProfileImage(imageData: Data){
+        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
+        activityIndicator.startAnimating()
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+        
+        
+        let storageReference = Storage.storage().reference()
+        let currentUser = Auth.auth().currentUser
+        let profileImageRef = storageReference.child("users").child(currentUser!.uid).child("\(currentUser!.uid)-profileImage.jpg")
+        
+        let uploadMetaData = StorageMetadata()
+        uploadMetaData.contentType = "image/jpeg"
+        
+        profileImageRef.putData(imageData, metadata: uploadMetaData) { (uploadedImageMeta, error) in
+            
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
+            
+            if error != nil
+            {
+                print("Error took place \(String(describing: error?.localizedDescription))")
+                return
+            } else {
+                
+                self.imagemProduto.image = UIImage(data: imageData)
+                
+                print("Meta data of uploaded image \(String(describing: uploadedImageMeta))")
+            }
+        }
+    }
 }
 
 extension CadastroProdutosViewController {

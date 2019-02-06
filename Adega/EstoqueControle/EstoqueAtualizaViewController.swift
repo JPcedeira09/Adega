@@ -14,6 +14,7 @@ class EstoqueAtualizaViewController: UIViewController {
 
     var produto:Produto?
     var ref = Database.database().reference()
+    var imagens:[UIImage]?
 
     @IBOutlet weak var imagemProduto: UIImageView!
     @IBOutlet weak var nome: UITextField!
@@ -25,7 +26,7 @@ class EstoqueAtualizaViewController: UIViewController {
         super.viewDidLoad()
 
         print(produto!)
-        
+        print(imagens?.count)
         self.nome.text = produto?.nome
         self.descricao.text = produto?.descricao
         self.quantidade.text = "\((produto?.quantidade)!)"
