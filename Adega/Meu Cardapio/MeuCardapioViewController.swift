@@ -115,7 +115,7 @@ extension MeuCardapioViewController : UITableViewDelegate, UITableViewDataSource
         
         if (segue.identifier == "atualizaEstoque"){
             let destination = segue.destination as? EstoqueAtualizaViewController
-            destination!.imagens = imagens!
+            //destination!.imagens = imagens!
             destination!.produto = produto!
         }
     }
