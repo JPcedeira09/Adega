@@ -64,6 +64,8 @@
 		6CB7010421DE6F3800CF0429 /* MeuCardapioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB7010221DE6F3800CF0429 /* MeuCardapioTableViewCell.swift */; };
 		6CB7010521DE6F3800CF0429 /* MeuCardapioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB7010321DE6F3800CF0429 /* MeuCardapioTableViewCell.xib */; };
 		6CDB5C3121E63F1D00D4CE1F /* CadastroProdutosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDB5C3021E63F1D00D4CE1F /* CadastroProdutosViewController.swift */; };
+		6CF36D6F2213168D0041AEE9 /* ValoresPedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF36D6E2213168D0041AEE9 /* ValoresPedido.swift */; };
+		6CF36D73221357240041AEE9 /* MenuClienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF36D72221357240041AEE9 /* MenuClienteViewController.swift */; };
 		6CF537CB21E652D5006DF1F0 /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF537CA21E652D5006DF1F0 /* Produto.swift */; };
 		AF554BC328853973E9A9AC70 /* Pods_AdegaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C665BB197CBF7CEBD40AE4 /* Pods_AdegaUITests.framework */; };
 /* End PBXBuildFile section */
@@ -152,6 +154,8 @@
 		6CB7010221DE6F3800CF0429 /* MeuCardapioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuCardapioTableViewCell.swift; sourceTree = "<group>"; };
 		6CB7010321DE6F3800CF0429 /* MeuCardapioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeuCardapioTableViewCell.xib; sourceTree = "<group>"; };
 		6CDB5C3021E63F1D00D4CE1F /* CadastroProdutosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroProdutosViewController.swift; sourceTree = "<group>"; };
+		6CF36D6E2213168D0041AEE9 /* ValoresPedido.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValoresPedido.swift; sourceTree = "<group>"; };
+		6CF36D72221357240041AEE9 /* MenuClienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuClienteViewController.swift; sourceTree = "<group>"; };
 		6CF537CA21E652D5006DF1F0 /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
 		AAE9B5713A635330E21BC6E3 /* Pods-AdegaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdegaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdegaTests/Pods-AdegaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB0D1EFDFFA5C9A65A8D4296 /* Pods_Adega.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Adega.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -433,6 +437,8 @@
 		6CB700C021DD308B00CF0429 /* Adega */ = {
 			isa = PBXGroup;
 			children = (
+				6CF36D712213570F0041AEE9 /* MenuDono */,
+				6CF36D70221357080041AEE9 /* MenuCliente */,
 				6C62B22021FF29410050122E /* MeusDados */,
 				6C94E88121F0C49500333A4A /* EstoqueControle */,
 				6CB11B9221E9091F0096860D /* ProdutoSeleciona */,
@@ -510,6 +516,21 @@
 			path = CadastrarProdutos;
 			sourceTree = "<group>";
 		};
+		6CF36D70221357080041AEE9 /* MenuCliente */ = {
+			isa = PBXGroup;
+			children = (
+				6CF36D72221357240041AEE9 /* MenuClienteViewController.swift */,
+			);
+			path = MenuCliente;
+			sourceTree = "<group>";
+		};
+		6CF36D712213570F0041AEE9 /* MenuDono */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MenuDono;
+			sourceTree = "<group>";
+		};
 		6CF537C921E652AF006DF1F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +538,7 @@
 				6C59A0C721ECC8A700D1FB00 /* Usuario.swift */,
 				6C498FFF21EE6A49009919C2 /* Pedido.swift */,
 				6C5876A921EF8701006635A7 /* ItensCarrinho.swift */,
+				6CF36D6E2213168D0041AEE9 /* ValoresPedido.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -846,6 +868,7 @@
 				6C49900021EE6A49009919C2 /* Pedido.swift in Sources */,
 				6C44A17321E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift in Sources */,
 				6C7DFFD721E50CF700C24596 /* InicialViewController.swift in Sources */,
+				6CF36D73221357240041AEE9 /* MenuClienteViewController.swift in Sources */,
 				6C79EFEC21F263E00018DC13 /* FormaPagamentoAdegaTableViewCell.swift in Sources */,
 				6C59A0CA21ECDB2C00D1FB00 /* CadastroInfoViewController.swift in Sources */,
 				6C72CEB521E8E44000463107 /* HeaderCarrinhoTableViewCell.swift in Sources */,
@@ -854,6 +877,7 @@
 				6C039C8C21E7B33E004696F7 /* AdicionarMaisTableViewCell.swift in Sources */,
 				6C79EFF521F26AEE0018DC13 /* PedidosAcompanhamentoViewController.swift in Sources */,
 				6C5876AA21EF8701006635A7 /* ItensCarrinho.swift in Sources */,
+				6CF36D6F2213168D0041AEE9 /* ValoresPedido.swift in Sources */,
 				6C44A17621E3B9F2008ED84A /* PedidoDetalheViewController.swift in Sources */,
 				6CDB5C3121E63F1D00D4CE1F /* CadastroProdutosViewController.swift in Sources */,
 				6C039C9721E7CB15004696F7 /* HeaderTableViewCell.swift in Sources */,

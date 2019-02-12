@@ -134,7 +134,6 @@ extension CardapioViewController : UITableViewDelegate, UITableViewDataSource{
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
         if (segue.identifier == "escolhaProduto"){
         let destination = segue.destination as? ProdutosSelecionaViewController
             
@@ -147,8 +146,9 @@ extension CardapioViewController : UITableViewDelegate, UITableViewDataSource{
             
             destination!.countItens = countItens!
         }
-        if (segue.identifier == "meusDados" ){
-            let destination = segue.destination as? MeusDadosViewController
+        
+        if segue.destination is MenuClienteViewController {
+            let destination = segue.destination as? MenuClienteViewController
 
             destination!.usuario = usuario!
         }

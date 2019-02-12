@@ -43,7 +43,12 @@ class CadastrarViewController: UIViewController {
          .child((user?.user.uid)!)
          .child("dados_pessoais")
          .setValue(self.usuario?.toDict(self.usuario!))
-     
+        
+        self.ref.child("Usuarios")
+            .child((user?.user.uid)!)
+            .child("valoresPedido")
+            .setValue(["valorTotalProduto":0.0])
+        
      let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
      self.present(vc!, animated: true, completion: nil)
      
