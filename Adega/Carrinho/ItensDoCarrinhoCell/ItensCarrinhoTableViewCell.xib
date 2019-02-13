@@ -34,7 +34,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="Fih-Vc-mbw"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>

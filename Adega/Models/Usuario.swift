@@ -18,7 +18,6 @@ struct Usuario{
     var numero:String
     var complemento:String
     var celular:String
-    
  init(email:String,nome:String,cpf:String,cep:String,endereco:String,numero:String,complemento:String,celular:String) {
     
         self.email = email

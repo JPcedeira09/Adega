@@ -11,9 +11,9 @@ import Firebase
 
 class MeusDadosViewController: UIViewController {
     
-    var usuario:Usuario?
     let user = (Auth.auth().currentUser)!
     var ref = Database.database().reference()
+    var usuarioFirebase = Auth.auth()
 
     @IBOutlet weak var nome: UITextField!
     @IBOutlet weak var CPF: UITextField!
@@ -24,17 +24,29 @@ class MeusDadosViewController: UIViewController {
     @IBOutlet weak var celular: UITextField!
     @IBOutlet weak var atualizar: UIButton!
     
+    
+    @IBAction func fechar(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.nome.text = (self.usuario?.nome)!
-        self.CPF.text = (self.usuario?.cpf)!
-        self.CEP.text = (self.usuario?.cep)!
-        self.endereco.text = (self.usuario?.endereco)!
-        self.numero.text = (self.usuario?.numero)!
-        self.complemento.text = (self.usuario?.complemento)!
-        self.celular.text = (self.usuario?.celular)!
-        self.atualizar.layer.cornerRadius = 4
+        let uid = (usuarioFirebase.currentUser?.uid)!
+        ref.child("Usuarios").child(uid).child("dados_pessoais").observe(.value) { (snapshot) in
+            let dict = snapshot.value as! NSDictionary
+            let usuario = Usuario(usuarioJSON: dict as! [String : Any])
+            print("Usuario que Retornou do Firebase:\(usuario)")
+            self.nome.text = usuario.nome
+            self.CPF.text = usuario.cpf
+            self.CEP.text = usuario.cep
+            self.endereco.text = usuario.endereco
+            self.numero.text = usuario.numero
+            self.complemento.text = usuario.complemento
+            self.celular.text = usuario.celular
+            self.atualizar.layer.cornerRadius = 4
+        }
+       
     }
     
     @IBAction func atualizarAction(_ sender: Any) {
@@ -47,23 +59,26 @@ class MeusDadosViewController: UIViewController {
             && validadeTxtField(txtField: self.complemento, msg: "Você esqueceu de digitar seu complemento ou ponto de referencia.") == true
             && validadeTxtField(txtField: self.celular, msg: "Você esqueceu de digitar seu celular!") == true){
             
-            self.usuario?.nome = self.nome.text!
-            self.usuario?.cpf = self.CPF.text!
-            self.usuario?.cep = self.CEP.text!
-            self.usuario?.endereco = self.endereco.text!
-            self.usuario?.numero = self.numero.text!
-            self.usuario?.complemento = self.complemento.text!
-            self.usuario?.celular = self.celular.text!
-            
-            print(usuario!)
-            
-            
+            let nome = self.nome.text!
+            let cpf = self.CPF.text!
+            let cep = self.CEP.text!
+            let endereco = self.endereco.text!
+            let numero = self.numero.text!
+            let complemento = self.complemento.text!
+            let celular = self.celular.text!
+            let email = (usuarioFirebase.currentUser?.email)!
+
+            let usuario = Usuario(email: email, nome: nome, cpf: cpf, cep: cep, endereco: endereco, numero: numero, complemento: complemento, celular: celular)
+
             ref.child("Usuarios")
                 .child(user.uid)
                 .child("dados_pessoais")
-                .updateChildValues((self.usuario?.toDict(self.usuario!))!)
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-            self.present(vc!, animated: true, completion: nil)
+                .updateChildValues(usuario.toDict(usuario))
+            
+            self.dismiss(animated: true)
+
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+//            self.present(vc!, animated: true, completion: nil)
         }
     }
     

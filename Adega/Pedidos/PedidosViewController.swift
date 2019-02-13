@@ -59,6 +59,7 @@ class PedidosViewController: UIViewController {
             }
             print("Count Pedidos:\((self.countPedidos)!)")
             var countItens = 0
+            if(self.countPedidos! != 0 && self.countPedidos! != nil ){
             for i in 1 ... self.countPedidos! {
                 self.ref.child("Adega").child("Pedidos").child("pedido_\(i)").observe(.value) { (snapshot) in
                     
@@ -80,6 +81,7 @@ class PedidosViewController: UIViewController {
                     self.table.reloadData()
                 }
             }
+        }
         }
     }
 }

@@ -261,19 +261,19 @@
 				6C039C8E21E7CABC004696F7 /* Pagemento */,
 				6C039C8921E7B32C004696F7 /* AdicionarMais */,
 				6C039C7F21E7B0D1004696F7 /* HeaderAdega */,
-				6C44A17B21E3C880008ED84A /* Itens do Carrinho Cell */,
+				6C44A17B21E3C880008ED84A /* ItensDoCarrinhoCell */,
 				6C44A17821E3C86C008ED84A /* CarrinhoViewController.swift */,
 			);
 			path = Carrinho;
 			sourceTree = "<group>";
 		};
-		6C44A17B21E3C880008ED84A /* Itens do Carrinho Cell */ = {
+		6C44A17B21E3C880008ED84A /* ItensDoCarrinhoCell */ = {
 			isa = PBXGroup;
 			children = (
 				6C039C7B21E7A64F004696F7 /* ItensCarrinhoTableViewCell.swift */,
 				6C039C7C21E7A64F004696F7 /* ItensCarrinhoTableViewCell.xib */,
 			);
-			path = "Itens do Carrinho Cell";
+			path = ItensDoCarrinhoCell;
 			sourceTree = "<group>";
 		};
 		6C44A17C21E3C8AA008ED84A /* Inicial */ = {

@@ -14,7 +14,8 @@ class CardapioViewController: UIViewController {
 
     var produtos = [Produto]()
     var produto:Produto?
-    var usuario:Usuario?
+    var usuario = Usuario(email: "", nome: "", cpf: "", cep: "", endereco: "", numero: "", complemento: "", celular: "")
+    
     var ref: DatabaseReference!
     var usuarioFirebase = Auth.auth()
     var countItens:Int?
@@ -62,9 +63,6 @@ class CardapioViewController: UIViewController {
         self.ref = Database.database().reference()
         
         ref.child("Adega").child("Produtos").observe(.value) { (snapshot) in
-            print()
-            print(snapshot.children)
-            print()
             var produtosRetrived = [Produto]()
             
             for item in snapshot.children {
@@ -83,10 +81,11 @@ class CardapioViewController: UIViewController {
         ref.child("Usuarios").child(uid).child("dados_pessoais").observe(.value) { (snapshot) in
             let dict = snapshot.value as! NSDictionary
             let retornoUsuario = Usuario(usuarioJSON: dict as! [String : Any])
-            print(retornoUsuario)
+            print("Usuario que Retornou do Firebase:\(retornoUsuario)")
             self.usuario = retornoUsuario
         }
         
+        print("Usuario Logado é:\(self.usuario)")
         ref.child("Usuarios").child(uid).child("meus_pedidos").observe(.value) { (snapshot) in
             
             print(snapshot.children)
@@ -97,7 +96,6 @@ class CardapioViewController: UIViewController {
                 self.countItens = Int(snapshot.childrenCount)
             }
             print("countItens:\(self.countItens)")
-
         }
     }
     
@@ -121,7 +119,9 @@ extension CardapioViewController : UITableViewDelegate, UITableViewDataSource{
         cell.nome_produto.text = produto.nome
         cell.descricao.text = produto.descricao
 
-        return cell    }
+        return cell
+        
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
@@ -138,19 +138,13 @@ extension CardapioViewController : UITableViewDelegate, UITableViewDataSource{
         let destination = segue.destination as? ProdutosSelecionaViewController
             
             destination!.produto = produto!
-            destination!.usuario = usuario!
+            destination!.usuario = usuario
         }
         
         if (segue.identifier == "carrinhosegue" ){
             let destination = segue.destination as? CarrinhoViewController
             
             destination!.countItens = countItens!
-        }
-        
-        if segue.destination is MenuClienteViewController {
-            let destination = segue.destination as? MenuClienteViewController
-
-            destination!.usuario = usuario!
         }
         
 //        // Get the index path from the cell that was tapped

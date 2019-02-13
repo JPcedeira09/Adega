@@ -21,8 +21,7 @@ class CarrinhoViewController: UIViewController {
     var usuarioFirebase = Auth.auth()
     var countPedidos = 0
     var UID = ""
-    var valorTotal = 0.0
-    var totalItens = [Double]()
+    var usuario:Usuario?
 
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -31,25 +30,22 @@ class CarrinhoViewController: UIViewController {
         
         self.table.delegate = self
         self.table.dataSource = self
-        self.ref = Database.database().reference()
         fazerPedido.layer.cornerRadius = 4
-    
+        
+        self.ref = Database.database().reference()
         montaCell()
         var array = [ItensCarrinho]()
+        
         for i in 1 ... countItens!{
             ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
 
                 let dict = snapshot.value as! NSDictionary
                 let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
-                print(item)
                 array.append(item)
             }
-            print(array)
             self.reloadInputViews()
             self.table.reloadData()
         }
-
-        print(self.itens)
         
         print("Quantidade de itens é:\(self.itens.count)")
         ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
@@ -57,6 +53,7 @@ class CarrinhoViewController: UIViewController {
             print("Count Pedidos =\(snapshot.childrenCount)")
         }
     }
+    
     /*
      static func remove(child: String) {
      
@@ -80,12 +77,18 @@ class CarrinhoViewController: UIViewController {
     
     @IBAction func FazerPedidoAction(_ sender: Any) {
         
+        ref.child("Usuarios").child(UID).child("dados_pessoais").observe(.value) { (snapshot) in
+            let dict = snapshot.value as! NSDictionary
+            let retornoUsuario = Usuario(usuarioJSON: dict as! [String : Any])
+            self.ref.child("Adega").child("Pedidos").child("pedido_\(self.countPedidos+1)").child("dados_cliente").setValue(retornoUsuario.toDict(retornoUsuario))
+        }
+        
         for i in 1 ... countItens!{
          
         ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
             
             let dict = snapshot.value as! NSDictionary
-            self.ref.child("Adega").child("Pedidos").child("pedido_\(self.countPedidos+1)").child("item_\(i)").setValue(dict)
+            self.ref.child("Adega").child("Pedidos").child("pedido_\(self.countPedidos+1)").child("Itens").child("item_\(i)").setValue(dict)
 
             }
         }
@@ -113,11 +116,9 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
                 cell.quantidadeNome.text = "\(item.qtd)X \(item.nome)"
                 
                 let valorString = String(format: "%.2f",item.totalItem).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
-                self.valorTotal + item.totalItem
 
                 cell.valorTotal.text = "R$ \(valorString)"
             }
-
             return cell
         }
         
@@ -140,30 +141,17 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         
         let cell = table.dequeueReusableCell(withIdentifier: "TotaisPagamentoTableViewCell") as! TotaisPagamentoTableViewCell
         
-
         if(countItens! != 0){
             var total = [Double]()
-
-            for i in 1 ... countItens! {
-                ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
+                ref.child("Usuarios").child(UID).child("valoresPedido").observe(.value) { (snapshot) in
                     let dict = snapshot.value as! NSDictionary
-                    let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
-                   
-                   // total = total! + item.totalItem
-                    total.append(item.totalItem)
-                    print(item.totalItem)
-                    self.totalItens = total
-                }
-                print(totalItens)
+                    let valores = ValoresPedido(valoresPedidoJSON: dict as! [String : Any])
+                    
+                    let valorString = String(format: "%.2f",valores.valorTotalProduto).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+                    
+                    cell.total.text = "R$ \(valorString)"
             }
             
-            print(totalItens)
-            let sum = totalItens.reduce(0.0, +)
-            print(sum)
-            
-            let valorString = String(format: "%.2f",sum).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
-            
-            cell.total.text = "R$ \(valorString)"
         }
         return cell
         
