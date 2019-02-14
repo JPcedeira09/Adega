@@ -44,9 +44,7 @@ class MeuCardapioViewController: UIViewController , UIImagePickerControllerDeleg
         self.ref = Database.database().reference()
 
         ref.child("Adega").child("Produtos").observe(.value) { (snapshot) in
-            print()
-            print(snapshot.children)
-            print()
+ 
             var produtosRetrived = [Produto]()
 
             for item in snapshot.children {

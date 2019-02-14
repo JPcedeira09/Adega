@@ -13,6 +13,8 @@ class InicialViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var entrabtn: UIButton!
     @IBOutlet weak var cadastrabtn: UIButton!
+    @IBOutlet weak var facebookbtn: UIButton!
+    @IBOutlet weak var googlebtn: UIButton!
     
     @IBOutlet weak var email: UITextField!
     
@@ -76,7 +78,9 @@ class InicialViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         entrabtn.layer.cornerRadius = 4
         cadastrabtn.layer.cornerRadius = 4
-
+        facebookbtn.layer.cornerRadius = 4
+        googlebtn.layer.cornerRadius = 4
+        
         self.email.delegate = self
         self.senha.delegate = self
         

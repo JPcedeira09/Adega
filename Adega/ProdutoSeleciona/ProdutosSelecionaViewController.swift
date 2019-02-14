@@ -20,6 +20,7 @@ class ProdutosSelecionaViewController: UIViewController {
     var countProduto = 0
     var valorTotalPedido = 0.0
     
+    @IBOutlet weak var imagemProduto: UIImageView!
     @IBOutlet weak var valorTotal: UILabel!
     @IBOutlet weak var quantidadePedido: UILabel!
     @IBOutlet weak var descricao: UITextView!
@@ -29,13 +30,23 @@ class ProdutosSelecionaViewController: UIViewController {
         super.viewDidLoad()
         
         self.ref = Database.database().reference()
-
-        print(produto!)
-        print(usuario!)
         self.valorTotal.text = "Total R$ \((produto?.valor)!)"
         self.nomeProduto.text = produto?.nome
         self.descricao.text = produto?.descricao
         self.quantidadePedido.text = "1"
+        
+        let islandRef = Storage.storage().reference().child("produtos/"+(produto?.nome)!+".jpg")
+        var imageFIR:UIImage?
+        // Download in memory with a maximum allowed size of 1MB (1 * 3000 * 3000 bytes)
+        islandRef.getData(maxSize: 1 * 3000 * 3000) { data, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                
+                imageFIR = UIImage(data: data!)
+            }
+            self.imagemProduto.image = imageFIR
+        }
         
         let uid = (usuarioFirebase.currentUser?.uid)!
         ref.child("Usuarios").child(uid).child("meus_pedidos").observe(.value) { (snapshot) in

@@ -32,6 +32,18 @@ class EstoqueAtualizaViewController: UIViewController {
         self.quantidade.text = "\((produto?.quantidade)!)"
         self.valor.text = "\((produto?.valor)!)"
         
+        let islandRef = Storage.storage().reference().child("produtos/"+(produto?.nome)!+".jpg")
+        var imageFIR:UIImage?
+        // Download in memory with a maximum allowed size of 1MB (1 * 3000 * 3000 bytes)
+        islandRef.getData(maxSize: 1 * 3000 * 3000) { data, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                
+                imageFIR = UIImage(data: data!)
+            }
+            self.imagemProduto.image = imageFIR
+        }
     }
     
     @IBAction func Atualizar(_ sender: Any) {

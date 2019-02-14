@@ -24,7 +24,6 @@ class MeusDadosViewController: UIViewController {
     @IBOutlet weak var celular: UITextField!
     @IBOutlet weak var atualizar: UIButton!
     
-    
     @IBAction func fechar(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
@@ -32,8 +31,7 @@ class MeusDadosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let uid = (usuarioFirebase.currentUser?.uid)!
-        ref.child("Usuarios").child(uid).child("dados_pessoais").observe(.value) { (snapshot) in
+        ref.child("Usuarios").child(user.uid).child("dados_pessoais").observe(.value) { (snapshot) in
             let dict = snapshot.value as! NSDictionary
             let usuario = Usuario(usuarioJSON: dict as! [String : Any])
             print("Usuario que Retornou do Firebase:\(usuario)")
@@ -46,7 +44,6 @@ class MeusDadosViewController: UIViewController {
             self.celular.text = usuario.celular
             self.atualizar.layer.cornerRadius = 4
         }
-       
     }
     
     @IBAction func atualizarAction(_ sender: Any) {

@@ -50,7 +50,6 @@ class CarrinhoViewController: UIViewController {
         print("Quantidade de itens é:\(self.itens.count)")
         ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
             self.countPedidos = Int(snapshot.childrenCount)
-            print("Count Pedidos =\(snapshot.childrenCount)")
         }
     }
     
@@ -76,6 +75,12 @@ class CarrinhoViewController: UIViewController {
     }
     
     @IBAction func FazerPedidoAction(_ sender: Any) {
+        
+        ref.child("Usuarios").child(UID).child("valoresPedido").observe(.value) { (snapshot) in
+            let dict = snapshot.value as! NSDictionary
+            let valores = ValoresPedido(valoresPedidoJSON: dict as! [String : Any])
+            self.ref.child("Adega").child("Pedidos").child("pedido_\(self.countPedidos+1)").child("valoresPedido").setValue(valores.toDict(valores))
+        }
         
         ref.child("Usuarios").child(UID).child("dados_pessoais").observe(.value) { (snapshot) in
             let dict = snapshot.value as! NSDictionary
@@ -118,6 +123,10 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
                 let valorString = String(format: "%.2f",item.totalItem).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
 
                 cell.valorTotal.text = "R$ \(valorString)"
+                
+                cell.botao.addTarget(self, action: Selector("connected:"), for: .touchUpInside)
+                cell.botao.tag = indexPath.row
+
             }
             return cell
         }
@@ -172,6 +181,14 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         return cell
     }
     
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            let groceryItem = items[indexPath.row]
+//            groceryItem.ref?.removeValue()
+//        }
+
     }
 }
 

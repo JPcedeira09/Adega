@@ -18,6 +18,7 @@
 		6C039C9721E7CB15004696F7 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C039C9521E7CB15004696F7 /* HeaderTableViewCell.swift */; };
 		6C039C9821E7CB15004696F7 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C039C9621E7CB15004696F7 /* HeaderTableViewCell.xib */; };
 		6C103F1821EE58FE0096108E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C103F1721EE58FE0096108E /* GoogleService-Info.plist */; };
+		6C3D4D84221509FA00A61C42 /* MenuDonoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D4D83221509FA00A61C42 /* MenuDonoViewController.swift */; };
 		6C44A17321E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44A17121E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift */; };
 		6C44A17421E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C44A17221E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib */; };
 		6C44A17621E3B9F2008ED84A /* PedidoDetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44A17521E3B9F2008ED84A /* PedidoDetalheViewController.swift */; };
@@ -102,6 +103,7 @@
 		6C039C9521E7CB15004696F7 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6C039C9621E7CB15004696F7 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		6C103F1721EE58FE0096108E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6C3D4D83221509FA00A61C42 /* MenuDonoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDonoViewController.swift; sourceTree = "<group>"; };
 		6C44A17121E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoDetalheTableViewCell.swift; sourceTree = "<group>"; };
 		6C44A17221E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PedidoDetalheTableViewCell.xib; sourceTree = "<group>"; };
 		6C44A17521E3B9F2008ED84A /* PedidoDetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoDetalheViewController.swift; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 		6CF36D712213570F0041AEE9 /* MenuDono */ = {
 			isa = PBXGroup;
 			children = (
+				6C3D4D83221509FA00A61C42 /* MenuDonoViewController.swift */,
 			);
 			path = MenuDono;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				6C94E88321F0C51E00333A4A /* EstoqueAtualizaViewController.swift in Sources */,
 				6C7DFFDA21E51A4A00C24596 /* CadastrarViewController.swift in Sources */,
 				6C79EFF221F267AC0018DC13 /* StatusPedidosTableViewCell.swift in Sources */,
+				6C3D4D84221509FA00A61C42 /* MenuDonoViewController.swift in Sources */,
 				6C62B22221FF295C0050122E /* MeusDadosViewController.swift in Sources */,
 				6C039C9121E7CACF004696F7 /* PagamentoTableViewCell.swift in Sources */,
 				6CB700F721DD523200CF0429 /* PedidosTableViewCell.swift in Sources */,
