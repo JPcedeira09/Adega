@@ -41,13 +41,17 @@ class CadastrarViewController: UIViewController {
      self.usuario?.email = (user?.user.email)!
      self.ref.child("Usuarios")
          .child((user?.user.uid)!)
-         .child("dados_pessoais")
+         .child("DadosPessoais")
          .setValue(self.usuario?.toDict(self.usuario!))
+        
+        let data = self.getCurrentDate()
+
+        let valoresPedido = ValoresPedido(valorTotalProduto: 0.0, dataPedido: data, statusPedido: "Sem Status", pedidoAceite: false)
         
         self.ref.child("Usuarios")
             .child((user?.user.uid)!)
-            .child("valoresPedido")
-            .setValue(["valorTotalProduto":0.0])
+            .child("ValoresPedido")
+            .setValue(valoresPedido.toDict(valoresPedido))
         
      let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
      self.present(vc!, animated: true, completion: nil)
@@ -72,4 +76,12 @@ class CadastrarViewController: UIViewController {
         self.ref = Database.database().reference()
     }
     
+    func getCurrentDate() -> String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = Date()
+        
+        let dataFormatada = dateFormatterGet.string(from: date)
+        return dataFormatada
+    }
 }

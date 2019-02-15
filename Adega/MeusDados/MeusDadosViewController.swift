@@ -31,7 +31,7 @@ class MeusDadosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref.child("Usuarios").child(user.uid).child("dados_pessoais").observe(.value) { (snapshot) in
+        ref.child("Usuarios").child(user.uid).child("DadosPessoais").observe(.value) { (snapshot) in
             let dict = snapshot.value as! NSDictionary
             let usuario = Usuario(usuarioJSON: dict as! [String : Any])
             print("Usuario que Retornou do Firebase:\(usuario)")
@@ -69,7 +69,7 @@ class MeusDadosViewController: UIViewController {
 
             ref.child("Usuarios")
                 .child(user.uid)
-                .child("dados_pessoais")
+                .child("DadosPessoais")
                 .updateChildValues(usuario.toDict(usuario))
             
             self.dismiss(animated: true)

@@ -37,7 +37,7 @@ class CarrinhoViewController: UIViewController {
         var array = [ItensCarrinho]()
         
         for i in 1 ... countItens!{
-            ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
+            ref.child("Usuarios").child(UID).child("MeusPedidos").child("Produto\(i)").observe(.value) { (snapshot) in
 
                 let dict = snapshot.value as! NSDictionary
                 let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
@@ -75,28 +75,43 @@ class CarrinhoViewController: UIViewController {
     }
     
     @IBAction func FazerPedidoAction(_ sender: Any) {
-        
-        ref.child("Usuarios").child(UID).child("valoresPedido").observe(.value) { (snapshot) in
+        ref.child("Usuarios").child(UID).child("ValoresPedido").observe(.value) { (snapshot) in
             let dict = snapshot.value as! NSDictionary
-            let valores = ValoresPedido(valoresPedidoJSON: dict as! [String : Any])
-            self.ref.child("Adega").child("Pedidos").child("pedido_\(self.countPedidos+1)").child("valoresPedido").setValue(valores.toDict(valores))
+            var valores = ValoresPedido(valoresPedidoJSON: dict as! [String : Any])
+           
+            let data = self.getCurrentDate()
+            valores.dataPedido = data
+            valores.statusPedido = "Aguardando o Aceite do Restaurante"
+                self.ref.child("Adega").child("Pedidos").child("Pedido\(self.countPedidos+1)").child("ValoresPedido").setValue(valores.toDict(valores))
+           
         }
-        
-        ref.child("Usuarios").child(UID).child("dados_pessoais").observe(.value) { (snapshot) in
+        ref.child("Usuarios").child(UID).child("DadosPessoais").observe(.value) { (snapshot) in
             let dict = snapshot.value as! NSDictionary
             let retornoUsuario = Usuario(usuarioJSON: dict as! [String : Any])
-            self.ref.child("Adega").child("Pedidos").child("pedido_\(self.countPedidos+1)").child("dados_cliente").setValue(retornoUsuario.toDict(retornoUsuario))
+            self.ref.child("Adega").child("Pedidos").child("Pedido\(self.countPedidos+1)").child("DadosCliente").setValue(retornoUsuario.toDict(retornoUsuario))
         }
         
         for i in 1 ... countItens!{
          
-        ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
+        ref.child("Usuarios").child(UID).child("MeusPedidos").child("Produto\(i)").observe(.value) { (snapshot) in
             
             let dict = snapshot.value as! NSDictionary
-            self.ref.child("Adega").child("Pedidos").child("pedido_\(self.countPedidos+1)").child("Itens").child("item_\(i)").setValue(dict)
-
+            self.ref.child("Adega").child("Pedidos").child("Pedido\(self.countPedidos+1)").child("Itens").child("Item\(i)").setValue(dict)
             }
         }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+        self.present(vc!, animated: true, completion: nil)
+        
+    }
+    
+    func getCurrentDate() -> String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let date = Date()
+        
+        let dataFormatada = dateFormatterGet.string(from: date)
+        return dataFormatada
     }
     
 }
@@ -115,7 +130,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
             
             let cell = table.dequeueReusableCell(withIdentifier: "ItensCarrinhoTableViewCell") as! ItensCarrinhoTableViewCell
             
-              ref.child("Usuarios").child(UID).child("meus_pedidos").child("produto_\(i)").observe(.value) { (snapshot) in
+              ref.child("Usuarios").child(UID).child("MeusPedidos").child("Produto\(i)").observe(.value) { (snapshot) in
                 let dict = snapshot.value as! NSDictionary
                 let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
                 cell.quantidadeNome.text = "\(item.qtd)X \(item.nome)"
@@ -124,8 +139,8 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
                 cell.valorTotal.text = "R$ \(valorString)"
                 
-                cell.botao.addTarget(self, action: Selector("connected:"), for: .touchUpInside)
-                cell.botao.tag = indexPath.row
+//                cell.botao.addTarget(self, action: Selector("connected:"), for: .touchUpInside)
+//                cell.botao.tag = indexPath.row
 
             }
             return cell
@@ -152,7 +167,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         
         if(countItens! != 0){
             var total = [Double]()
-                ref.child("Usuarios").child(UID).child("valoresPedido").observe(.value) { (snapshot) in
+                ref.child("Usuarios").child(UID).child("ValoresPedido").observe(.value) { (snapshot) in
                     let dict = snapshot.value as! NSDictionary
                     let valores = ValoresPedido(valoresPedidoJSON: dict as! [String : Any])
                     

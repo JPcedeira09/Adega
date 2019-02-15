@@ -1113,45 +1113,11 @@
                                 <rect key="frame" x="16" y="108.5" width="288" height="439.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h74-jz-tzG">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="10"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uR8-L7-pJy">
-                                        <rect key="frame" x="0.0" y="29" width="288" height="16.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="16.5" id="Hf8-1N-rTr"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu  celular" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xin-ri-NFT">
-                                        <rect key="frame" x="0.0" y="49.5" width="288" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="O5H-4Q-tAz"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdL-g8-U6B">
-                                        <rect key="frame" x="0.0" y="83.5" width="288" height="16.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="16.5" id="Jw4-Ko-d9V"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu CPF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7TU-UT-Xji">
-                                        <rect key="frame" x="0.0" y="104" width="288" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="axY-gq-Ubl"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2W-rs-rCp">
-                                        <rect key="frame" x="0.0" y="138" width="288" height="16.5"/>
+                                        <rect key="frame" x="0.0" y="14" width="288" height="16.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16.5" id="wVc-0A-yFm"/>
                                         </constraints>
@@ -1159,7 +1125,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="87f-mi-vw9">
-                                        <rect key="frame" x="0.0" y="158.5" width="288" height="30"/>
+                                        <rect key="frame" x="0.0" y="34.5" width="288" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="rdX-vE-TYp"/>
                                         </constraints>
@@ -1167,8 +1133,59 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="twitter"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdL-g8-U6B">
+                                        <rect key="frame" x="0.0" y="68.5" width="288" height="16.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16.5" id="Jw4-Ko-d9V"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu CPF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7TU-UT-Xji">
+                                        <rect key="frame" x="0.0" y="89" width="288" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="axY-gq-Ubl"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uR8-L7-pJy">
+                                        <rect key="frame" x="0.0" y="123" width="288" height="16.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16.5" id="Hf8-1N-rTr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu  celular" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xin-ri-NFT">
+                                        <rect key="frame" x="0.0" y="143.5" width="288" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="O5H-4Q-tAz"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CEP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFO-bU-mdK">
+                                        <rect key="frame" x="0.0" y="177.5" width="288" height="16.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16.5" id="Zbc-Xl-lC3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu CEP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EGv-fK-46u">
+                                        <rect key="frame" x="0.0" y="198" width="288" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="9hl-RH-2Rl"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcP-pa-8wg">
-                                        <rect key="frame" x="0.0" y="192.5" width="288" height="16.5"/>
+                                        <rect key="frame" x="0.0" y="232" width="288" height="16.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16.5" id="V4k-vB-jnq"/>
                                         </constraints>
@@ -1176,7 +1193,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu endereço" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xq6-S0-3E7">
-                                        <rect key="frame" x="0.0" y="213" width="288" height="30"/>
+                                        <rect key="frame" x="0.0" y="252.5" width="288" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="9ra-no-KJK"/>
                                         </constraints>
@@ -1185,7 +1202,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complemento/Referência" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKe-Zn-Giu">
-                                        <rect key="frame" x="0.0" y="247" width="288" height="16.5"/>
+                                        <rect key="frame" x="0.0" y="286.5" width="288" height="16.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16.5" id="sOm-mJ-Ytb"/>
                                         </constraints>
@@ -1193,7 +1210,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu complemento ou referência" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MQk-8Z-qEZ">
-                                        <rect key="frame" x="0.0" y="267.5" width="288" height="30"/>
+                                        <rect key="frame" x="0.0" y="307" width="288" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="8gP-fi-egZ"/>
                                         </constraints>
@@ -1202,7 +1219,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQO-uY-iOd">
-                                        <rect key="frame" x="0.0" y="301.5" width="288" height="16.5"/>
+                                        <rect key="frame" x="0.0" y="341" width="288" height="16.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16.5" id="qEw-mj-Qgy"/>
                                         </constraints>
@@ -1210,7 +1227,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu numero" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P2u-Sw-22l">
-                                        <rect key="frame" x="0.0" y="322" width="288" height="30"/>
+                                        <rect key="frame" x="0.0" y="361.5" width="288" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="XPc-rJ-GXQ"/>
                                         </constraints>
@@ -1218,29 +1235,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CEP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFO-bU-mdK">
-                                        <rect key="frame" x="0.0" y="356" width="288" height="16.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="16.5" id="Zbc-Xl-lC3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu CEP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EGv-fK-46u">
-                                        <rect key="frame" x="0.0" y="376.5" width="288" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="9hl-RH-2Rl"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
-                                    </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCd-sX-Iue">
-                                        <rect key="frame" x="0.0" y="410.5" width="288" height="25"/>
+                                        <rect key="frame" x="0.0" y="395.5" width="288" height="10"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQe-g4-A62">
-                                        <rect key="frame" x="0.0" y="439.5" width="288" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="409.5" width="288" height="30"/>
                                         <color key="backgroundColor" red="0.79959779980000001" green="0.36950546499999998" blue="0.3678372204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Atualizar Cadastro">
@@ -2100,7 +2100,7 @@
         <image name="shopping_cart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="90q-nZ-9kn"/>
+        <segue reference="iQN-uR-Yjb"/>
         <segue reference="eDG-ju-SaF"/>
         <segue reference="DMN-d2-5LX"/>
     </inferredMetricsTieBreakers>

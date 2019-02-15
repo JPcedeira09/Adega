@@ -49,14 +49,14 @@ class ProdutosSelecionaViewController: UIViewController {
         }
         
         let uid = (usuarioFirebase.currentUser?.uid)!
-        ref.child("Usuarios").child(uid).child("meus_pedidos").observe(.value) { (snapshot) in
+        ref.child("Usuarios").child(uid).child("MeusPedidos").observe(.value) { (snapshot) in
             self.countProduto = Int(snapshot.childrenCount)
             print("Count children =\(snapshot.childrenCount)")
         }
         
         ref.child("Usuarios")
             .child(uid)
-            .child("valoresPedido").observe(.value) { (snapshot) in
+            .child("ValoresPedido").observe(.value) { (snapshot) in
             let child = snapshot as! DataSnapshot
             let dict = child.value as! NSDictionary
                 let valorPedido = ValoresPedido(valoresPedidoJSON: dict as! [String : Any])
@@ -75,14 +75,21 @@ class ProdutosSelecionaViewController: UIViewController {
         let item = ItensCarrinho(qtd: Int(self.quantidadePedido.text!)!, nome: (produto?.nome)!, totalItem: Double(valorTotalItem))
         
         let user = (Auth.auth().currentUser)!
-        self.ref.child("Usuarios").child(user.uid).child("meus_pedidos").child("produto_\(countProduto+1)").setValue(item.toDict(item))
+        self.ref.child("Usuarios").child(user.uid).child("MeusPedidos").child("Produto\(countProduto+1)").setValue(item.toDict(item))
         
         var totalAtualizado = self.valorTotalPedido + item.totalItem
         
-        self.ref.child("Usuarios")
-            .child(user.uid)
-            .child("valoresPedido")
-            .updateChildValues(["valorTotalProduto":totalAtualizado])
+        ref.child("Usuarios").child(user.uid).child("ValoresPedido").observe(.value) { (snapshot) in
+            let dict = snapshot.value as! NSDictionary
+            var valores = ValoresPedido(valoresPedidoJSON: dict as! [String : Any])
+            
+            valores.valorTotalProduto = totalAtualizado
+            
+            self.ref.child("Usuarios")
+                .child(user.uid)
+                .child("ValoresPedido")
+                .updateChildValues(valores.toDict(valores))
+        }
         
         performSegue(withIdentifier: "adicionouItemCarrinho", sender: nil)
     }

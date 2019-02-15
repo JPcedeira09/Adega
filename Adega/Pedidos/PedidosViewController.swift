@@ -57,11 +57,12 @@ class PedidosViewController: UIViewController {
             }else{
                 self.countPedidos = Int(snapshot.childrenCount)
             }
+            
             print("Count Pedidos:\((self.countPedidos)!)")
             var countItens = 0
             if(self.countPedidos! != 0 && self.countPedidos! != nil ){
             for i in 1 ... self.countPedidos! {
-                self.ref.child("Adega").child("Pedidos").child("pedido_\(i)").observe(.value) { (snapshot) in
+                self.ref.child("Adega").child("Pedidos").child("Pedido\(i)").observe(.value) { (snapshot) in
                     
                     if(Int(snapshot.childrenCount) == 0){
                         countItens = 0
