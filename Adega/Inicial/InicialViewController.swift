@@ -87,6 +87,19 @@ class InicialViewController: UIViewController,UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(InicialViewController.keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
         
         NotificationCenter.default.addObserver(self, selector: #selector(InicialViewController.keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
+        
+        let data = self.getCurrentDate()
+        print("DATA LOCAL:\(data)")
+    }
+    
+    func getCurrentDate() -> String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let date = Date()
+        
+        let dataFormatada = dateFormatterGet.string(from: date)
+        return dataFormatada
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

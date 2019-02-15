@@ -27,7 +27,7 @@ struct ValoresPedido {
     func toDict (_ valoresPedido : ValoresPedido) -> [String:Any]{
         return [
             "valorTotalProduto":valoresPedido.valorTotalProduto,
-            "dataPedido":valoresPedido.valorTotalProduto,
+            "dataPedido":valoresPedido.dataPedido,
             "statusPedido":valoresPedido.statusPedido,
             "pedidoAceite":valoresPedido.pedidoAceite,
         ]

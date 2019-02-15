@@ -81,6 +81,7 @@ class CarrinhoViewController: UIViewController {
            
             let data = self.getCurrentDate()
             valores.dataPedido = data
+            
             valores.statusPedido = "Aguardando o Aceite do Restaurante"
                 self.ref.child("Adega").child("Pedidos").child("Pedido\(self.countPedidos+1)").child("ValoresPedido").setValue(valores.toDict(valores))
            
@@ -103,6 +104,7 @@ class CarrinhoViewController: UIViewController {
         self.present(vc!, animated: true, completion: nil)
         
     }
+    
     
     func getCurrentDate() -> String {
         let dateFormatterGet = DateFormatter()

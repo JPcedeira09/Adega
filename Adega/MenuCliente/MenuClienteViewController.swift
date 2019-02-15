@@ -21,8 +21,8 @@ class MenuClienteViewController: UIViewController {
     }
     
     func alertSair(){
-        let alertController = UIAlertController(title: "Logout", message: "Tem certeza que deseja SAIR?", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        let alertController = UIAlertController(title: "Logout", message: "Tem certeza que deseja sair?", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "Não", style: .cancel, handler: nil)
         let sairAction = UIAlertAction(title: "Sair", style: .default) { (UIAlertAction) in
             if Auth.auth().currentUser != nil {
                 do {
