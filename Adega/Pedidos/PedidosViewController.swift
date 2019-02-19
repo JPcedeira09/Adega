@@ -42,26 +42,42 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.ref = Database.database().reference()
 
-        ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
-            let count = Int(snapshot.childrenCount)
-            print(count)
-            var pedidosRetrived = [Pedido]()
-            for i in 1...count{
-                print("Pedido\(i)")
-                
-                self.ref.child("Adega").child("Pedidos").child("Pedido\(i)").observe(.value) { (snapshot) in
-                    let child = snapshot as! DataSnapshot
-                    let dict = child.value as! NSDictionary
-                    let pedido = Pedido(pedidoJSON: dict as! [String : Any])
+                self.ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
                     
-                    pedidosRetrived.append(pedido)
+                    var pedidosRetrived = [Pedido]()
+
+                    for pedido in snapshot.children {
+                        let child = pedido as! DataSnapshot
+                        let dict = child.value as! NSDictionary
+                        let pedidoRetriver = Pedido(pedidoJSON: dict as! [String : Any])
+                        pedidosRetrived.append(pedidoRetriver)
+                    }
+                    
                     self.pedidos = pedidosRetrived
                     self.table.reloadData()
                     
                 }
-            }
-            self.table.reloadData()
-        }
+        
+//        ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
+//            let count = Int(snapshot.childrenCount)
+//            print(count)
+//            var pedidosRetrived = [Pedido]()
+//            for i in 1...count{
+//                print("Pedido\(i)")
+//
+//                self.ref.child("Adega").child("Pedidos").child("Pedido\(i)").observe(.value) { (snapshot) in
+//                    let child = snapshot as! DataSnapshot
+//                    let dict = child.value as! NSDictionary
+//                    let pedido = Pedido(pedidoJSON: dict as! [String : Any])
+//
+//                    pedidosRetrived.append(pedido)
+//                    self.pedidos = pedidosRetrived
+//                    self.table.reloadData()
+//
+//                }
+//            }
+//            self.table.reloadData()
+//        }
         
     }
     
@@ -76,10 +92,11 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         var pedido = pedidos[indexPath.row]
 
-        cell.hora.text = pedido.valoresPedido.dataPedido
-        cell.numeroPedido.text = "#00\(indexPath.row+1) - \(pedido.usuario.nome)"
+        cell.distanciaEntrega.text = "3,5 Km"
+        cell.timerPedido.text = pedido.valoresPedido.dataPedido
+        cell.nomeEnumeroPedido.text = "#00\(indexPath.row+1) - \(pedido.usuario.nome)"
         cell.valorTotal.text = "\(pedido.valoresPedido.valorTotalProduto)"
-        
+        cell.statusPedido.text = pedido.valoresPedido.statusPedido
         //adega.house@gmail.com
         //adega123
         return cell

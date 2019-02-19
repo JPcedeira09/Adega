@@ -58,8 +58,6 @@
 		6CB700CF21DD308D00CF0429 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CB700CD21DD308D00CF0429 /* LaunchScreen.storyboard */; };
 		6CB700DA21DD308D00CF0429 /* AdegaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700D921DD308D00CF0429 /* AdegaTests.swift */; };
 		6CB700E521DD308D00CF0429 /* AdegaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700E421DD308D00CF0429 /* AdegaUITests.swift */; };
-		6CB700F721DD523200CF0429 /* PedidosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700F521DD523200CF0429 /* PedidosTableViewCell.swift */; };
-		6CB700F821DD523200CF0429 /* PedidosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB700F621DD523200CF0429 /* PedidosTableViewCell.xib */; };
 		6CB700FF21DD525300CF0429 /* CardapioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB700FD21DD525300CF0429 /* CardapioTableViewCell.swift */; };
 		6CB7010021DD525300CF0429 /* CardapioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB700FE21DD525300CF0429 /* CardapioTableViewCell.xib */; };
 		6CB7010421DE6F3800CF0429 /* MeuCardapioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB7010221DE6F3800CF0429 /* MeuCardapioTableViewCell.swift */; };
@@ -149,8 +147,6 @@
 		6CB700E021DD308D00CF0429 /* AdegaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdegaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB700E421DD308D00CF0429 /* AdegaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdegaUITests.swift; sourceTree = "<group>"; };
 		6CB700E621DD308D00CF0429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6CB700F521DD523200CF0429 /* PedidosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosTableViewCell.swift; sourceTree = "<group>"; };
-		6CB700F621DD523200CF0429 /* PedidosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PedidosTableViewCell.xib; sourceTree = "<group>"; };
 		6CB700FD21DD525300CF0429 /* CardapioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardapioTableViewCell.swift; sourceTree = "<group>"; };
 		6CB700FE21DD525300CF0429 /* CardapioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardapioTableViewCell.xib; sourceTree = "<group>"; };
 		6CB7010221DE6F3800CF0429 /* MeuCardapioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuCardapioTableViewCell.swift; sourceTree = "<group>"; };
@@ -374,7 +370,6 @@
 			children = (
 				6C79EFE921F25EA60018DC13 /* PedidosSegundaTela */,
 				6C79EFE421F253DE0018DC13 /* Pedidos Adega */,
-				6CB700F421DD4D1F00CF0429 /* Pedidos Cell */,
 				6C8B68AC21DED33A001AEFE9 /* PedidosViewController.swift */,
 			);
 			path = Pedidos;
@@ -499,15 +494,6 @@
 				6CB7010321DE6F3800CF0429 /* MeuCardapioTableViewCell.xib */,
 			);
 			path = "Meu Cardapio Cell";
-			sourceTree = "<group>";
-		};
-		6CB700F421DD4D1F00CF0429 /* Pedidos Cell */ = {
-			isa = PBXGroup;
-			children = (
-				6CB700F521DD523200CF0429 /* PedidosTableViewCell.swift */,
-				6CB700F621DD523200CF0429 /* PedidosTableViewCell.xib */,
-			);
-			path = "Pedidos Cell";
 			sourceTree = "<group>";
 		};
 		6CDB5C2F21E63F0900D4CE1F /* CadastrarProdutos */ = {
@@ -678,7 +664,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CB700F821DD523200CF0429 /* PedidosTableViewCell.xib in Resources */,
 				6C79F00521F2727D0018DC13 /* HeaderBasicoTableViewCell.xib in Resources */,
 				6C039C9221E7CACF004696F7 /* PagamentoTableViewCell.xib in Resources */,
 				6C79EFE821F2540A0018DC13 /* PedidosAdegaTableViewCell.xib in Resources */,
@@ -862,7 +847,6 @@
 				6C3D4D84221509FA00A61C42 /* MenuDonoViewController.swift in Sources */,
 				6C62B22221FF295C0050122E /* MeusDadosViewController.swift in Sources */,
 				6C039C9121E7CACF004696F7 /* PagamentoTableViewCell.swift in Sources */,
-				6CB700F721DD523200CF0429 /* PedidosTableViewCell.swift in Sources */,
 				6CB11B9421E909400096860D /* ProdutosSelecionaViewController.swift in Sources */,
 				6C79EFE721F2540A0018DC13 /* PedidosAdegaTableViewCell.swift in Sources */,
 				6C62B22621FF30980050122E /* TotaisPagamentoTableViewCell.swift in Sources */,

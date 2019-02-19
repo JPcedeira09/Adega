@@ -10,10 +10,11 @@ import UIKit
 
 class PedidosAdegaTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var numeroPedido: UILabel!
-    @IBOutlet weak var hora: UILabel!
-    @IBOutlet weak var distancia: UILabel!
+    @IBOutlet weak var statusPedido: UILabel!
+    @IBOutlet weak var timerPedido: UILabel!
+    @IBOutlet weak var distanciaEntrega: UILabel!
     @IBOutlet weak var valorTotal: UILabel!
+    @IBOutlet weak var nomeEnumeroPedido: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
