@@ -14,7 +14,7 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     var ref:DatabaseReference!
     var countPedidos = 0
-    var valoresPedidos = [ValoresPedido]()
+    var pedidos = [Pedido]()
 
     @IBOutlet weak var table: UITableView!
     @IBAction func SairAction(_ sender: UIBarButtonItem) {
@@ -45,18 +45,17 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
         ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
             let count = Int(snapshot.childrenCount)
             print(count)
-            var valoresPedidosRetrived = [ValoresPedido]()
+            var pedidosRetrived = [Pedido]()
             for i in 1...count{
                 print("Pedido\(i)")
                 
-                self.ref.child("Adega").child("Pedidos").child("Pedido\(i)").child("ValoresPedido").observe(.value) { (snapshot) in
+                self.ref.child("Adega").child("Pedidos").child("Pedido\(i)").observe(.value) { (snapshot) in
                     let child = snapshot as! DataSnapshot
                     let dict = child.value as! NSDictionary
-                    let valoresPedido = ValoresPedido(valoresPedidoJSON: dict as! [String : Any])
+                    let pedido = Pedido(pedidoJSON: dict as! [String : Any])
                     
-                    valoresPedidosRetrived.append(valoresPedido)
-                    self.valoresPedidos = valoresPedidosRetrived
-                    print(self.valoresPedidos)
+                    pedidosRetrived.append(pedido)
+                    self.pedidos = pedidosRetrived
                     self.table.reloadData()
                     
                 }
@@ -68,19 +67,18 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(valoresPedidos.count)
-        return valoresPedidos.count
+        return pedidos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = table.dequeueReusableCell(withIdentifier: "PedidosAdegaTableViewCell") as! PedidosAdegaTableViewCell
         
-        let valoresPedido = valoresPedidos[indexPath.row]
+        var pedido = pedidos[indexPath.row]
 
-        cell.hora.text = valoresPedido.dataPedido
-        cell.numeroPedido.text = "Pedido\(indexPath.row+1)"
-        cell.valorTotal.text = "\(valoresPedido.valorTotalProduto)"
+        cell.hora.text = pedido.valoresPedido.dataPedido
+        cell.numeroPedido.text = "#00\(indexPath.row+1) - \(pedido.usuario.nome)"
+        cell.valorTotal.text = "\(pedido.valoresPedido.valorTotalProduto)"
         
         //adega.house@gmail.com
         //adega123
