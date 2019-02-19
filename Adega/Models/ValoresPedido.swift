@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct ValoresPedido {
     
     var valorTotalProduto:Double

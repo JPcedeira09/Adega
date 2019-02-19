@@ -17,7 +17,7 @@
 		6C039C9221E7CACF004696F7 /* PagamentoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C039C9021E7CACF004696F7 /* PagamentoTableViewCell.xib */; };
 		6C039C9721E7CB15004696F7 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C039C9521E7CB15004696F7 /* HeaderTableViewCell.swift */; };
 		6C039C9821E7CB15004696F7 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C039C9621E7CB15004696F7 /* HeaderTableViewCell.xib */; };
-		6C103F1821EE58FE0096108E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C103F1721EE58FE0096108E /* GoogleService-Info.plist */; };
+		6C109678221C42EA00F5B554 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C109677221C42EA00F5B554 /* GoogleService-Info.plist */; };
 		6C3D4D84221509FA00A61C42 /* MenuDonoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D4D83221509FA00A61C42 /* MenuDonoViewController.swift */; };
 		6C44A17321E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44A17121E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift */; };
 		6C44A17421E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C44A17221E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib */; };
@@ -102,7 +102,7 @@
 		6C039C9021E7CACF004696F7 /* PagamentoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagamentoTableViewCell.xib; sourceTree = "<group>"; };
 		6C039C9521E7CB15004696F7 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6C039C9621E7CB15004696F7 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
-		6C103F1721EE58FE0096108E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6C109677221C42EA00F5B554 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		6C3D4D83221509FA00A61C42 /* MenuDonoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDonoViewController.swift; sourceTree = "<group>"; };
 		6C44A17121E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoDetalheTableViewCell.swift; sourceTree = "<group>"; };
 		6C44A17221E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PedidoDetalheTableViewCell.xib; sourceTree = "<group>"; };
@@ -460,7 +460,7 @@
 				6CB700CD21DD308D00CF0429 /* LaunchScreen.storyboard */,
 				6CB700D021DD308D00CF0429 /* Info.plist */,
 				6CB700C821DD308B00CF0429 /* Adega.xcdatamodeld */,
-				6C103F1721EE58FE0096108E /* GoogleService-Info.plist */,
+				6C109677221C42EA00F5B554 /* GoogleService-Info.plist */,
 			);
 			path = Adega;
 			sourceTree = "<group>";
@@ -695,8 +695,8 @@
 				6C79EFED21F263E00018DC13 /* FormaPagamentoAdegaTableViewCell.xib in Resources */,
 				6CB700CC21DD308D00CF0429 /* Assets.xcassets in Resources */,
 				6CB700C721DD308B00CF0429 /* Main.storyboard in Resources */,
+				6C109678221C42EA00F5B554 /* GoogleService-Info.plist in Resources */,
 				6C039C7E21E7A64F004696F7 /* ItensCarrinhoTableViewCell.xib in Resources */,
-				6C103F1821EE58FE0096108E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,20 +8,13 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
-
-
-struct Count{
-    var count:Int
-    init(count:Int){
-        self.count = count
-    }
-}
-class PedidosViewController: UIViewController {
+class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     var ref:DatabaseReference!
-    var countPedidos:Int?
-    var itens = [ItensCarrinho]()
+    var countPedidos = 0
+    var valoresPedidos = [ValoresPedido]()
 
     @IBOutlet weak var table: UITableView!
     @IBAction func SairAction(_ sender: UIBarButtonItem) {
@@ -37,75 +30,65 @@ class PedidosViewController: UIViewController {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.table.dataSource = self
         self.table.delegate = self
         
-
         self.table.register(UINib(nibName: "PedidosAdegaTableViewCell", bundle: nil), forCellReuseIdentifier: "PedidosAdegaTableViewCell")
         
-        self.ref = Database.database().reference()
         
-        ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
+        self.ref = Database.database().reference()
 
-            print(snapshot.children)
-            print("Count children = \(snapshot.childrenCount)")
-            if(Int(snapshot.childrenCount) == 0){
-                self.countPedidos = 0
-            }else{
-                self.countPedidos = Int(snapshot.childrenCount)
-            }
-            
-            print("Count Pedidos:\((self.countPedidos)!)")
-            var countItens = 0
-            if(self.countPedidos! != 0 && self.countPedidos! != nil ){
-            for i in 1 ... self.countPedidos! {
-                self.ref.child("Adega").child("Pedidos").child("Pedido\(i)").observe(.value) { (snapshot) in
+        ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
+            let count = Int(snapshot.childrenCount)
+            print(count)
+            var valoresPedidosRetrived = [ValoresPedido]()
+            for i in 1...count{
+                print("Pedido\(i)")
+                
+                self.ref.child("Adega").child("Pedidos").child("Pedido\(i)").child("ValoresPedido").observe(.value) { (snapshot) in
+                    let child = snapshot as! DataSnapshot
+                    let dict = child.value as! NSDictionary
+                    let valoresPedido = ValoresPedido(valoresPedidoJSON: dict as! [String : Any])
                     
-                    if(Int(snapshot.childrenCount) == 0){
-                        countItens = 0
-                    }else{
-                        countItens = Int(snapshot.childrenCount)
-                    }
-                    var itensRetrived = [ItensCarrinho]()
-                    print("Count Itens:\(countItens)")
-                    for item in snapshot.children {
-                        let child = item as! DataSnapshot
-                        let dict = child.value as! NSDictionary
-                        let item = ItensCarrinho(itensCarrinhoJSON: dict as! [String : Any])
-                            itensRetrived.append(item)
-                        print(item)
-                    }
-                    self.itens = itensRetrived
+                    valoresPedidosRetrived.append(valoresPedido)
+                    self.valoresPedidos = valoresPedidosRetrived
+                    print(self.valoresPedidos)
                     self.table.reloadData()
+                    
                 }
             }
+            self.table.reloadData()
         }
-        }
+        
     }
-}
-
-extension PedidosViewController : UITableViewDelegate, UITableViewDataSource{
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        print(valoresPedidos.count)
+        return valoresPedidos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = table.dequeueReusableCell(withIdentifier: "PedidosAdegaTableViewCell") as! PedidosAdegaTableViewCell
         
+        let valoresPedido = valoresPedidos[indexPath.row]
+
+        cell.hora.text = valoresPedido.dataPedido
+        cell.numeroPedido.text = "Pedido\(indexPath.row+1)"
+        cell.valorTotal.text = "\(valoresPedido.valorTotalProduto)"
+        
+        //adega.house@gmail.com
+        //adega123
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
-//        let row = indexPath.row
-//        let produtoselecionado = produtos[row]
-//        produto = produtoselecionado
-//        print(produto!)
         performSegue(withIdentifier: "segueDetalhePedido", sender: nil)
     }
     

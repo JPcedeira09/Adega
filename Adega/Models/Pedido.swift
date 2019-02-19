@@ -10,11 +10,11 @@ import Foundation
 
 struct Pedido {
 
-    var valorTotalProduto:Double
+    var valorTotalProduto:ValoresPedido
     var usuario:Usuario
     var itensCarrinho:[ItensCarrinho]
     
-    init(valorTotalProduto:Double,usuario:Usuario, itensCarrinho:[ItensCarrinho]) {
+    init(valorTotalProduto:ValoresPedido,usuario:Usuario, itensCarrinho:[ItensCarrinho]) {
 
         self.valorTotalProduto = valorTotalProduto
         self.itensCarrinho = itensCarrinho
@@ -24,10 +24,9 @@ struct Pedido {
     
     func toDict (_ pedido : Pedido) -> [String:Any]{
         
-        return ["valorTotalProduto":pedido.valorTotalProduto,
-                "usuario":pedido.usuario,
-                "itensCarrinho":pedido.itensCarrinho
-        ]
+        return ["ValoresPedido":pedido.valorTotalProduto,
+                "DadosCliente":pedido.usuario,
+                "Itens":  pedido.itensCarrinho      ]
     }
     
 //    init( pedidoJSON : [String : Any]) {
