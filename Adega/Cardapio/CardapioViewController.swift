@@ -21,27 +21,21 @@ class CardapioViewController: UIViewController {
     var countItens:Int?
     
     @IBOutlet weak var table: UITableView!
-
-    @IBAction func logOut(_ sender: UIBarButtonItem) {
-        
-        if Auth.auth().currentUser != nil {
-            do {
-                try Auth.auth().signOut()
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUp")
-                present(vc, animated: true, completion: nil)
-                
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        }
-    }
     
     @IBAction func segueCarrinho(_ sender: Any) {
-        if(countItens! != 0){
-            performSegue(withIdentifier: "escolhaProduto", sender: nil)
-
-        }else{
-            alertSimples(title:"Carrinho Vazio",msg: "Escolha algum produto e adicione ele ao seu carrinho.")
+        
+        let uid = (usuarioFirebase.currentUser?.uid)!
+        self.ref = Database.database().reference()
+        
+        ref.child("Usuarios").child(uid).child("MeusPedidos").observe(.value) { (snapshot) in
+            
+            if(Int(snapshot.childrenCount) > 0 || (self.countItens)! > 0){
+                print("--------------- O COUNT É:\(snapshot.childrenCount)---------------")
+                self.performSegue(withIdentifier: "carrinho", sender: nil)
+            
+            }else{
+                self.alertSimples(title:"Carrinho Vazio",msg: "Escolha algum produto e adicione ele ao seu carrinho.")
+            }
         }
     }
     
@@ -153,7 +147,7 @@ extension CardapioViewController : UITableViewDelegate, UITableViewDataSource{
             destination!.usuario = usuario
         }
         
-        if (segue.identifier == "carrinhosegue" ){
+        if (segue.identifier == "carrinho" ){
             let destination = segue.destination as? CarrinhoViewController
             
             destination!.countItens = countItens!

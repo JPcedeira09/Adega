@@ -23,8 +23,12 @@ class CarrinhoViewController: UIViewController {
     var UID = ""
     var usuario:Usuario?
 
+    @IBOutlet weak var enderecoNumero: UILabel!
+    
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+//        self.enderecoNumero.text = "\((usuario?.endereco)!), \((usuario?.numero)!)"
         
         self.UID = (usuarioFirebase.currentUser?.uid)!
         
@@ -51,6 +55,7 @@ class CarrinhoViewController: UIViewController {
         ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
             self.countPedidos = Int(snapshot.childrenCount)
         }
+  
     }
     
     /*
@@ -75,21 +80,22 @@ class CarrinhoViewController: UIViewController {
     }
     
     @IBAction func FazerPedidoAction(_ sender: Any) {
+        
+        let pedidoRef = self.ref.child("Adega").child("Pedidos").childByAutoId()
+        let data = self.getCurrentDate()
+
         ref.child("Usuarios").child(UID).child("ValoresPedido").observe(.value) { (snapshot) in
             let dict = snapshot.value as! NSDictionary
             var valores = ValoresPedido(valoresPedidoJSON: dict as! [String : Any])
-           
-            let data = self.getCurrentDate()
             valores.dataPedido = data
-            
-            valores.statusPedido = "Aguardando o Aceite do Restaurante"
-                self.ref.child("Adega").child("Pedidos").child("Pedido\(self.countPedidos+1)").child("ValoresPedido").setValue(valores.toDict(valores))
-           
+            valores.statusPedido = "Aguardando Restaurante"
+            pedidoRef.child("ValoresPedido").setValue(valores.toDict(valores))
         }
+        
         ref.child("Usuarios").child(UID).child("DadosPessoais").observe(.value) { (snapshot) in
             let dict = snapshot.value as! NSDictionary
             let retornoUsuario = Usuario(usuarioJSON: dict as! [String : Any])
-            self.ref.child("Adega").child("Pedidos").child("Pedido\(self.countPedidos+1)").child("DadosCliente").setValue(retornoUsuario.toDict(retornoUsuario))
+            pedidoRef.child("DadosCliente").setValue(retornoUsuario.toDict(retornoUsuario))
         }
         
         for i in 1 ... countItens!{
@@ -97,9 +103,14 @@ class CarrinhoViewController: UIViewController {
         ref.child("Usuarios").child(UID).child("MeusPedidos").child("Produto\(i)").observe(.value) { (snapshot) in
             
             let dict = snapshot.value as! NSDictionary
-            self.ref.child("Adega").child("Pedidos").child("Pedido\(self.countPedidos+1)").child("Itens").child("Item\(i)").setValue(dict)
+            pedidoRef.child("Itens").child("Item\(i)").setValue(dict)
+            self.ref.child("Usuarios").child(self.UID).child("HistoricoPedidos").childByAutoId().child("Itens").child("Item\(i)").setValue(dict)
             }
-        }
+//            ref.child("Usuarios").child(UID).child("MeusPedidos").child("Produto\(i)").removeValue { error, _ in
+//                print(error.)
+//            }
+            }
+
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
         self.present(vc!, animated: true, completion: nil)
         
@@ -199,7 +210,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     }
     
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 //        if editingStyle == .delete {
 //            let groceryItem = items[indexPath.row]

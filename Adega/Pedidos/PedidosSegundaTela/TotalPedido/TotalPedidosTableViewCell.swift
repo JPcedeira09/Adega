@@ -10,6 +10,7 @@ import UIKit
 
 class TotalPedidosTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var total: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

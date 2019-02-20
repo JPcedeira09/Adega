@@ -13,13 +13,15 @@ import FirebaseDatabase
 class PedidosAcompanhamentoViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
-    var countItens:Int?
     var ref:DatabaseReference!
-
+    var pedido:Pedido?
+    @IBOutlet weak var enderecoNumero: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.countItens = 2
+        self.enderecoNumero.text = "\((pedido?.usuario.endereco)!), \((pedido?.usuario.numero)!)"
+        
         self.table.delegate = self
         self.table.dataSource = self
         self.ref = Database.database().reference()
@@ -41,43 +43,54 @@ extension PedidosAcompanhamentoViewController : UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
-        return 4 + countItens!
+        return 4 + (self.pedido?.itensCarrinho.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if(countItens! != 0){
-            for i in 1 ... countItens! {
-                if indexPath.row == i{
-                    let cell = table.dequeueReusableCell(withIdentifier: "ItensCarrinhoTableViewCell") as! ItensCarrinhoTableViewCell
-                    
-                    
-                    return cell
-                }
+        print((self.pedido?.itensCarrinho.count)!)
+        
+        for i in 1...(self.pedido?.itensCarrinho.count)!{
+            print(i)
+            if indexPath.row == i {
+                
+            let cell = table.dequeueReusableCell(withIdentifier: "ItensCarrinhoTableViewCell") as! ItensCarrinhoTableViewCell
+                
+            let indice = indexPath.row - 1
+            let itens = (self.pedido?.itensCarrinho)!
+            let item = itens[indice]
+            cell.quantidadeNome.text = "\(item.qtd) X \(item.nome)"
+            cell.valorTotal.text = "R$ \(item.totalItem)"
+                return cell
             }
         }
+        
         if indexPath.row == 0{
             
             let cell = table.dequeueReusableCell(withIdentifier: "HeaderBasicoTableViewCell") as! HeaderBasicoTableViewCell
             return cell
         
-        }else  if indexPath.row == (countItens! + 1){
+        }else  if indexPath.row == ((self.pedido?.itensCarrinho.count)! + 1){
             
             let cell = table.dequeueReusableCell(withIdentifier: "TotalPedidosTableViewCell") as! TotalPedidosTableViewCell
+            cell.total.text = "R$ \((self.pedido?.valoresPedido.valorTotalProduto)!)"
             return cell
             
-        }else if indexPath.row == (countItens! + 2){
+        }else if indexPath.row == ((self.pedido?.itensCarrinho.count)! + 2){
             
             let cell = table.dequeueReusableCell(withIdentifier: "FormaPagamentoAdegaTableViewCell") as! FormaPagamentoAdegaTableViewCell
             return cell
             
-        }else if indexPath.row == (countItens! + 3){
+        }else if indexPath.row == ((self.pedido?.itensCarrinho.count)! + 3){
             
             let cell = table.dequeueReusableCell(withIdentifier: "StatusPedidosTableViewCell") as! StatusPedidosTableViewCell
             return cell
             
         }else{
-            let cell = table.dequeueReusableCell(withIdentifier: "HeaderCarrinhoTableViewCell") as! HeaderCarrinhoTableViewCell
+            
+            let cell = table.dequeueReusableCell(withIdentifier: "HeaderBasicoTableViewCell") as! HeaderBasicoTableViewCell
+            return cell
+            
             return cell
         }
         

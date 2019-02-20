@@ -21,7 +21,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECq-mc-BH0">
                         <rect key="frame" x="16" y="8.5" width="141.5" height="35"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                         <color key="textColor" red="0.2352643311" green="0.2353112996" blue="0.2352613509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -48,6 +48,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="total" destination="1EK-o1-bhY" id="J9x-7y-ds6"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="156.97151424287858"/>
         </tableViewCell>
     </objects>

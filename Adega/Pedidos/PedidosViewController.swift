@@ -15,6 +15,7 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
     var ref:DatabaseReference!
     var countPedidos = 0
     var pedidos = [Pedido]()
+    var pedido:Pedido?
 
     @IBOutlet weak var table: UITableView!
     @IBAction func SairAction(_ sender: UIBarButtonItem) {
@@ -45,11 +46,27 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
                     
                     var pedidosRetrived = [Pedido]()
+                    var itensRetrived = [ItensCarrinho]()
 
                     for pedido in snapshot.children {
+                        
                         let child = pedido as! DataSnapshot
                         let dict = child.value as! NSDictionary
-                        let pedidoRetriver = Pedido(pedidoJSON: dict as! [String : Any])
+                        print(dict)
+                        var pedidoRetriver = Pedido(pedidoJSON: dict as! [String : Any])
+                        
+                        
+                        let itens = child.childSnapshot(forPath: "Itens")
+                        print(itens)
+                        for x in itens.children{
+                            let y = x as! DataSnapshot
+                            let dict2 = y.value as! NSDictionary
+                            let itemRetriver = ItensCarrinho(itensCarrinhoJSON: dict2 as! [String : Any])
+                            print(itemRetriver)
+                            itensRetrived.append(itemRetriver)
+                        }
+                        
+                        pedidoRetriver.itensCarrinho = itensRetrived
                         pedidosRetrived.append(pedidoRetriver)
                     }
                     
@@ -104,16 +121,19 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
+        let row = indexPath.row
+        let produtoselecionado = pedidos[row]
+        pedido = produtoselecionado
+        print(pedido!)
         performSegue(withIdentifier: "segueDetalhePedido", sender: nil)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if (segue.identifier == "segueDetalhePedido"){
-//            let destination = segue.destination as? PedidosAcompanhamentoViewController
-//            
-//         //   destination!.produto = produto!
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "segueDetalhePedido"){
+            let destination = segue.destination as? PedidosAcompanhamentoViewController
+            destination!.pedido = pedido!
+        }
+    }
     
 }
