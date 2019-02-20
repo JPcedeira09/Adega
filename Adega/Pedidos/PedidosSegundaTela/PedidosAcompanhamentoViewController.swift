@@ -60,7 +60,9 @@ extension PedidosAcompanhamentoViewController : UITableViewDelegate, UITableView
             let itens = (self.pedido?.itensCarrinho)!
             let item = itens[indice]
             cell.quantidadeNome.text = "\(item.qtd) X \(item.nome)"
-            cell.valorTotal.text = "R$ \(item.totalItem)"
+                
+            let valorString = String(format: "%.2f",item.totalItem).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+            cell.valorTotal.text = "R$ \(valorString)"
                 return cell
             }
         }
@@ -71,9 +73,9 @@ extension PedidosAcompanhamentoViewController : UITableViewDelegate, UITableView
             return cell
         
         }else  if indexPath.row == ((self.pedido?.itensCarrinho.count)! + 1){
-            
             let cell = table.dequeueReusableCell(withIdentifier: "TotalPedidosTableViewCell") as! TotalPedidosTableViewCell
-            cell.total.text = "R$ \((self.pedido?.valoresPedido.valorTotalProduto)!)"
+            let valorString = String(format: "%.2f",(self.pedido?.valoresPedido.valorTotalProduto)!).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+            cell.total.text = "R$ \(valorString)"
             return cell
             
         }else if indexPath.row == ((self.pedido?.itensCarrinho.count)! + 2){

@@ -12,76 +12,75 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardapioTableViewCell" rowHeight="116" id="KGk-i7-Jjw" customClass="CardapioTableViewCell" customModule="Adega" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardapioTableViewCell" rowHeight="112" id="KGk-i7-Jjw" customClass="CardapioTableViewCell" customModule="Adega" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="115.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="111.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saco de Carvão" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2T-Z0-y87">
-                        <rect key="frame" x="16" y="0.0" width="186" height="29"/>
+                        <rect key="frame" x="118" y="11" width="141" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="29" id="3Ju-cQ-PZl"/>
+                            <constraint firstAttribute="height" constant="50" id="N8H-gN-QBx"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 26,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mP8-8H-1Hc">
-                        <rect key="frame" x="16" y="88" width="186" height="21"/>
+                        <rect key="frame" x="118" y="61" width="141" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="FQY-bO-eYm"/>
+                            <constraint firstAttribute="height" constant="30" id="gNI-yq-X1a"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                         <color key="textColor" red="0.66522772077927461" green="0.056140971634012098" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Saco de carvão para churrasco" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oZe-eo-yK4">
-                        <rect key="frame" x="16" y="31" width="186" height="55"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons_image_filled" translatesAutoresizingMaskIntoConstraints="NO" id="Emb-7O-v4x">
+                        <rect key="frame" x="16" y="11" width="80" height="90"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="55" id="Um9-2J-B3C"/>
+                            <constraint firstAttribute="width" constant="80" id="6PU-tJ-fWu"/>
+                            <constraint firstAttribute="height" constant="90" id="7fx-eA-0fL"/>
                         </constraints>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carvao_vegetal" translatesAutoresizingMaskIntoConstraints="NO" id="Emb-7O-v4x">
-                        <rect key="frame" x="210" y="11" width="94" height="94"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="add_filled" translatesAutoresizingMaskIntoConstraints="NO" id="9NH-hE-qiZ">
+                        <rect key="frame" x="267" y="32.5" width="37" height="37"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="94" id="7Og-G3-nXo"/>
-                            <constraint firstAttribute="height" constant="94" id="qgR-xU-ctO"/>
+                            <constraint firstAttribute="width" constant="37" id="29g-Uj-kj9"/>
+                            <constraint firstAttribute="height" constant="37" id="SvL-My-9Xn"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Emb-7O-v4x" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="01e-0j-BTP"/>
-                    <constraint firstItem="Emb-7O-v4x" firstAttribute="leading" secondItem="M2T-Z0-y87" secondAttribute="trailing" constant="8" id="1YD-LX-zbx"/>
-                    <constraint firstItem="M2T-Z0-y87" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5FA-So-Tpb"/>
-                    <constraint firstItem="mP8-8H-1Hc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6Pc-9e-wFP"/>
-                    <constraint firstItem="Emb-7O-v4x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Av8-9U-DgD"/>
-                    <constraint firstItem="Emb-7O-v4x" firstAttribute="leading" secondItem="oZe-eo-yK4" secondAttribute="trailing" constant="8" id="DZg-fe-Pfw"/>
-                    <constraint firstItem="oZe-eo-yK4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="IRJ-Z6-Ng0"/>
-                    <constraint firstItem="Emb-7O-v4x" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Jjj-fT-3fV"/>
-                    <constraint firstAttribute="bottom" secondItem="mP8-8H-1Hc" secondAttribute="bottom" id="KsZ-lV-hTJ"/>
-                    <constraint firstItem="oZe-eo-yK4" firstAttribute="top" secondItem="M2T-Z0-y87" secondAttribute="bottom" constant="2" id="KuR-l4-VOL"/>
-                    <constraint firstItem="Emb-7O-v4x" firstAttribute="leading" secondItem="mP8-8H-1Hc" secondAttribute="trailing" constant="8" id="eeq-B5-3tW"/>
-                    <constraint firstItem="M2T-Z0-y87" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="mlB-a2-Sgw"/>
-                    <constraint firstItem="mP8-8H-1Hc" firstAttribute="top" secondItem="oZe-eo-yK4" secondAttribute="bottom" constant="2" id="zJs-Gt-AKd"/>
+                    <constraint firstItem="mP8-8H-1Hc" firstAttribute="bottom" secondItem="Emb-7O-v4x" secondAttribute="bottom" constant="-10" id="0ha-vu-LgW"/>
+                    <constraint firstItem="M2T-Z0-y87" firstAttribute="top" secondItem="Emb-7O-v4x" secondAttribute="top" id="2Bh-9L-0XV"/>
+                    <constraint firstItem="mP8-8H-1Hc" firstAttribute="leading" secondItem="Emb-7O-v4x" secondAttribute="trailing" constant="22" id="54r-ni-9QT"/>
+                    <constraint firstItem="M2T-Z0-y87" firstAttribute="leading" secondItem="Emb-7O-v4x" secondAttribute="trailing" constant="22" id="BnN-7b-ULF"/>
+                    <constraint firstItem="mP8-8H-1Hc" firstAttribute="top" secondItem="M2T-Z0-y87" secondAttribute="bottom" id="G3A-iu-kkY"/>
+                    <constraint firstItem="9NH-hE-qiZ" firstAttribute="leading" secondItem="M2T-Z0-y87" secondAttribute="trailing" constant="8" id="KGY-DM-5F2"/>
+                    <constraint firstItem="mP8-8H-1Hc" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="YqG-bQ-iPb"/>
+                    <constraint firstItem="Emb-7O-v4x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="azw-42-LRg"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Emb-7O-v4x" secondAttribute="bottom" id="ffD-FQ-UI0"/>
+                    <constraint firstItem="M2T-Z0-y87" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="gHc-wH-fgK"/>
+                    <constraint firstItem="9NH-hE-qiZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kpc-XW-1Bb"/>
+                    <constraint firstItem="9NH-hE-qiZ" firstAttribute="leading" secondItem="mP8-8H-1Hc" secondAttribute="trailing" constant="8" id="lta-vc-UNT"/>
+                    <constraint firstItem="Emb-7O-v4x" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mJU-wW-6aa"/>
+                    <constraint firstItem="Emb-7O-v4x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="nBR-ZK-rLj"/>
+                    <constraint firstItem="9NH-hE-qiZ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="vRm-c7-okx"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="descricao" destination="oZe-eo-yK4" id="iXo-r3-Jm6"/>
-                <outlet property="imagem" destination="Emb-7O-v4x" id="Q1r-6O-6NK"/>
-                <outlet property="nome_produto" destination="M2T-Z0-y87" id="oRb-GL-X5A"/>
-                <outlet property="valor" destination="mP8-8H-1Hc" id="rv2-PO-GAA"/>
+                <outlet property="imagem" destination="Emb-7O-v4x" id="suM-9k-mFk"/>
+                <outlet property="nome_produto" destination="M2T-Z0-y87" id="oBb-jy-gZ3"/>
+                <outlet property="valor" destination="mP8-8H-1Hc" id="rsU-Aj-bVA"/>
             </connections>
-            <point key="canvasLocation" x="137.59999999999999" y="186.20689655172416"/>
+            <point key="canvasLocation" x="137.59999999999999" y="184.40779610194903"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="carvao_vegetal" width="675" height="1200"/>
+        <image name="add_filled" width="75" height="75"/>
+        <image name="icons_image_filled" width="75" height="75"/>
     </resources>
 </document>

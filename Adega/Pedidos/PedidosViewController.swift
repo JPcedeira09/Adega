@@ -107,15 +107,17 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = table.dequeueReusableCell(withIdentifier: "PedidosAdegaTableViewCell") as! PedidosAdegaTableViewCell
         
-        var pedido = pedidos[indexPath.row]
+        let pedido = pedidos[indexPath.row]
 
         cell.distanciaEntrega.text = "3,5 Km"
         cell.timerPedido.text = pedido.valoresPedido.dataPedido
         cell.nomeEnumeroPedido.text = "#00\(indexPath.row+1) - \(pedido.usuario.nome)"
-        cell.valorTotal.text = "\(pedido.valoresPedido.valorTotalProduto)"
+        
+                let valorString = String(format: "%.2f",pedido.valoresPedido.valorTotalProduto).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+        
+        cell.valorTotal.text = "R$ \(valorString)"
         cell.statusPedido.text = pedido.valoresPedido.statusPedido
-        //adega.house@gmail.com
-        //adega123
+
         return cell
     }
     

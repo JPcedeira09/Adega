@@ -11,7 +11,6 @@ import UIKit
 class CardapioTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nome_produto: UILabel!
-    @IBOutlet weak var descricao: UITextView!
     @IBOutlet weak var valor: UILabel!
     @IBOutlet weak var imagem: UIImageView!
     
