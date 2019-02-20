@@ -45,6 +45,10 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
 
                 self.ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
                     
+                    print("-----------------------------")
+                    print(snapshot)
+                    print("-----------------------------")
+
                     var pedidosRetrived = [Pedido]()
                     var itensRetrived = [ItensCarrinho]()
 
@@ -54,7 +58,6 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
                         let dict = child.value as! NSDictionary
                         print(dict)
                         var pedidoRetriver = Pedido(pedidoJSON: dict as! [String : Any])
-                        
                         
                         let itens = child.childSnapshot(forPath: "Itens")
                         print(itens)
@@ -75,26 +78,7 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
                     
                 }
         
-//        ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
-//            let count = Int(snapshot.childrenCount)
-//            print(count)
-//            var pedidosRetrived = [Pedido]()
-//            for i in 1...count{
-//                print("Pedido\(i)")
-//
-//                self.ref.child("Adega").child("Pedidos").child("Pedido\(i)").observe(.value) { (snapshot) in
-//                    let child = snapshot as! DataSnapshot
-//                    let dict = child.value as! NSDictionary
-//                    let pedido = Pedido(pedidoJSON: dict as! [String : Any])
-//
-//                    pedidosRetrived.append(pedido)
-//                    self.pedidos = pedidosRetrived
-//                    self.table.reloadData()
-//
-//                }
-//            }
-//            self.table.reloadData()
-//        }
+
         
     }
     

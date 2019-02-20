@@ -18,6 +18,9 @@
 		6C039C9721E7CB15004696F7 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C039C9521E7CB15004696F7 /* HeaderTableViewCell.swift */; };
 		6C039C9821E7CB15004696F7 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C039C9621E7CB15004696F7 /* HeaderTableViewCell.xib */; };
 		6C109678221C42EA00F5B554 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C109677221C42EA00F5B554 /* GoogleService-Info.plist */; };
+		6C193B22221DB746000AB850 /* MeusDadosDonoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C193B21221DB746000AB850 /* MeusDadosDonoViewController.swift */; };
+		6C193B24221DD09F000AB850 /* MBSobreOAppViewController - cópia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C193B23221DD09E000AB850 /* MBSobreOAppViewController - cópia.swift */; };
+		6C193B26221DD112000AB850 /* MBContactViewcontroller - cópia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C193B25221DD112000AB850 /* MBContactViewcontroller - cópia.swift */; };
 		6C3D4D84221509FA00A61C42 /* MenuDonoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D4D83221509FA00A61C42 /* MenuDonoViewController.swift */; };
 		6C44A17321E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44A17121E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift */; };
 		6C44A17421E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C44A17221E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib */; };
@@ -102,6 +105,9 @@
 		6C039C9521E7CB15004696F7 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6C039C9621E7CB15004696F7 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		6C109677221C42EA00F5B554 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6C193B21221DB746000AB850 /* MeusDadosDonoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusDadosDonoViewController.swift; sourceTree = "<group>"; };
+		6C193B23221DD09E000AB850 /* MBSobreOAppViewController - cópia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MBSobreOAppViewController - cópia.swift"; sourceTree = "<group>"; };
+		6C193B25221DD112000AB850 /* MBContactViewcontroller - cópia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MBContactViewcontroller - cópia.swift"; sourceTree = "<group>"; };
 		6C3D4D83221509FA00A61C42 /* MenuDonoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDonoViewController.swift; sourceTree = "<group>"; };
 		6C44A17121E3B4D0008ED84A /* PedidoDetalheTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoDetalheTableViewCell.swift; sourceTree = "<group>"; };
 		6C44A17221E3B4D0008ED84A /* PedidoDetalheTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PedidoDetalheTableViewCell.xib; sourceTree = "<group>"; };
@@ -236,6 +242,42 @@
 			path = PagamentoHeader;
 			sourceTree = "<group>";
 		};
+		6C193B1E221DB6B2000AB850 /* Dono */ = {
+			isa = PBXGroup;
+			children = (
+				6C193B20221DB725000AB850 /* MeusDadosDono */,
+				6C44A16C21E3B2E3008ED84A /* Pedidos Detalhe */,
+				6C8B68A621DE8972001AEFE9 /* Meu Cardapio */,
+				6C8B68A521DE8969001AEFE9 /* Pedidos */,
+				6CDB5C2F21E63F0900D4CE1F /* CadastrarProdutos */,
+				6C94E88121F0C49500333A4A /* EstoqueControle */,
+				6CF36D712213570F0041AEE9 /* MenuDono */,
+			);
+			path = Dono;
+			sourceTree = "<group>";
+		};
+		6C193B1F221DB6BD000AB850 /* Cliente */ = {
+			isa = PBXGroup;
+			children = (
+				6C8B68A721DE897F001AEFE9 /* Cardapio */,
+				6C44A17721E3C85E008ED84A /* Carrinho */,
+				6C7DFFD821E51A3E00C24596 /* CadastrarUsuario */,
+				6CB11B9221E9091F0096860D /* ProdutoSeleciona */,
+				6C62B22021FF29410050122E /* MeusDadosCliente */,
+				6CF36D70221357080041AEE9 /* MenuCliente */,
+				6C4833B1221D0C45009EE31F /* Termos de Uso */,
+			);
+			path = Cliente;
+			sourceTree = "<group>";
+		};
+		6C193B20221DB725000AB850 /* MeusDadosDono */ = {
+			isa = PBXGroup;
+			children = (
+				6C193B21221DB746000AB850 /* MeusDadosDonoViewController.swift */,
+			);
+			path = MeusDadosDono;
+			sourceTree = "<group>";
+		};
 		6C44A16C21E3B2E3008ED84A /* Pedidos Detalhe */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,12 +334,12 @@
 			path = "Termos de Uso";
 			sourceTree = "<group>";
 		};
-		6C62B22021FF29410050122E /* MeusDados */ = {
+		6C62B22021FF29410050122E /* MeusDadosCliente */ = {
 			isa = PBXGroup;
 			children = (
 				6C62B22121FF295C0050122E /* MeusDadosViewController.swift */,
 			);
-			path = MeusDados;
+			path = MeusDadosCliente;
 			sourceTree = "<group>";
 		};
 		6C62B22321FF307E0050122E /* pagamento new */ = {
@@ -444,22 +486,13 @@
 		6CB700C021DD308B00CF0429 /* Adega */ = {
 			isa = PBXGroup;
 			children = (
-				6C4833B1221D0C45009EE31F /* Termos de Uso */,
-				6CF36D712213570F0041AEE9 /* MenuDono */,
-				6CF36D70221357080041AEE9 /* MenuCliente */,
-				6C62B22021FF29410050122E /* MeusDados */,
-				6C94E88121F0C49500333A4A /* EstoqueControle */,
-				6CB11B9221E9091F0096860D /* ProdutoSeleciona */,
+				6C193B1F221DB6BD000AB850 /* Cliente */,
+				6C193B1E221DB6B2000AB850 /* Dono */,
 				6CF537C921E652AF006DF1F0 /* Models */,
-				6CDB5C2F21E63F0900D4CE1F /* CadastrarProdutos */,
-				6C7DFFD821E51A3E00C24596 /* CadastrarUsuario */,
 				6C44A17C21E3C8AA008ED84A /* Inicial */,
-				6C44A17721E3C85E008ED84A /* Carrinho */,
-				6C44A16C21E3B2E3008ED84A /* Pedidos Detalhe */,
-				6C8B68A721DE897F001AEFE9 /* Cardapio */,
-				6C8B68A621DE8972001AEFE9 /* Meu Cardapio */,
-				6C8B68A521DE8969001AEFE9 /* Pedidos */,
 				6CB700C121DD308B00CF0429 /* AppDelegate.swift */,
+				6C193B23221DD09E000AB850 /* MBSobreOAppViewController - cópia.swift */,
+				6C193B25221DD112000AB850 /* MBContactViewcontroller - cópia.swift */,
 				6CB700C321DD308B00CF0429 /* ViewController.swift */,
 				6CB700C521DD308B00CF0429 /* Main.storyboard */,
 				6CB700CB21DD308D00CF0429 /* Assets.xcassets */,
@@ -862,6 +895,7 @@
 				6C79EFE721F2540A0018DC13 /* PedidosAdegaTableViewCell.swift in Sources */,
 				6C62B22621FF30980050122E /* TotaisPagamentoTableViewCell.swift in Sources */,
 				6C8B68AB21DED322001AEFE9 /* MeuCardapioViewController.swift in Sources */,
+				6C193B24221DD09F000AB850 /* MBSobreOAppViewController - cópia.swift in Sources */,
 				6C59A0C821ECC8A700D1FB00 /* Usuario.swift in Sources */,
 				6C44A17921E3C86C008ED84A /* CarrinhoViewController.swift in Sources */,
 				6C49900021EE6A49009919C2 /* Pedido.swift in Sources */,
@@ -872,6 +906,7 @@
 				6C79EFEC21F263E00018DC13 /* FormaPagamentoAdegaTableViewCell.swift in Sources */,
 				6C59A0CA21ECDB2C00D1FB00 /* CadastroInfoViewController.swift in Sources */,
 				6C72CEB521E8E44000463107 /* HeaderCarrinhoTableViewCell.swift in Sources */,
+				6C193B26221DD112000AB850 /* MBContactViewcontroller - cópia.swift in Sources */,
 				6CB700C421DD308B00CF0429 /* ViewController.swift in Sources */,
 				6CF537CB21E652D5006DF1F0 /* Produto.swift in Sources */,
 				6C039C8C21E7B33E004696F7 /* AdicionarMaisTableViewCell.swift in Sources */,
@@ -884,6 +919,7 @@
 				6C8B68AD21DED33A001AEFE9 /* PedidosViewController.swift in Sources */,
 				6CB700C221DD308B00CF0429 /* AppDelegate.swift in Sources */,
 				6CB700CA21DD308B00CF0429 /* Adega.xcdatamodeld in Sources */,
+				6C193B22221DB746000AB850 /* MeusDadosDonoViewController.swift in Sources */,
 				6C039C7D21E7A64F004696F7 /* ItensCarrinhoTableViewCell.swift in Sources */,
 				6CB7010421DE6F3800CF0429 /* MeuCardapioTableViewCell.swift in Sources */,
 			);
@@ -1062,7 +1098,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UEJNTPTGX4;
+				DEVELOPMENT_TEAM = C4U6BT3YBD;
 				INFOPLIST_FILE = Adega/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1081,7 +1117,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UEJNTPTGX4;
+				DEVELOPMENT_TEAM = C4U6BT3YBD;
 				INFOPLIST_FILE = Adega/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
