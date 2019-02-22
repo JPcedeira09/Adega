@@ -33,8 +33,9 @@ class CardapioViewController: UIViewController {
             
             if(Int(snapshot.childrenCount) > 0 || (self.countItens)! > 0){
                 print("--------------- O COUNT É:\(snapshot.childrenCount)---------------")
-                CircularSpinner.hide()
                 self.performSegue(withIdentifier: "carrinho", sender: nil)
+                CircularSpinner.hide()
+
             }else{
                 CircularSpinner.hide()
                 self.alertSimples(title:"Carrinho Vazio",msg: "Escolha algum produto e adicione ele ao seu carrinho.")

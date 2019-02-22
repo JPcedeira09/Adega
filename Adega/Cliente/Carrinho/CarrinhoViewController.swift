@@ -84,6 +84,9 @@ class CarrinhoViewController: UIViewController {
         let pedidoRef = self.ref.child("Adega").child("Pedidos").childByAutoId()
         let data = self.getCurrentDate()
 
+
+
+        
         ref.child("Usuarios").child(UID).child("ValoresPedido").observe(.value) { (snapshot) in
             let dict = snapshot.value as! NSDictionary
             var valores = ValoresPedido(valoresPedidoJSON: dict as! [String : Any])
@@ -106,6 +109,8 @@ class CarrinhoViewController: UIViewController {
             pedidoRef.child("Itens").child("Item\(i)").setValue(dict)
             self.ref.child("Usuarios").child(self.UID).child("HistoricoPedidos").childByAutoId().child("Itens").child("Item\(i)").setValue(dict)
             }
+        let pedidoKey = pedidoRef.key
+            pedidoRef.setValue(["key":pedidoKey])
 //            ref.child("Usuarios").child(UID).child("MeusPedidos").child("Produto\(i)").removeValue { error, _ in
 //                print(error.)
 //            }

@@ -13,7 +13,9 @@ import FirebaseDatabase
 class ProdutosSelecionaViewController: UIViewController {
 
     var item:ItensCarrinho?
+    
     var produto:Produto?
+    
     var usuario:Usuario?
     var ref: DatabaseReference!
     var usuarioFirebase = Auth.auth()
@@ -72,6 +74,7 @@ class ProdutosSelecionaViewController: UIViewController {
 //        let pedido = Pedido(nomeProduto: (produto?.nome)!, quantidadeProduto: Int(self.quantidadePedido.text!)!, valorTotalProduto: Double((self.produto?.valor)! * qtd), usuarioComprador: (usuario?.toDict(usuario!))!)
         
         let valorTotalItem = ((self.produto?.valor)! * qtd)
+        
         let item = ItensCarrinho(qtd: Int(self.quantidadePedido.text!)!, nome: (produto?.nome)!, totalItem: Double(valorTotalItem))
         
         let user = (Auth.auth().currentUser)!
@@ -95,7 +98,7 @@ class ProdutosSelecionaViewController: UIViewController {
     }
     
     @IBAction func reduzirUm(_ sender: Any) {
-        if(Int(self.quantidadePedido.text!)! > 1 ){
+        if(Int(self.quantidadePedido.text!)! >= 1 ){
             self.quantidadePedido.text = "\(Int(self.quantidadePedido.text!)!-1)"
             atualizaValorTotal()
         }

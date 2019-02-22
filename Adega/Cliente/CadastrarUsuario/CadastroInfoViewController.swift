@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CadastroInfoViewController: UIViewController {
+class CadastroInfoViewController: UIViewController{
 
     var usuario:Usuario?
     
@@ -26,8 +26,9 @@ class CadastroInfoViewController: UIViewController {
         
         proximoBtn.layer.cornerRadius = 4
         usuario = Usuario(email: "", nome: "", cpf: "", cep: "", endereco: "", numero: "", complemento: "", celular: "")
-   
     }
+    
+
     
     @IBAction func ProximoAction(_ sender: Any) {
         if(validadeTxtField(txtField: self.nome, msg: "Você esqueceu de digitar seu nome!") == true
@@ -73,7 +74,54 @@ class CadastroInfoViewController: UIViewController {
             let destination = segue.destination as? CadastrarViewController
             
             destination!.usuario = self.usuario!
+        }
+    }
+}
+
+extension CadastroInfoViewController : UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        if(endereco.text != ""){
             
         }
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        nome.resignFirstResponder()
+        cpf.resignFirstResponder()
+        cep.resignFirstResponder()
+        endereco.resignFirstResponder()
+        numero.resignFirstResponder()
+        complemento.resignFirstResponder()
+        celular.resignFirstResponder()
+
+        return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text as NSString).rangeOfCharacter(from: CharacterSet.newlines).location == NSNotFound {
+            return true
+        }
+        
+        nome.resignFirstResponder()
+        cpf.resignFirstResponder()
+        cep.resignFirstResponder()
+        endereco.resignFirstResponder()
+        numero.resignFirstResponder()
+        complemento.resignFirstResponder()
+        celular.resignFirstResponder()
+
+        return false
+    }
+    
+    override var canBecomeFirstResponder: Bool{
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.becomeFirstResponder()
+    }
+    
 }
