@@ -8,17 +8,24 @@
 
 import UIKit
 import Firebase
+import CircularSpinner
+import GoogleSignIn
 
-class InicialViewController: UIViewController,UITextFieldDelegate {
+class InicialViewController: UIViewController,UITextFieldDelegate{
 
+    //, GIDSignInUIDelegate
+    
     @IBOutlet weak var entrabtn: UIButton!
     @IBOutlet weak var cadastrabtn: UIButton!
+    @IBOutlet weak var facebookbtn: UIButton!
+    @IBOutlet weak var googlebtn: UIButton!
     
     @IBOutlet weak var email: UITextField!
     
     @IBOutlet weak var senha: UITextField!
  
     @IBAction func loginAction(_ sender: AnyObject) {
+        CircularSpinner.show("Entrando...", animated: true, type: .indeterminate)
         
         if self.email.text == "" || self.senha.text == "" {
             
@@ -27,6 +34,7 @@ class InicialViewController: UIViewController,UITextFieldDelegate {
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
+            CircularSpinner.hide()
             self.present(alertController, animated: true, completion: nil)
             
         }else if self.email.text == "adega.house@gmail.com" || self.senha.text == "adega123"{
@@ -37,6 +45,8 @@ class InicialViewController: UIViewController,UITextFieldDelegate {
                     
                     print("O Dono da Adega foi logado com sucesso.")
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeDono")
+                    
+                    CircularSpinner.hide()
                     self.present(vc!, animated: true, completion: nil)
                     
                 } else {
@@ -47,6 +57,7 @@ class InicialViewController: UIViewController,UITextFieldDelegate {
                     alertController.addAction(defaultAction)
                     
                     self.present(alertController, animated: true, completion: nil)
+                    CircularSpinner.hide()
                 }
             }
             
@@ -56,6 +67,7 @@ class InicialViewController: UIViewController,UITextFieldDelegate {
                 if error == nil {
                   
                     print("Voce foi logado com sucesso.")
+                    CircularSpinner.hide()
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
                     self.present(vc!, animated: true, completion: nil)
                     
@@ -67,6 +79,7 @@ class InicialViewController: UIViewController,UITextFieldDelegate {
                     alertController.addAction(defaultAction)
                     
                     self.present(alertController, animated: true, completion: nil)
+                    CircularSpinner.hide()
                 }
             }
         }
@@ -76,13 +89,31 @@ class InicialViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         entrabtn.layer.cornerRadius = 4
         cadastrabtn.layer.cornerRadius = 4
-
+        facebookbtn.layer.cornerRadius = 4
+        googlebtn.layer.cornerRadius = 4
+        
         self.email.delegate = self
         self.senha.delegate = self
+        
+//        GIDSignIn.sharedInstance().uiDelegate = self
+//        GIDSignIn.sharedInstance().signIn()
         
         NotificationCenter.default.addObserver(self, selector: #selector(InicialViewController.keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
         
         NotificationCenter.default.addObserver(self, selector: #selector(InicialViewController.keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
+        
+        let data = self.getCurrentDate()
+        print("DATA LOCAL:\(data)")
+    }
+    
+    func getCurrentDate() -> String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let date = Date()
+        
+        let dataFormatada = dateFormatterGet.string(from: date)
+        return dataFormatada
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

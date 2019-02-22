@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TotaisPagamentoTableViewCell" rowHeight="109" id="KGk-i7-Jjw" customClass="TotaisPagamentoTableViewCell" customModule="Adega" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="108.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taxa de entrega" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIc-Ic-u7R">
+                        <rect key="frame" x="16" y="11" width="141.5" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="efX-z2-rzM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" red="0.2352643311" green="0.2353112996" blue="0.2352613509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BT-5h-ZzB">
+                        <rect key="frame" x="16" y="53" width="141.5" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="YgG-HE-0JA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grátis" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abf-XK-caJ">
+                        <rect key="frame" x="162.5" y="11" width="141.5" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="zYE-Ig-McC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" red="0.20902363700000001" green="0.70556531789999999" blue="0.019794382959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 50,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7X-bJ-6vm">
+                        <rect key="frame" x="162.5" y="53" width="141.5" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="QZi-4d-QJg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" red="0.86362701649999996" green="0.32150477170000002" blue="0.27715787289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3BT-5h-ZzB" firstAttribute="width" secondItem="O7X-bJ-6vm" secondAttribute="width" id="2Kn-Ah-Xjm"/>
+                    <constraint firstItem="O7X-bJ-6vm" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="6Pj-RT-Rr5"/>
+                    <constraint firstItem="O7X-bJ-6vm" firstAttribute="leading" secondItem="3BT-5h-ZzB" secondAttribute="trailing" constant="5" id="7Wd-jK-b27"/>
+                    <constraint firstItem="3BT-5h-ZzB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="8rm-Gh-T2u"/>
+                    <constraint firstItem="FIc-Ic-u7R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DjM-rO-UZV"/>
+                    <constraint firstItem="3BT-5h-ZzB" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Fo5-Y3-9vm"/>
+                    <constraint firstItem="Abf-XK-caJ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ayA-42-Y6Z"/>
+                    <constraint firstItem="3BT-5h-ZzB" firstAttribute="top" secondItem="FIc-Ic-u7R" secondAttribute="bottom" constant="7" id="f8o-fN-f9T"/>
+                    <constraint firstItem="Abf-XK-caJ" firstAttribute="centerY" secondItem="FIc-Ic-u7R" secondAttribute="centerY" id="ifs-f5-pxE"/>
+                    <constraint firstItem="FIc-Ic-u7R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="pNV-Oj-B6n"/>
+                    <constraint firstItem="O7X-bJ-6vm" firstAttribute="centerY" secondItem="3BT-5h-ZzB" secondAttribute="centerY" id="qEf-F1-GMN"/>
+                    <constraint firstItem="O7X-bJ-6vm" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="r5A-lD-7ps"/>
+                    <constraint firstItem="Abf-XK-caJ" firstAttribute="width" secondItem="FIc-Ic-u7R" secondAttribute="width" id="rPU-1N-fut"/>
+                    <constraint firstItem="Abf-XK-caJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="rqz-j5-shI"/>
+                    <constraint firstItem="Abf-XK-caJ" firstAttribute="leading" secondItem="FIc-Ic-u7R" secondAttribute="trailing" constant="5" id="xGg-uz-x22"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="total" destination="O7X-bJ-6vm" id="jhN-H1-YsS"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="172.26386806596702"/>
+        </tableViewCell>
+    </objects>
+</document>

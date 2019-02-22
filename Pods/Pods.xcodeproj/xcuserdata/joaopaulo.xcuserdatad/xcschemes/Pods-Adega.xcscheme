@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE6ED649935FBBEE8F4FE5CB38784171"
+               BlueprintIdentifier = "697BCB4F5786E8971802EC91552851F3"
                BuildableName = "Pods_Adega.framework"
                BlueprintName = "Pods-Adega"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FE6ED649935FBBEE8F4FE5CB38784171"
+            BlueprintIdentifier = "697BCB4F5786E8971802EC91552851F3"
             BuildableName = "Pods_Adega.framework"
             BlueprintName = "Pods-Adega"
             ReferencedContainer = "container:Pods.xcodeproj">
