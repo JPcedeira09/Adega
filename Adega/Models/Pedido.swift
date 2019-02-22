@@ -26,7 +26,7 @@ struct Pedido {
         
         return ["ValoresPedido":pedido.valoresPedido,
                 "DadosCliente":pedido.usuario,
-                "Itens":  pedido.itensCarrinho      ]
+                "Itens":pedido.itensCarrinho      ]
     }
     
     init( pedidoJSON : [String : Any]) {

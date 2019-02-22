@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.0)
+  - CircularSpinner (1.2.0)
   - Firebase/Auth (5.15.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.2.0)
@@ -117,11 +118,13 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
+  - ReachabilitySwift (3)
   - Result (4.1.0)
   - SideMenu (5.0.3)
 
 DEPENDENCIES:
   - Alamofire
+  - CircularSpinner
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -130,11 +133,13 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleSignIn
   - Moya
+  - ReachabilitySwift (~> 3)
   - SideMenu (~> 5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - CircularSpinner
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -156,11 +161,13 @@ SPEC REPOS:
     - Moya
     - nanopb
     - Protobuf
+    - ReachabilitySwift
     - Result
     - SideMenu
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  CircularSpinner: 80b8ee3eda59b66d20631d4ca7c7c83720931739
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseABTesting: 1f50b8d50f5e3469eea54e7463a7b7fe221d1f5e
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
@@ -182,9 +189,10 @@ SPEC CHECKSUMS:
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
 
-PODFILE CHECKSUM: aa2abfc5ea9d06d84c5e10671d2e7969a3434d29
+PODFILE CHECKSUM: ff4bff4e373a9bf99b4d531581cda331400e9695
 
 COCOAPODS: 1.5.3

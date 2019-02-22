@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import CircularSpinner
 
 class CardapioViewController: UIViewController {
 
@@ -23,7 +24,8 @@ class CardapioViewController: UIViewController {
     @IBOutlet weak var table: UITableView!
     
     @IBAction func segueCarrinho(_ sender: Any) {
-        
+        CircularSpinner.show("Carregando o carrinho...", animated: true, type: .indeterminate)
+
         let uid = (usuarioFirebase.currentUser?.uid)!
         self.ref = Database.database().reference()
         
@@ -31,13 +33,15 @@ class CardapioViewController: UIViewController {
             
             if(Int(snapshot.childrenCount) > 0 || (self.countItens)! > 0){
                 print("--------------- O COUNT É:\(snapshot.childrenCount)---------------")
+                CircularSpinner.hide()
                 self.performSegue(withIdentifier: "carrinho", sender: nil)
-            
             }else{
+                CircularSpinner.hide()
                 self.alertSimples(title:"Carrinho Vazio",msg: "Escolha algum produto e adicione ele ao seu carrinho.")
             }
         }
     }
+    
     
     func alertSimples(title:String , msg:String){
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
@@ -52,47 +56,57 @@ class CardapioViewController: UIViewController {
         self.table.dataSource = self
         self.table.delegate = self
         
+        
         self.table.register(UINib(nibName: "CardapioTableViewCell", bundle: nil), forCellReuseIdentifier: "CardapioTableViewCell")
         
-        self.ref = Database.database().reference()
-        
-        ref.child("Adega").child("Produtos").observe(.value) { (snapshot) in
-            var produtosRetrived = [Produto]()
-            
-            for item in snapshot.children {
-                let child = item as! DataSnapshot
-                let dict = child.value as! NSDictionary
-                let produto = Produto(produtoJSON: dict as! [String : Any])
-                if(produto.disponivel == true){
-                    produtosRetrived.append(produto)
-                }
-            }
-            self.produtos = produtosRetrived
-            self.table.reloadData()
-        }
-        
-        let uid = (usuarioFirebase.currentUser?.uid)!
-        ref.child("Usuarios").child(uid).child("DadosPessoais").observe(.value) { (snapshot) in
-            let dict = snapshot.value as! NSDictionary
-            let retornoUsuario = Usuario(usuarioJSON: dict as! [String : Any])
-            print("Usuario que Retornou do Firebase:\(retornoUsuario)")
-            self.usuario = retornoUsuario
-        }
-        
-        print("Usuario Logado é:\(self.usuario)")
-        ref.child("Usuarios").child(uid).child("MeusPedidos").observe(.value) { (snapshot) in
-            
-            print(snapshot.children)
-            print("Count children =\(snapshot.childrenCount)")
-            if(Int(snapshot.childrenCount) == 0){
-                self.countItens = 0
-            }else{
-                self.countItens = Int(snapshot.childrenCount)
-            }
-            print("countItens:\(self.countItens)")
-        }
+        loadInfoFromFirebase()
+
     }
     
+    func loadInfoFromFirebase(){
+        self.ref = Database.database().reference()
+
+        do {
+     
+        CircularSpinner.show("Carregando o cardápio...", animated: true, type: .indeterminate)
+
+               try ref.child("Adega").child("Produtos").observe(.value) { (snapshot) in
+                    var produtosRetrived = [Produto]()
+                
+                    for item in snapshot.children {
+                        let child = item as! DataSnapshot
+                        let dict = child.value as! NSDictionary
+                        let produto = Produto(produtoJSON: dict as! [String : Any])
+                        if(produto.disponivel == true){
+                            produtosRetrived.append(produto)
+                        }
+                    }
+                    self.produtos = produtosRetrived
+                    self.table.reloadData()
+                }
+            
+                let uid = (usuarioFirebase.currentUser?.uid)!
+                ref.child("Usuarios").child(uid).child("DadosPessoais").observe(.value) { (snapshot) in
+                    let dict = snapshot.value as! NSDictionary
+                    let retornoUsuario = Usuario(usuarioJSON: dict as! [String : Any])
+                    self.usuario = retornoUsuario
+                }
+            
+                ref.child("Usuarios").child(uid).child("MeusPedidos").observe(.value) { (snapshot) in
+                    
+                    print(snapshot.children)
+                    print("Count children =\(snapshot.childrenCount)")
+                    if(Int(snapshot.childrenCount) == 0){
+                        self.countItens = 0
+                    }else{
+                        self.countItens = Int(snapshot.childrenCount)
+                    }
+                }
+                CircularSpinner.hide()
+        } catch  {
+                CircularSpinner.hide()
+            }
+        }
 }
 
 extension CardapioViewController : UITableViewDelegate, UITableViewDataSource{

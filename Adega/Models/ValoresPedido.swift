@@ -28,7 +28,7 @@ struct ValoresPedido {
             "valorTotalProduto":valoresPedido.valorTotalProduto,
             "dataPedido":valoresPedido.dataPedido,
             "statusPedido":valoresPedido.statusPedido,
-            "pedidoAceite":valoresPedido.pedidoAceite,
+            "pedidoAceite":valoresPedido.pedidoAceite
         ]
     }
     

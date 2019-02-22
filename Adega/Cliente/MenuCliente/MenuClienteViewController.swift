@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import CircularSpinner
 
 class MenuClienteViewController: UIViewController {
 
@@ -21,11 +22,14 @@ class MenuClienteViewController: UIViewController {
     }
     
     func alertSair(){
+        
         let alertController = UIAlertController(title: "Logout", message: "Tem certeza que deseja sair?", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "Não", style: .cancel, handler: nil)
         let sairAction = UIAlertAction(title: "Sair", style: .default) { (UIAlertAction) in
             if Auth.auth().currentUser != nil {
                 do {
+                    CircularSpinner.show("Saindo do aplicativo...", animated: true, type: .indeterminate)
+
                     try Auth.auth().signOut()
                     let domain = Bundle.main.bundleIdentifier!
                     UserDefaults.standard.removePersistentDomain(forName: domain)
@@ -36,8 +40,10 @@ class MenuClienteViewController: UIViewController {
                         
                         appDel.window?.rootViewController = rootController
                     }
+                    CircularSpinner.hide()
                 } catch let error as NSError {
                     print(error.localizedDescription)
+                    CircularSpinner.hide()
                 }
             }
         }
