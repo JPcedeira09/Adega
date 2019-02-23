@@ -122,7 +122,7 @@ extension PedidosAcompanhamentoViewController : UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
-        return 4 + (self.pedido?.itensCarrinho.count)!
+        return 3 + (self.pedido?.itensCarrinho.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

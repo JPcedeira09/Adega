@@ -20,6 +20,7 @@
 		6C055102221F463700DDC252 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C055101221F463700DDC252 /* MapKit.framework */; };
 		6C055105221F898600DDC252 /* DadosAdega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C055104221F898600DDC252 /* DadosAdega.swift */; };
 		6C109678221C42EA00F5B554 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C109677221C42EA00F5B554 /* GoogleService-Info.plist */; };
+		6C1520812221C364004E6E08 /* PagamentoPagSeguro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1520802221C364004E6E08 /* PagamentoPagSeguro.swift */; };
 		6C193B22221DB746000AB850 /* MeusDadosDonoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C193B21221DB746000AB850 /* MeusDadosDonoViewController.swift */; };
 		6C193B26221DD112000AB850 /* MBContactViewcontroller - cópia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C193B25221DD112000AB850 /* MBContactViewcontroller - cópia.swift */; };
 		6C193B2A221DF393000AB850 /* SobreOAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C193B29221DF393000AB850 /* SobreOAppViewController.swift */; };
@@ -116,6 +117,8 @@
 		6C055103221F478A00DDC252 /* Adega-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Adega-Bridging-Header.h"; sourceTree = "<group>"; };
 		6C055104221F898600DDC252 /* DadosAdega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosAdega.swift; sourceTree = "<group>"; };
 		6C109677221C42EA00F5B554 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6C15207F2221BFA3004E6E08 /* Adega-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Adega-Bridging-Header.h"; sourceTree = "<group>"; };
+		6C1520802221C364004E6E08 /* PagamentoPagSeguro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoPagSeguro.swift; sourceTree = "<group>"; };
 		6C193B21221DB746000AB850 /* MeusDadosDonoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusDadosDonoViewController.swift; sourceTree = "<group>"; };
 		6C193B25221DD112000AB850 /* MBContactViewcontroller - cópia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MBContactViewcontroller - cópia.swift"; sourceTree = "<group>"; };
 		6C193B29221DF393000AB850 /* SobreOAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobreOAppViewController.swift; sourceTree = "<group>"; };
@@ -423,8 +426,8 @@
 		6C79EFEE21F263E90018DC13 /* FormaPagementoAdega */ = {
 			isa = PBXGroup;
 			children = (
-				6C79EFEB21F263E00018DC13 /* FormaPagamentoAdegaTableViewCell.xib */,
 				6C79EFEA21F263E00018DC13 /* FormaPagamentoAdegaTableViewCell.swift */,
+				6C79EFEB21F263E00018DC13 /* FormaPagamentoAdegaTableViewCell.xib */,
 			);
 			path = FormaPagementoAdega;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 		6CB700B521DD308B00CF0429 = {
 			isa = PBXGroup;
 			children = (
+				6C15207F2221BFA3004E6E08 /* Adega-Bridging-Header.h */,
 				6CB700C021DD308B00CF0429 /* Adega */,
 				6CB700D821DD308D00CF0429 /* AdegaTests */,
 				6CB700E321DD308D00CF0429 /* AdegaUITests */,
@@ -558,6 +562,7 @@
 				6C109677221C42EA00F5B554 /* GoogleService-Info.plist */,
 				6C055103221F478A00DDC252 /* Adega-Bridging-Header.h */,
 				6C7F3AEB221F9D3200736011 /* TesteZipCodeViewController.swift */,
+				6C1520802221C364004E6E08 /* PagamentoPagSeguro.swift */,
 			);
 			path = Adega;
 			sourceTree = "<group>";
@@ -995,6 +1000,7 @@
 				6CB700C221DD308B00CF0429 /* AppDelegate.swift in Sources */,
 				6C7F3AEC221F9D3200736011 /* TesteZipCodeViewController.swift in Sources */,
 				6CB700CA21DD308B00CF0429 /* Adega.xcdatamodeld in Sources */,
+				6C1520812221C364004E6E08 /* PagamentoPagSeguro.swift in Sources */,
 				6C193B22221DB746000AB850 /* MeusDadosDonoViewController.swift in Sources */,
 				6C039C7D21E7A64F004696F7 /* ItensCarrinhoTableViewCell.swift in Sources */,
 				6CB7010421DE6F3800CF0429 /* MeuCardapioTableViewCell.swift in Sources */,

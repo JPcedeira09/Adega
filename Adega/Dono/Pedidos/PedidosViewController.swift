@@ -41,7 +41,6 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.table.register(UINib(nibName: "PedidosAdegaTableViewCell", bundle: nil), forCellReuseIdentifier: "PedidosAdegaTableViewCell")
         
-        
         self.ref = Database.database().reference()
 
                 self.ref.child("Adega").child("Pedidos").observe(.value) { (snapshot) in
@@ -57,16 +56,13 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
                         
                         let child = pedido as! DataSnapshot
                         let dict = child.value as! NSDictionary
-                        print(dict)
                         var pedidoRetriver = Pedido(pedidoJSON: dict as! [String : Any])
                         
                         let itens = child.childSnapshot(forPath: "Itens")
-                        print(itens)
                         for x in itens.children{
                             let y = x as! DataSnapshot
                             let dict2 = y.value as! NSDictionary
                             let itemRetriver = ItensCarrinho(itensCarrinhoJSON: dict2 as! [String : Any])
-                            print(itemRetriver)
                             itensRetrived.append(itemRetriver)
                         }
                         
@@ -78,9 +74,6 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.table.reloadData()
                     
                 }
-        
-
-        
     }
     
     
@@ -111,7 +104,6 @@ class PedidosViewController: UIViewController, UITableViewDelegate, UITableViewD
         let row = indexPath.row
         let produtoselecionado = pedidos[row]
         pedido = produtoselecionado
-        print(pedido!)
         performSegue(withIdentifier: "segueDetalhePedido", sender: nil)
     }
     

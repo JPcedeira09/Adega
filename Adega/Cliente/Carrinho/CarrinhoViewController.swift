@@ -121,10 +121,18 @@ class CarrinhoViewController: UIViewController {
         
     }
     
+//    func atualizarData (){
+//        let dataAtual = Date()
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.locale = Locale(identifier: "pt-BR")
+//        dateFormatter.dateStyle = .
+//        self.data = dateFormatter.string(from: dataAtual)
+//    }
+    
     
     func getCurrentDate() -> String {
         let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatterGet.dateFormat = "HH:mm:ss"
         
         let date = Date()
         

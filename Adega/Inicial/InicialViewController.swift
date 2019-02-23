@@ -37,7 +37,7 @@ class InicialViewController: UIViewController,UITextFieldDelegate{
             CircularSpinner.hide()
             self.present(alertController, animated: true, completion: nil)
             
-        }else if self.email.text == "adega.house@gmail.com" || self.senha.text == "adega123"{
+        }else if self.email.text == "adega.house@gmail.com" && self.senha.text == "adega123"{
             
             
             Auth.auth().signIn(withEmail: self.email.text!, password: self.senha.text!) { (user, error) in
